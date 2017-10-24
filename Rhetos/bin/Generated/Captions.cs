@@ -1259,5 +1259,131 @@ namespace Rhetos.Mvc {
                 return ResourceManager.GetString("Common_SystemRequiredUsersFrom", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Država.
+        /// </summary>
+        public static string PrviRhetos_Drzava {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Drzava", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Naziv.
+        /// </summary>
+        public static string PrviRhetos_Drzava_Naziv {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Drzava_Naziv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pozivni broj.
+        /// </summary>
+        public static string PrviRhetos_Drzava_PozivniBroj {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Drzava_PozivniBroj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grad.
+        /// </summary>
+        public static string PrviRhetos_Grad {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Grad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Naziv.
+        /// </summary>
+        public static string PrviRhetos_Grad_Naziv {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Grad_Naziv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postanski broj.
+        /// </summary>
+        public static string PrviRhetos_Grad_PostanskiBroj {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Grad_PostanskiBroj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to U državi.
+        /// </summary>
+        public static string PrviRhetos_Grad_UDrzavi {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Grad_UDrzavi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Osoba.
+        /// </summary>
+        public static string PrviRhetos_Osoba {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adresa.
+        /// </summary>
+        public static string PrviRhetos_Osoba_Adresa {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba_Adresa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Broj mobitela.
+        /// </summary>
+        public static string PrviRhetos_Osoba_BrojMobitela {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba_BrojMobitela", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Država rodenja.
+        /// </summary>
+        public static string PrviRhetos_Osoba_DrzavaRodenja {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba_DrzavaRodenja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grad rodenja.
+        /// </summary>
+        public static string PrviRhetos_Osoba_GradRodenja {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba_GradRodenja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grad stanovanja.
+        /// </summary>
+        public static string PrviRhetos_Osoba_GradStanovanja {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba_GradStanovanja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OIB.
+        /// </summary>
+        public static string PrviRhetos_Osoba_OIB {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba_OIB", resourceCulture);
+            }
+        }
     }
 }

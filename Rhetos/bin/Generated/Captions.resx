@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="PrviRhetos_Drzava" xml:space="preserve">
+    <value>Država</value>
+  </data>
+  <data name="PrviRhetos_Grad" xml:space="preserve">
+    <value>Grad</value>
+  </data>
+  <data name="PrviRhetos_Osoba" xml:space="preserve">
+    <value>Osoba</value>
+  </data>
   <data name="Common_AutoCodeCache" xml:space="preserve">
     <value>Auto code cache</value>
   </data>
@@ -218,6 +227,21 @@
   </data>
   <data name="Common_AuditDataModifications" xml:space="preserve">
     <value>Audit data modifications</value>
+  </data>
+  <data name="PrviRhetos_Drzava_Naziv" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="PrviRhetos_Grad_Naziv" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="PrviRhetos_Grad_PostanskiBroj" xml:space="preserve">
+    <value>Postanski broj</value>
+  </data>
+  <data name="PrviRhetos_Osoba_OIB" xml:space="preserve">
+    <value>OIB</value>
+  </data>
+  <data name="PrviRhetos_Osoba_BrojMobitela" xml:space="preserve">
+    <value>Broj mobitela</value>
   </data>
   <data name="Common_AutoCodeCache_Entity" xml:space="preserve">
     <value>Entity</value>
@@ -363,11 +387,71 @@
   <data name="Common_RelatedEventsSource_TableName" xml:space="preserve">
     <value>Table name</value>
   </data>
+  <data name="PrviRhetos_Drzava_PozivniBroj" xml:space="preserve">
+    <value>Pozivni broj</value>
+  </data>
   <data name="Common_AutoCodeCache_MinDigits" xml:space="preserve">
     <value>Min digits</value>
   </data>
   <data name="Common_AutoCodeCache_LastCode" xml:space="preserve">
     <value>Last code</value>
+  </data>
+  <data name="PrviRhetos_Grad_UDrzavi" xml:space="preserve">
+    <value>U državi</value>
+  </data>
+  <data name="PrviRhetos_Osoba_GradRodenja" xml:space="preserve">
+    <value>Grad rodenja</value>
+  </data>
+  <data name="PrviRhetos_Osoba_DrzavaRodenja" xml:space="preserve">
+    <value>Država rodenja</value>
+  </data>
+  <data name="PrviRhetos_Osoba_GradStanovanja" xml:space="preserve">
+    <value>Grad stanovanja</value>
+  </data>
+  <data name="Common_RoleInheritsRole_UsersFrom" xml:space="preserve">
+    <value>Users from</value>
+  </data>
+  <data name="Common_RoleInheritsRole_PermissionsFrom" xml:space="preserve">
+    <value>Permissions from</value>
+  </data>
+  <data name="Common_PrincipalPermission_Principal" xml:space="preserve">
+    <value>Principal</value>
+  </data>
+  <data name="Common_PrincipalPermission_Claim" xml:space="preserve">
+    <value>Claim</value>
+  </data>
+  <data name="Common_LogRelatedItemReader_Log" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="PrviRhetos_Osoba_Adresa" xml:space="preserve">
+    <value>Adresa</value>
+  </data>
+  <data name="Common_KeepSynchronizedMetadata_Context" xml:space="preserve">
+    <value>Context</value>
+  </data>
+  <data name="Common_Log_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Common_AddToLog_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Common_AuditRelatedEvents_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Common_AuditRelatedEvents_Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="Common_AuditDataModifications_OldValue" xml:space="preserve">
+    <value>Old value</value>
+  </data>
+  <data name="Common_AuditDataModifications_NewValue" xml:space="preserve">
+    <value>New value</value>
+  </data>
+  <data name="Common_LogReader_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Common_RelatedEventsSource_Description" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="Common_FilterId_Handle" xml:space="preserve">
     <value>Handle</value>
@@ -413,33 +497,6 @@
   </data>
   <data name="Common_RelatedEventsSource_ItemId" xml:space="preserve">
     <value>Item id</value>
-  </data>
-  <data name="Common_KeepSynchronizedMetadata_Context" xml:space="preserve">
-    <value>Context</value>
-  </data>
-  <data name="Common_Log_Description" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="Common_AddToLog_Description" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="Common_AuditRelatedEvents_Description" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="Common_AuditRelatedEvents_Summary" xml:space="preserve">
-    <value>Summary</value>
-  </data>
-  <data name="Common_AuditDataModifications_OldValue" xml:space="preserve">
-    <value>Old value</value>
-  </data>
-  <data name="Common_AuditDataModifications_NewValue" xml:space="preserve">
-    <value>New value</value>
-  </data>
-  <data name="Common_LogReader_Description" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="Common_RelatedEventsSource_Description" xml:space="preserve">
-    <value>Description</value>
   </data>
   <data name="Common_ExclusiveLock_LockStart" xml:space="preserve">
     <value>Lock start</value>
@@ -497,21 +554,6 @@
   </data>
   <data name="Common_Claim_Active" xml:space="preserve">
     <value>Aktivan</value>
-  </data>
-  <data name="Common_RoleInheritsRole_UsersFrom" xml:space="preserve">
-    <value>Users from</value>
-  </data>
-  <data name="Common_RoleInheritsRole_PermissionsFrom" xml:space="preserve">
-    <value>Permissions from</value>
-  </data>
-  <data name="Common_PrincipalPermission_Principal" xml:space="preserve">
-    <value>Principal</value>
-  </data>
-  <data name="Common_PrincipalPermission_Claim" xml:space="preserve">
-    <value>Claim</value>
-  </data>
-  <data name="Common_LogRelatedItemReader_Log" xml:space="preserve">
-    <value>Log</value>
   </data>
   <data name="Common_ReportTemplate_Content" xml:space="preserve">
     <value>Content</value>

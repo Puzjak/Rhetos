@@ -1,10 +1,10 @@
-﻿// Reference: C:\inetpub\wwwroot\Rhetos\bin\Generated\Captions.dll
+﻿// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Generated\Captions.dll
 // Reference: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Plugins\OmegaCommonConcepts.Mvc.Client.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Plugins\Rhetos.Mvc.Client.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Plugins\OmegaCommonConcepts.Mvc.Client.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Plugins\Rhetos.Mvc.Client.dll
 // CompilerOptions: ""
 
 
@@ -34,6 +34,101 @@ using CaptionsResourceClass =  Rhetos.Mvc.Captions;
     }
 */
 
+
+
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_Drzava", typeof(CaptionsResourceClass))]
+    [Rhetos.Mvc.ReadableDataStructure]
+    [Rhetos.Mvc.WritableDataStructure]
+    public partial class Drzava : Rhetos.Mvc.BaseMvcModel
+    {
+        public const string EntityDrzava = "Drzava";
+
+        [Display(Name = "PrviRhetos_Drzava_Naziv", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [MaxLength(256)]
+        [Required()]
+        public virtual string Naziv { get; set; }
+        public const string PropertyNaziv = "Naziv";
+        
+        [Display(Name = "PrviRhetos_Drzava_PozivniBroj", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual int? PozivniBroj { get; set; }
+        public const string PropertyPozivniBroj = "PozivniBroj";
+    }
+}
+
+
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_Grad", typeof(CaptionsResourceClass))]
+    [Rhetos.Mvc.ReadableDataStructure]
+    [Rhetos.Mvc.WritableDataStructure]
+    public partial class Grad : Rhetos.Mvc.BaseMvcModel
+    {
+        public const string EntityGrad = "Grad";
+
+        [Display(Name = "PrviRhetos_Grad_Naziv", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [MaxLength(256)]
+        [Required()]
+        public virtual string Naziv { get; set; }
+        public const string PropertyNaziv = "Naziv";
+        
+        [Display(Name = "PrviRhetos_Grad_UDrzavi", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual Guid? UDrzaviID { get; set; }
+        public const string PropertyUDrzaviID = "UDrzaviID";
+        
+        [Display(Name = "PrviRhetos_Grad_PostanskiBroj", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [MaxLength(256)]
+        public virtual string PostanskiBroj { get; set; }
+        public const string PropertyPostanskiBroj = "PostanskiBroj";
+    }
+}
+
+
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_Osoba", typeof(CaptionsResourceClass))]
+    [Rhetos.Mvc.ReadableDataStructure]
+    [Rhetos.Mvc.WritableDataStructure]
+    public partial class Osoba : Rhetos.Mvc.BaseMvcModel
+    {
+        public const string EntityOsoba = "Osoba";
+
+        [Display(Name = "PrviRhetos_Osoba_OIB", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [MaxLength(256)]
+        [Required()]
+        public virtual string OIB { get; set; }
+        public const string PropertyOIB = "OIB";
+        
+        [Display(Name = "PrviRhetos_Osoba_GradRodenja", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual Guid? GradRodenjaID { get; set; }
+        public const string PropertyGradRodenjaID = "GradRodenjaID";
+        
+        [Display(Name = "PrviRhetos_Osoba_DrzavaRodenja", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual Guid? DrzavaRodenjaID { get; set; }
+        public const string PropertyDrzavaRodenjaID = "DrzavaRodenjaID";
+        
+        [Display(Name = "PrviRhetos_Osoba_GradStanovanja", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual Guid? GradStanovanjaID { get; set; }
+        public const string PropertyGradStanovanjaID = "GradStanovanjaID";
+        
+        [Display(Name = "PrviRhetos_Osoba_Adresa", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [UIHint("StringMultiline")]
+        [Required()]
+        public virtual string Adresa { get; set; }
+        public const string PropertyAdresa = "Adresa";
+        
+        [Display(Name = "PrviRhetos_Osoba_BrojMobitela", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [MaxLength(256)]
+        public virtual string BrojMobitela { get; set; }
+        public const string PropertyBrojMobitela = "BrojMobitela";
+    }
+}
 
 
 namespace Rhetos.Mvc.Common
@@ -245,14 +340,14 @@ namespace Rhetos.Mvc.Common
         public virtual string TableName { get; set; }
         public const string PropertyTableName = "TableName";
         
-        [Display(Name = "Common_LogReader_ItemId", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
-        public virtual Guid? ItemId { get; set; }
-        public const string PropertyItemId = "ItemId";
-        
         [Display(Name = "Common_LogReader_Description", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [UIHint("StringMultiline")]
         public virtual string Description { get; set; }
         public const string PropertyDescription = "Description";
+        
+        [Display(Name = "Common_LogReader_ItemId", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        public virtual Guid? ItemId { get; set; }
+        public const string PropertyItemId = "ItemId";
         
         [Display(Name = "Common_LogReader_Created", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [Required()]
@@ -461,14 +556,14 @@ namespace Rhetos.Mvc.Common
         public virtual string TableName { get; set; }
         public const string PropertyTableName = "TableName";
         
-        [Display(Name = "Common_RelatedEventsSource_ItemId", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
-        public virtual Guid? ItemId { get; set; }
-        public const string PropertyItemId = "ItemId";
-        
         [Display(Name = "Common_RelatedEventsSource_Description", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [UIHint("StringMultiline")]
         public virtual string Description { get; set; }
         public const string PropertyDescription = "Description";
+        
+        [Display(Name = "Common_RelatedEventsSource_ItemId", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        public virtual Guid? ItemId { get; set; }
+        public const string PropertyItemId = "ItemId";
         
         [Display(Name = "Common_RelatedEventsSource_Created", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [Required()]

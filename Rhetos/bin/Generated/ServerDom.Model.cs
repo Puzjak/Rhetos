@@ -1,25 +1,122 @@
-﻿// Reference: C:\inetpub\wwwroot\Rhetos\bin\Autofac.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Rhetos.Extensibility.Interfaces.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Rhetos.Utilities.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Rhetos.Security.Interfaces.dll
+﻿// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Autofac.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Rhetos.Extensibility.Interfaces.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Rhetos.Utilities.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Rhetos.Security.Interfaces.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.Composition\v4.0_4.0.0.0__b77a5c561934e089\System.ComponentModel.Composition.dll
 // Reference: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Plugins\Rhetos.Dom.DefaultConcepts.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Rhetos.Logging.Interfaces.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\EntityFramework.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\EntityFramework.SqlServer.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Plugins\Rhetos.Dom.DefaultConcepts.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Rhetos.Logging.Interfaces.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\EntityFramework.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\EntityFramework.SqlServer.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_64\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Rhetos.Persistence.Interfaces.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Rhetos.Persistence.Interfaces.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Data.DataSetExtensions\v4.0_4.0.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Plugins\Rhetos.Dom.DefaultConcepts.Interfaces.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Plugins\Rhetos.Dom.DefaultConcepts.Interfaces.dll
 // Reference: C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll
-// Reference: C:\inetpub\wwwroot\Rhetos\bin\Plugins\OmegaCommonConcepts.dll
+// Reference: C:\Projects\MojPrviRhetos\Rhetos\bin\Plugins\OmegaCommonConcepts.dll
 // CompilerOptions: "/optimize"
+
+namespace PrviRhetos
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Linq.Expressions;
+    using System.Runtime.Serialization;
+    using Rhetos.Dom.DefaultConcepts;
+    using Rhetos.Utilities;
+
+    /*ModuleInfo Using PrviRhetos*/
+
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.Drzava*/
+    public class Drzava : EntityBase<PrviRhetos.Drzava>/*Next DataStructureInfo ClassInterace PrviRhetos.Drzava*/
+    {
+        /// <summary>Converts the simple object to a navigation object, and copies its simple properties. Navigation properties are set to null.</summary>
+        public Common.Queryable.PrviRhetos_Drzava ToNavigation()
+        {
+            var item = this;
+            return new Common.Queryable.PrviRhetos_Drzava
+            {
+                ID = item.ID,
+                Naziv = item.Naziv,
+                PozivniBroj = item.PozivniBroj/*DataStructureInfo AssignSimpleProperty PrviRhetos.Drzava*/
+            };
+        }
+
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Drzava.Naziv*/
+        public string Naziv { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Drzava.PozivniBroj*/
+        public int? PozivniBroj { get; set; }
+        /*DataStructureInfo ClassBody PrviRhetos.Drzava*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.Grad*/
+    public class Grad : EntityBase<PrviRhetos.Grad>/*Next DataStructureInfo ClassInterace PrviRhetos.Grad*/
+    {
+        /// <summary>Converts the simple object to a navigation object, and copies its simple properties. Navigation properties are set to null.</summary>
+        public Common.Queryable.PrviRhetos_Grad ToNavigation()
+        {
+            var item = this;
+            return new Common.Queryable.PrviRhetos_Grad
+            {
+                ID = item.ID,
+                Naziv = item.Naziv,
+                UDrzaviID = item.UDrzaviID,
+                PostanskiBroj = item.PostanskiBroj/*DataStructureInfo AssignSimpleProperty PrviRhetos.Grad*/
+            };
+        }
+
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Grad.Naziv*/
+        public string Naziv { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Grad.UDrzaviID*/
+        public Guid? UDrzaviID { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Grad.PostanskiBroj*/
+        public string PostanskiBroj { get; set; }
+        /*DataStructureInfo ClassBody PrviRhetos.Grad*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.Osoba*/
+    public class Osoba : EntityBase<PrviRhetos.Osoba>/*Next DataStructureInfo ClassInterace PrviRhetos.Osoba*/
+    {
+        /// <summary>Converts the simple object to a navigation object, and copies its simple properties. Navigation properties are set to null.</summary>
+        public Common.Queryable.PrviRhetos_Osoba ToNavigation()
+        {
+            var item = this;
+            return new Common.Queryable.PrviRhetos_Osoba
+            {
+                ID = item.ID,
+                OIB = item.OIB,
+                GradRodenjaID = item.GradRodenjaID,
+                DrzavaRodenjaID = item.DrzavaRodenjaID,
+                GradStanovanjaID = item.GradStanovanjaID,
+                Adresa = item.Adresa,
+                BrojMobitela = item.BrojMobitela/*DataStructureInfo AssignSimpleProperty PrviRhetos.Osoba*/
+            };
+        }
+
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.OIB*/
+        public string OIB { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.GradRodenjaID*/
+        public Guid? GradRodenjaID { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.DrzavaRodenjaID*/
+        public Guid? DrzavaRodenjaID { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.GradStanovanjaID*/
+        public Guid? GradStanovanjaID { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.Adresa*/
+        public string Adresa { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.BrojMobitela*/
+        public string BrojMobitela { get; set; }
+        /*DataStructureInfo ClassBody PrviRhetos.Osoba*/
+    }
+
+    /*ModuleInfo Body PrviRhetos*/
+}
 
 namespace Common
 {
@@ -184,8 +281,8 @@ namespace Common
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
-                ItemId = item.ItemId,
                 Description = item.Description,
+                ItemId = item.ItemId,
                 Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
             };
         }
@@ -200,10 +297,10 @@ namespace Common
         public string Action { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogReader.TableName*/
         public string TableName { get; set; }
-        [DataMember]/*PropertyInfo Attribute Common.LogReader.ItemId*/
-        public Guid? ItemId { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogReader.Description*/
         public string Description { get; set; }
+        [DataMember]/*PropertyInfo Attribute Common.LogReader.ItemId*/
+        public Guid? ItemId { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogReader.Created*/
         public DateTime? Created { get; set; }
         /*DataStructureInfo ClassBody Common.LogReader*/
@@ -338,8 +435,8 @@ namespace Common
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
-                ItemId = item.ItemId,
                 Description = item.Description,
+                ItemId = item.ItemId,
                 Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
             };
         }
@@ -362,10 +459,10 @@ namespace Common
         public string Action { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.TableName*/
         public string TableName { get; set; }
-        [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.ItemId*/
-        public Guid? ItemId { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.Description*/
         public string Description { get; set; }
+        [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.ItemId*/
+        public Guid? ItemId { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.Created*/
         public DateTime? Created { get; set; }
         /*DataStructureInfo ClassBody Common.RelatedEventsSource*/
@@ -739,6 +836,162 @@ namespace Common.Queryable
     using Rhetos.Dom.DefaultConcepts;
     using Rhetos.Utilities;
 
+    /*DataStructureInfo QueryableClassAttributes PrviRhetos.Drzava*/
+    public class PrviRhetos_Drzava : global::PrviRhetos.Drzava, IQueryableEntity<PrviRhetos.Drzava>, System.IEquatable<PrviRhetos_Drzava>, IDetachOverride/*DataStructureInfo QueryableClassInterace PrviRhetos.Drzava*/
+    {
+        bool IDetachOverride.Detaching { get; set; }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public PrviRhetos.Drzava ToSimple()
+        {
+            var item = this;
+            return new PrviRhetos.Drzava
+            {
+                ID = item.ID,
+                Naziv = item.Naziv,
+                PozivniBroj = item.PozivniBroj/*DataStructureInfo AssignSimpleProperty PrviRhetos.Drzava*/
+            };
+        }
+
+        /*DataStructureInfo QueryableClassMembers PrviRhetos.Drzava*/
+
+        public bool Equals(PrviRhetos_Drzava other)
+        {
+            return other != null && other.ID == ID;
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes PrviRhetos.Grad*/
+    public class PrviRhetos_Grad : global::PrviRhetos.Grad, IQueryableEntity<PrviRhetos.Grad>, System.IEquatable<PrviRhetos_Grad>, IDetachOverride/*DataStructureInfo QueryableClassInterace PrviRhetos.Grad*/
+    {
+        bool IDetachOverride.Detaching { get; set; }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public PrviRhetos.Grad ToSimple()
+        {
+            var item = this;
+            return new PrviRhetos.Grad
+            {
+                ID = item.ID,
+                Naziv = item.Naziv,
+                UDrzaviID = item.UDrzaviID,
+                PostanskiBroj = item.PostanskiBroj/*DataStructureInfo AssignSimpleProperty PrviRhetos.Grad*/
+            };
+        }
+
+        private Common.Queryable.PrviRhetos_Drzava _uDrzavi;
+
+        /*DataStructureQueryable PropertyAttribute PrviRhetos.Grad.UDrzavi*/
+        public virtual Common.Queryable.PrviRhetos_Drzava UDrzavi
+        {
+            get
+            {
+                /*DataStructureQueryable Getter PrviRhetos.Grad.UDrzavi*/
+                return _uDrzavi;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter PrviRhetos.Grad.UDrzavi*/
+                _uDrzavi = value;
+                UDrzaviID = value != null ? (Guid?)value.ID : null;
+            }
+        }
+
+        /*DataStructureInfo QueryableClassMembers PrviRhetos.Grad*/
+
+        public bool Equals(PrviRhetos_Grad other)
+        {
+            return other != null && other.ID == ID;
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes PrviRhetos.Osoba*/
+    public class PrviRhetos_Osoba : global::PrviRhetos.Osoba, IQueryableEntity<PrviRhetos.Osoba>, System.IEquatable<PrviRhetos_Osoba>, IDetachOverride/*DataStructureInfo QueryableClassInterace PrviRhetos.Osoba*/
+    {
+        bool IDetachOverride.Detaching { get; set; }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public PrviRhetos.Osoba ToSimple()
+        {
+            var item = this;
+            return new PrviRhetos.Osoba
+            {
+                ID = item.ID,
+                OIB = item.OIB,
+                GradRodenjaID = item.GradRodenjaID,
+                DrzavaRodenjaID = item.DrzavaRodenjaID,
+                GradStanovanjaID = item.GradStanovanjaID,
+                Adresa = item.Adresa,
+                BrojMobitela = item.BrojMobitela/*DataStructureInfo AssignSimpleProperty PrviRhetos.Osoba*/
+            };
+        }
+
+        private Common.Queryable.PrviRhetos_Grad _gradRodenja;
+
+        /*DataStructureQueryable PropertyAttribute PrviRhetos.Osoba.GradRodenja*/
+        public virtual Common.Queryable.PrviRhetos_Grad GradRodenja
+        {
+            get
+            {
+                /*DataStructureQueryable Getter PrviRhetos.Osoba.GradRodenja*/
+                return _gradRodenja;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter PrviRhetos.Osoba.GradRodenja*/
+                _gradRodenja = value;
+                GradRodenjaID = value != null ? (Guid?)value.ID : null;
+            }
+        }
+
+        private Common.Queryable.PrviRhetos_Drzava _drzavaRodenja;
+
+        /*DataStructureQueryable PropertyAttribute PrviRhetos.Osoba.DrzavaRodenja*/
+        public virtual Common.Queryable.PrviRhetos_Drzava DrzavaRodenja
+        {
+            get
+            {
+                /*DataStructureQueryable Getter PrviRhetos.Osoba.DrzavaRodenja*/
+                return _drzavaRodenja;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter PrviRhetos.Osoba.DrzavaRodenja*/
+                _drzavaRodenja = value;
+                DrzavaRodenjaID = value != null ? (Guid?)value.ID : null;
+            }
+        }
+
+        private Common.Queryable.PrviRhetos_Grad _gradStanovanja;
+
+        /*DataStructureQueryable PropertyAttribute PrviRhetos.Osoba.GradStanovanja*/
+        public virtual Common.Queryable.PrviRhetos_Grad GradStanovanja
+        {
+            get
+            {
+                /*DataStructureQueryable Getter PrviRhetos.Osoba.GradStanovanja*/
+                return _gradStanovanja;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter PrviRhetos.Osoba.GradStanovanja*/
+                _gradStanovanja = value;
+                GradStanovanjaID = value != null ? (Guid?)value.ID : null;
+            }
+        }
+
+        /*DataStructureInfo QueryableClassMembers PrviRhetos.Osoba*/
+
+        public bool Equals(PrviRhetos_Osoba other)
+        {
+            return other != null && other.ID == ID;
+        }
+    }
+
     /*DataStructureInfo QueryableClassAttributes Common.AutoCodeCache*/
     public class Common_AutoCodeCache : global::Common.AutoCodeCache, IQueryableEntity<Common.AutoCodeCache>, System.IEquatable<Common_AutoCodeCache>, IDetachOverride/*DataStructureInfo QueryableClassInterace Common.AutoCodeCache*/
     {
@@ -865,8 +1118,8 @@ namespace Common.Queryable
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
-                ItemId = item.ItemId,
                 Description = item.Description,
+                ItemId = item.ItemId,
                 Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
             };
         }
@@ -1023,8 +1276,8 @@ namespace Common.Queryable
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
-                ItemId = item.ItemId,
                 Description = item.Description,
+                ItemId = item.ItemId,
                 Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
             };
         }
@@ -1587,6 +1840,41 @@ namespace Rhetos.Dom.DefaultConcepts
     public static class QueryExtensions
     {
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<PrviRhetos.Drzava> ToSimple(this IQueryable<Common.Queryable.PrviRhetos_Drzava> query)
+        {
+            return query.Select(item => new PrviRhetos.Drzava
+            {
+                ID = item.ID,
+                Naziv = item.Naziv,
+                PozivniBroj = item.PozivniBroj/*DataStructureInfo AssignSimpleProperty PrviRhetos.Drzava*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<PrviRhetos.Grad> ToSimple(this IQueryable<Common.Queryable.PrviRhetos_Grad> query)
+        {
+            return query.Select(item => new PrviRhetos.Grad
+            {
+                ID = item.ID,
+                Naziv = item.Naziv,
+                UDrzaviID = item.UDrzaviID,
+                PostanskiBroj = item.PostanskiBroj/*DataStructureInfo AssignSimpleProperty PrviRhetos.Grad*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<PrviRhetos.Osoba> ToSimple(this IQueryable<Common.Queryable.PrviRhetos_Osoba> query)
+        {
+            return query.Select(item => new PrviRhetos.Osoba
+            {
+                ID = item.ID,
+                OIB = item.OIB,
+                GradRodenjaID = item.GradRodenjaID,
+                DrzavaRodenjaID = item.DrzavaRodenjaID,
+                GradStanovanjaID = item.GradStanovanjaID,
+                Adresa = item.Adresa,
+                BrojMobitela = item.BrojMobitela/*DataStructureInfo AssignSimpleProperty PrviRhetos.Osoba*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
         public static IQueryable<Common.AutoCodeCache> ToSimple(this IQueryable<Common.Queryable.Common_AutoCodeCache> query)
         {
             return query.Select(item => new Common.AutoCodeCache
@@ -1646,8 +1934,8 @@ namespace Rhetos.Dom.DefaultConcepts
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
-                ItemId = item.ItemId,
                 Description = item.Description,
+                ItemId = item.ItemId,
                 Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
             });
         }
@@ -1706,8 +1994,8 @@ namespace Rhetos.Dom.DefaultConcepts
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
-                ItemId = item.ItemId,
                 Description = item.Description,
+                ItemId = item.ItemId,
                 Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
             });
         }
