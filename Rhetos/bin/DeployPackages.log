@@ -1,0 +1,424 @@
+2017-10-23 15:59:42.5204|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 15:59:42.5987|TRACE|DeployPackages|Getting packages.
+2017-10-23 15:59:42.6300|ERROR|DeployPackages|Rhetos.UserException: Missing configuration file 'C:\inetpub\wwwroot\Rhetos\RhetosPackages.config'. Rename the created template file (Template.RhetosPackages.config) to match the expected file name. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+   at Rhetos.Deployment.DeploymentConfiguration.ReadConfigFileOrCreateTemplate(String configFileName, String templateFileName, String configFileUsage) in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 138
+   at Rhetos.Deployment.DeploymentConfiguration.LoadPackageRequest() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 61
+   at Rhetos.Deployment.DeploymentConfiguration.Initialize() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 53
+   at Rhetos.Deployment.DeploymentConfiguration.get_PackageRequests() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 42
+   at Rhetos.Deployment.PackageDownloader.GetPackages() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\PackageDownloader.cs:line 78
+   at DeployPackages.Program.DownloadPackages(ILogger logger, Arguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 156
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 68
+Info: 
+MessageParameters: null
+SystemMessage: 
+2017-10-23 16:00:12.7376|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:00:12.7845|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:00:12.8157|ERROR|DeployPackages|Rhetos.UserException: Missing configuration file 'C:\inetpub\wwwroot\Rhetos\RhetosPackages.config'. Rename the created template file (Template.RhetosPackages.config) to match the expected file name. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+   at Rhetos.Deployment.DeploymentConfiguration.ReadConfigFileOrCreateTemplate(String configFileName, String templateFileName, String configFileUsage) in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 138
+   at Rhetos.Deployment.DeploymentConfiguration.LoadPackageRequest() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 61
+   at Rhetos.Deployment.DeploymentConfiguration.Initialize() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 53
+   at Rhetos.Deployment.DeploymentConfiguration.get_PackageRequests() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 42
+   at Rhetos.Deployment.PackageDownloader.GetPackages() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\PackageDownloader.cs:line 78
+   at DeployPackages.Program.DownloadPackages(ILogger logger, Arguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 156
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 68
+Info: 
+MessageParameters: null
+SystemMessage: 
+2017-10-23 16:00:28.4425|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:00:28.4894|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:00:28.5206|ERROR|DeploymentConfiguration|No packages defined in 'RhetosPackages.config'. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+2017-10-23 16:00:28.5206|ERROR|DeployPackages|Rhetos.UserException: Missing configuration file 'C:\inetpub\wwwroot\Rhetos\RhetosPackageSources.config'. Rename the created template file (Template.RhetosPackageSources.config) to match the expected file name. Edit the file to add locations where Rhetos packages can be found.
+   at Rhetos.Deployment.DeploymentConfiguration.ReadConfigFileOrCreateTemplate(String configFileName, String templateFileName, String configFileUsage) in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 138
+   at Rhetos.Deployment.DeploymentConfiguration.LoadPackageSources() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 87
+   at Rhetos.Deployment.DeploymentConfiguration.Initialize() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 54
+   at Rhetos.Deployment.DeploymentConfiguration.get_PackageRequests() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\DeploymentConfiguration.cs:line 42
+   at Rhetos.Deployment.PackageDownloader.GetPackages() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\PackageDownloader.cs:line 78
+   at DeployPackages.Program.DownloadPackages(ILogger logger, Arguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 156
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 68
+Info: 
+MessageParameters: null
+SystemMessage: 
+2017-10-23 16:01:19.8811|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:01:19.9280|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:01:19.9698|ERROR|DeploymentConfiguration|No packages defined in 'RhetosPackages.config'. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+2017-10-23 16:01:19.9898|TRACE|Packages|Rhetos 2.2.0 (requested from Rhetos framework) in C:\inetpub\wwwroot\Rhetos.
+2017-10-23 16:01:20.0771|TRACE|DeployPackages|Loading plugins.
+2017-10-23 16:01:20.3896|TRACE|DeployPackages|SQL connection string: Data Source=theServer;Initial Catalog=theDatabase;Integrated Security=SSPI;
+2017-10-23 16:01:35.5932|ERROR|MsSqlExecuter|Could not connect to server 'theServer', database 'theDatabase' using integrated security account mpuzjak. System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Rhetos.Persistence.MsSqlExecuter.SafeExecuteCommand(Action`1 action, Boolean useTransaction) in C:\My Projects\Rhetos\Source\Rhetos.Persistence\MsSqlExecuter.cs:line 152
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2017-10-23 16:01:35.6088|ERROR|DeployPackages|Rhetos.FrameworkException: Could not connect to server 'theServer', database 'theDatabase' using integrated security account mpuzjak. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception: The network path was not found
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Rhetos.Persistence.MsSqlExecuter.SafeExecuteCommand(Action`1 action, Boolean useTransaction) in C:\My Projects\Rhetos\Source\Rhetos.Persistence\MsSqlExecuter.cs:line 152
+   --- End of inner exception stack trace ---
+   at Rhetos.Deployment.ApplicationGenerator.ValidateDbConnection() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\ApplicationGenerator.cs:line 143
+   at Rhetos.Deployment.ApplicationGenerator.ExecuteGenerators(Boolean deployDatabaseOnly) in C:\My Projects\Rhetos\Source\Rhetos.Deployment\ApplicationGenerator.cs:line 73
+   at DeployPackages.Program.GenerateApplication(ILogger logger, Arguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 183
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 69
+Info: 
+2017-10-23 16:08:07.7500|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:08:07.7969|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:08:07.8281|ERROR|DeploymentConfiguration|No packages defined in 'RhetosPackages.config'. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+2017-10-23 16:08:07.8437|TRACE|Packages|Rhetos 2.2.0 (requested from Rhetos framework) in C:\inetpub\wwwroot\Rhetos.
+2017-10-23 16:08:07.8594|TRACE|DeployPackages|Loading plugins.
+2017-10-23 16:08:07.9820|ERROR|DeployPackages|System.Configuration.ConfigurationErrorsException: The 'add' start tag on line 7 position 4 does not match the end tag of 'connectionStrings'. Line 8, position 3. (C:\inetpub\wwwroot\Rhetos\bin\ConnectionStrings.config line 8) ---> System.Xml.XmlException: The 'add' start tag on line 7 position 4 does not match the end tag of 'connectionStrings'. Line 8, position 3.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.ThrowTagMismatch(NodeData startTag)
+   at System.Xml.XmlTextReaderImpl.ParseEndElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Configuration.XmlUtil.CopyXmlNode(XmlUtilWriter utilWriter)
+   at System.Configuration.XmlUtil.CopyElement(XmlUtilWriter utilWriter)
+   at System.Configuration.XmlUtil.CopySection()
+   at System.Configuration.BaseConfigurationRecord.LoadConfigSource(String name, SectionXmlInfo sectionXmlInfo)
+   at System.Configuration.BaseConfigurationRecord.GetSectionXmlReader(String[] keys, SectionInput input)
+   --- End of inner exception stack trace ---
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at System.Configuration.ConfigurationManager.get_ConnectionStrings()
+   at Rhetos.Utilities.ConfigUtility.GetConnectionString() in C:\My Projects\Rhetos\Source\Rhetos.Utilities\ConfigUtility.cs:line 54
+   at Rhetos.Utilities.SqlUtility.get_ConnectionString() in C:\My Projects\Rhetos\Source\Rhetos.Utilities\SqlUtility.cs:line 110
+   at Rhetos.Configuration.Autofac.DefaultAutofacConfiguration.Load(ContainerBuilder builder) in C:\My Projects\Rhetos\Source\Rhetos.Configuration.Autofac\DefaultAutofacConfiguration.cs:line 45
+   at Autofac.Module.Configure(IComponentRegistry componentRegistry)
+   at Autofac.ContainerBuilder.Build(IComponentRegistry componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.Module.Configure(IComponentRegistry componentRegistry)
+   at Autofac.ContainerBuilder.Build(IComponentRegistry componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at DeployPackages.Program.GenerateApplication(ILogger logger, Arguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 174
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 69
+2017-10-23 16:08:31.3296|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:08:31.3764|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:08:31.4077|ERROR|DeploymentConfiguration|No packages defined in 'RhetosPackages.config'. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+2017-10-23 16:08:31.4077|TRACE|Packages|Rhetos 2.2.0 (requested from Rhetos framework) in C:\inetpub\wwwroot\Rhetos.
+2017-10-23 16:08:31.4389|TRACE|DeployPackages|Loading plugins.
+2017-10-23 16:08:31.6994|TRACE|DeployPackages|SQL connection string: User Id=Rhetos;Password=*;Data Source=localhost:1521/xe;
+2017-10-23 16:08:31.6994|TRACE|DeployPackages|Preparing Rhetos database.
+2017-10-23 16:08:34.2153|ERROR|OracleSqlExecuter|Could not connect to data source 'localhost:1521/xe', userID 'Rhetos'.
+2017-10-23 16:08:34.2153|ERROR|OracleSqlExecuter|Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12541: TNS: No listener ---> OracleInternal.Network.NetworkException (0x80004005): ORA-12541: TNS: No listener ---> System.Net.Sockets.SocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:1521
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at OracleInternal.Network.TcpTransportAdapter.Connect(ConnectionOption conOption)
+   at OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   at OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   at Rhetos.Utilities.OracleSqlExecuter.SafeExecuteCommand(Action`1 action) in C:\My Projects\Rhetos\Source\Rhetos.Utilities\OracleSqlExecuter.cs:line 89
+2017-10-23 16:08:34.2309|ERROR|DeployPackages|Rhetos.FrameworkException: Could not connect to data source 'localhost:1521/xe', userID 'Rhetos'. ---> Oracle.ManagedDataAccess.Client.OracleException: ORA-12541: TNS: No listener ---> OracleInternal.Network.NetworkException: ORA-12541: TNS: No listener ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:1521
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at OracleInternal.Network.TcpTransportAdapter.Connect(ConnectionOption conOption)
+   --- End of inner exception stack trace ---
+   at OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   --- End of inner exception stack trace ---
+   at OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   at Rhetos.Utilities.OracleSqlExecuter.SafeExecuteCommand(Action`1 action) in C:\My Projects\Rhetos\Source\Rhetos.Utilities\OracleSqlExecuter.cs:line 89
+   --- End of inner exception stack trace ---
+   at Rhetos.Utilities.OracleSqlExecuter.SafeExecuteCommand(Action`1 action) in C:\My Projects\Rhetos\Source\Rhetos.Utilities\OracleSqlExecuter.cs:line 106
+   at Rhetos.Utilities.OracleSqlExecuter.ExecuteSql(IEnumerable`1 commands, Boolean useTransaction) in C:\My Projects\Rhetos\Source\Rhetos.Utilities\OracleSqlExecuter.cs:line 52
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, String[] commands) in C:\My Projects\Rhetos\Source\Rhetos.Utilities\ISqlExecuter.cs:line 40
+   at Rhetos.Deployment.ApplicationGenerator.PrepareRhetosDatabase() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\ApplicationGenerator.cs:line 156
+   at Rhetos.Deployment.ApplicationGenerator.ExecuteGenerators(Boolean deployDatabaseOnly) in C:\My Projects\Rhetos\Source\Rhetos.Deployment\ApplicationGenerator.cs:line 76
+   at DeployPackages.Program.GenerateApplication(ILogger logger, Arguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 183
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 69
+Info: 
+2017-10-23 16:23:08.5663|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:23:08.6131|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:23:08.6444|ERROR|DeploymentConfiguration|No packages defined in 'RhetosPackages.config'. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+2017-10-23 16:23:08.6600|TRACE|Packages|Rhetos 2.2.0 (requested from Rhetos framework) in C:\inetpub\wwwroot\Rhetos.
+2017-10-23 16:23:08.6913|TRACE|DeployPackages|Loading plugins.
+2017-10-23 16:23:08.9256|TRACE|DeployPackages|SQL connection string: Data Source=adsql2008r2;Initial Catalog=RhetosDb_mpuzjak;Integrated Security=SSPI;
+2017-10-23 16:23:09.0194|TRACE|DeployPackages|Preparing Rhetos database.
+2017-10-23 16:23:09.9881|TRACE|DeployPackages|Parsing DSL scripts.
+2017-10-23 16:23:10.0993|TRACE|DeployPackages|Application model has 1 statements.
+2017-10-23 16:23:10.0993|TRACE|DeployPackages|Compiling DOM assembly.
+2017-10-23 16:23:10.1306|ERROR|DeployPackages|WARNING: Empty assembly is generated.
+2017-10-23 16:23:10.1306|TRACE|DeployPackages|Executing EntityFrameworkMappingGenerator.
+2017-10-23 16:23:10.1462|TRACE|DeployPackages|Cleaning old migration data.
+2017-10-23 16:23:10.1931|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2017-10-23 16:23:10.2087|TRACE|DeployPackages|Executing data migration scripts.
+2017-10-23 16:23:10.2244|TRACE|DeployPackages|Executed 0 of 0 scripts.
+2017-10-23 16:23:10.2244|TRACE|DeployPackages|Upgrading database.
+2017-10-23 16:23:10.3349|TRACE|DeployPackages|DatabaseGenerator removing 0 concept applications.
+2017-10-23 16:23:10.3349|TRACE|DeployPackages|DatabaseGenerator creating 0 concept applications.
+2017-10-23 16:23:10.3505|TRACE|DeployPackages|Deleting redundant migration data.
+2017-10-23 16:23:10.3662|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2017-10-23 16:23:10.3662|TRACE|DeployPackages|Uploading DSL scripts.
+2017-10-23 16:23:10.3974|TRACE|DeployPackages|Uploaded 0 DSL scripts to database.
+2017-10-23 16:23:10.4130|TRACE|DeployPackages|Loading generated plugins.
+2017-10-23 16:23:10.4130|TRACE|DeployPackages|No server initialization plugins.
+2017-10-23 16:23:10.4287|TRACE|DeployPackages|Updated Web.config modification date to restart server.
+2017-10-23 16:23:10.4287|TRACE|DeployPackages|Done.
+2017-10-23 16:23:31.4148|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:23:31.4616|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:23:31.4929|ERROR|DeploymentConfiguration|No packages defined in 'RhetosPackages.config'. Edit the file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+2017-10-23 16:23:31.5085|TRACE|Packages|Rhetos 2.2.0 (requested from Rhetos framework) in C:\inetpub\wwwroot\Rhetos.
+2017-10-23 16:23:31.5241|TRACE|DeployPackages|Loading plugins.
+2017-10-23 16:23:31.7741|TRACE|DeployPackages|SQL connection string: Data Source=adsql2008r2;Initial Catalog=RhetosDb_mpuzjak;Integrated Security=SSPI;
+2017-10-23 16:23:31.8366|TRACE|DeployPackages|Preparing Rhetos database.
+2017-10-23 16:23:31.9412|TRACE|DeployPackages|Parsing DSL scripts.
+2017-10-23 16:23:32.0194|TRACE|DeployPackages|Application model has 1 statements.
+2017-10-23 16:23:32.0194|TRACE|DeployPackages|Compiling DOM assembly.
+2017-10-23 16:23:32.0350|ERROR|DeployPackages|WARNING: Empty assembly is generated.
+2017-10-23 16:23:32.0350|TRACE|DeployPackages|Executing EntityFrameworkMappingGenerator.
+2017-10-23 16:23:32.0350|TRACE|DeployPackages|Cleaning old migration data.
+2017-10-23 16:23:32.0506|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2017-10-23 16:23:32.0662|TRACE|DeployPackages|Executing data migration scripts.
+2017-10-23 16:23:32.0818|TRACE|DeployPackages|Executed 0 of 0 scripts.
+2017-10-23 16:23:32.0818|TRACE|DeployPackages|Upgrading database.
+2017-10-23 16:23:32.1756|TRACE|DeployPackages|DatabaseGenerator removing 0 concept applications.
+2017-10-23 16:23:32.1756|TRACE|DeployPackages|DatabaseGenerator creating 0 concept applications.
+2017-10-23 16:23:32.1756|TRACE|DeployPackages|Deleting redundant migration data.
+2017-10-23 16:23:32.1912|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2017-10-23 16:23:32.1912|TRACE|DeployPackages|Uploading DSL scripts.
+2017-10-23 16:23:32.2225|TRACE|DeployPackages|Uploaded 0 DSL scripts to database.
+2017-10-23 16:23:32.2225|TRACE|DeployPackages|Loading generated plugins.
+2017-10-23 16:23:32.2381|TRACE|DeployPackages|No server initialization plugins.
+2017-10-23 16:23:32.2381|TRACE|DeployPackages|Updated Web.config modification date to restart server.
+2017-10-23 16:23:32.2381|TRACE|DeployPackages|Done.
+2017-10-23 16:35:45.6010|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:35:45.6479|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:35:48.0230|TRACE|PackageDownloader|Downloading NuGet package Rhetos.CommonConcepts 2.2.0 from C:\inetpub\wwwroot\Rhetos\Packages.
+2017-10-23 16:35:48.1792|TRACE|NuGet|Installing 'Rhetos.CommonConcepts 2.2.0'.
+2017-10-23 16:35:48.3042|TRACE|NuGet|Successfully installed 'Rhetos.CommonConcepts 2.2.0'.
+2017-10-23 16:35:48.5542|TRACE|PackageDownloader|Downloading NuGet package Rhetos.OmegaCommonConcepts 2.3.0 from C:\inetpub\wwwroot\Rhetos\Packages.
+2017-10-23 16:35:48.5855|TRACE|NuGet|Installing 'Rhetos.OmegaCommonConcepts 2.3.0'.
+2017-10-23 16:35:48.6011|TRACE|NuGet|Successfully installed 'Rhetos.OmegaCommonConcepts 2.3.0'.
+2017-10-23 16:35:48.8198|TRACE|PackageDownloader|Downloading NuGet package Rhetos.RestGenerator 2.4.0 from https://www.nuget.org/api/v2/.
+2017-10-23 16:35:49.4449|TRACE|NuGet|Installing 'Rhetos.RestGenerator 2.4.0'.
+2017-10-23 16:35:49.4762|TRACE|NuGet|Successfully installed 'Rhetos.RestGenerator 2.4.0'.
+2017-10-23 16:35:50.0543|TRACE|PackageDownloader|Downloading NuGet package Rhetos.MvcModelGenerator 2.2.0 from C:\inetpub\wwwroot\Rhetos\Packages.
+2017-10-23 16:35:50.0699|TRACE|NuGet|Installing 'Rhetos.MvcModelGenerator 2.2.0'.
+2017-10-23 16:35:50.0699|TRACE|NuGet|Successfully installed 'Rhetos.MvcModelGenerator 2.2.0'.
+2017-10-23 16:35:50.0855|TRACE|PackageDownloader|Not looking for valueinjecter 2.3.3 in packages cache because the request does not specify an exact version.
+2017-10-23 16:35:50.3199|TRACE|PackageDownloader|Downloading NuGet package ValueInjecter 2.3.3 from https://www.nuget.org/api/v2/.
+2017-10-23 16:35:50.5387|TRACE|NuGet|Installing 'ValueInjecter 2.3.3'.
+2017-10-23 16:35:50.5543|TRACE|NuGet|Successfully installed 'ValueInjecter 2.3.3'.
+2017-10-23 16:35:50.5543|TRACE|PackageDownloader|Not looking for Rhetos.MvcModelGenerator.Client 2.2.0 in packages cache because the request does not specify an exact version.
+2017-10-23 16:35:51.3355|TRACE|PackageDownloader|There is no legacy file Rhetos.MvcModelGenerator.Client_2_2_0.zip in Packages.
+2017-10-23 16:35:51.3511|ERROR|DeployPackages|Rhetos.UserException: Cannot download package Rhetos.MvcModelGenerator.Client 2.2.0. Looked at 2 sources:
+https://www.nuget.org/api/v2/
+C:\inetpub\wwwroot\Rhetos\Packages
+   at Rhetos.Deployment.PackageDownloader.GetPackage(PackageRequest request, FileSyncer binFileSyncer) in C:\My Projects\Rhetos\Source\Rhetos.Deployment\PackageDownloader.cs:line 160
+   at Rhetos.Deployment.PackageDownloader.GetPackages() in C:\My Projects\Rhetos\Source\Rhetos.Deployment\PackageDownloader.cs:line 86
+   at DeployPackages.Program.DownloadPackages(ILogger logger, Arguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 156
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 68
+Info: 
+MessageParameters: null
+SystemMessage: 
+2017-10-23 16:38:18.1160|TRACE|DeployPackages|Moving old generated files to cache.
+2017-10-23 16:38:18.1629|TRACE|DeployPackages|Getting packages.
+2017-10-23 16:38:18.2723|TRACE|DeployPackages|Reading package from cache 'Rhetos.CommonConcepts.2.2.0'.
+2017-10-23 16:38:18.3191|TRACE|DeployPackages|Reading package from cache 'Rhetos.OmegaCommonConcepts.2.3.0'.
+2017-10-23 16:38:18.3191|TRACE|DeployPackages|Reading package from cache 'Rhetos.RestGenerator.2.4.0'.
+2017-10-23 16:38:18.3348|TRACE|DeployPackages|Reading package from cache 'Rhetos.MvcModelGenerator.2.2.0'.
+2017-10-23 16:38:18.3348|TRACE|PackageDownloader|Not looking for valueinjecter 2.3.3 in packages cache because the request does not specify an exact version.
+2017-10-23 16:38:20.4441|TRACE|PackageDownloader|Downloading NuGet package ValueInjecter 2.3.3 from https://www.nuget.org/api/v2/.
+2017-10-23 16:38:20.5222|TRACE|NuGet|'ValueInjecter 2.3.3' already installed.
+2017-10-23 16:38:20.5222|TRACE|PackageDownloader|Not looking for Rhetos.MvcModelGenerator.Client 2.2.0 in packages cache because the request does not specify an exact version.
+2017-10-23 16:38:20.8660|TRACE|PackageDownloader|There is no legacy file Rhetos.MvcModelGenerator.Client_2_2_0.zip in Packages.
+2017-10-23 16:38:20.8660|TRACE|PackageDownloader|Downloading NuGet package Rhetos.MvcModelGenerator.Client 2.2.0 from C:\inetpub\wwwroot\Rhetos\Packages.
+2017-10-23 16:38:20.8816|TRACE|NuGet|Installing 'Rhetos.MvcModelGenerator.Client 2.2.0'.
+2017-10-23 16:38:20.9597|TRACE|NuGet|Successfully installed 'Rhetos.MvcModelGenerator.Client 2.2.0'.
+2017-10-23 16:38:21.0066|TRACE|Packages|Rhetos 2.2.0 (requested from Rhetos framework) in C:\inetpub\wwwroot\Rhetos.
+2017-10-23 16:38:21.0066|TRACE|Packages|Rhetos.CommonConcepts 2.2.0 (requested from configuration file RhetosPackages.config) in C:\inetpub\wwwroot\Rhetos\PackagesCache\Rhetos.CommonConcepts.2.2.0.
+2017-10-23 16:38:21.0222|TRACE|Packages|Rhetos.MvcModelGenerator.Client 2.2.0 (requested from package Rhetos.MvcModelGenerator) in C:\inetpub\wwwroot\Rhetos\PackagesCache\Rhetos.MvcModelGenerator.Client.2.2.0.
+2017-10-23 16:38:21.0222|TRACE|Packages|Rhetos.MvcModelGenerator 2.2.0 (requested from configuration file RhetosPackages.config) in C:\inetpub\wwwroot\Rhetos\PackagesCache\Rhetos.MvcModelGenerator.2.2.0.
+2017-10-23 16:38:21.0222|TRACE|Packages|Rhetos.RestGenerator 2.4.0 (requested from configuration file RhetosPackages.config) in C:\inetpub\wwwroot\Rhetos\PackagesCache\Rhetos.RestGenerator.2.4.0.
+2017-10-23 16:38:21.0222|TRACE|Packages|ValueInjecter 2.3.3 (requested from package Rhetos.OmegaCommonConcepts) in C:\inetpub\wwwroot\Rhetos\PackagesCache\ValueInjecter.2.3.3.
+2017-10-23 16:38:21.0222|TRACE|Packages|Rhetos.OmegaCommonConcepts 2.3.0 (requested from configuration file RhetosPackages.config) in C:\inetpub\wwwroot\Rhetos\PackagesCache\Rhetos.OmegaCommonConcepts.2.3.0.
+2017-10-23 16:38:21.0379|TRACE|DeployPackages|Loading plugins.
+2017-10-23 16:38:21.6628|TRACE|DeployPackages|SQL connection string: Data Source=adsql2008r2;Initial Catalog=RhetosDb_mpuzjak;Integrated Security=SSPI;
+2017-10-23 16:38:21.7097|TRACE|DeployPackages|Preparing Rhetos database.
+2017-10-23 16:38:21.7878|TRACE|DeployPackages|Parsing DSL scripts.
+2017-10-23 16:38:22.2097|TRACE|DeployPackages|Application model has 549 statements.
+2017-10-23 16:38:22.2097|TRACE|DeployPackages|Compiling DOM assembly.
+2017-10-23 16:38:22.3816|TRACE|AssemblyGenerator|Compiling assembly: ServerDom.Model.dll.
+2017-10-23 16:38:22.6941|TRACE|AssemblyGenerator|Compiling assembly: ServerDom.Orm.dll.
+2017-10-23 16:38:22.8972|TRACE|AssemblyGenerator|Compiling assembly: ServerDom.Repositories.dll.
+2017-10-23 16:38:23.2253|INFO|AssemblyGenerator|Warning CS0618: 'Common.QueryableRepositoryBase<Common.Queryable.Common_LogReader,Common.LogReader>.Filter(System.Collections.Generic.IEnumerable<System.Guid>)' is obsolete: 'Use Load(identifiers)or Query(identifiers) method.'. At line 3734, column 23, file 'c:\inetpub\wwwroot\Rhetos\bin\Generated\ServerDom.Repositories.cs'.
+2017-10-23 16:38:23.2409|TRACE|DeployPackages|Generated 144 types.
+2017-10-23 16:38:23.2409|INFO|DeployPackages|Missing dependency '' for application generator 'Rhetos.RestGenerator.RestGenerator'.
+2017-10-23 16:38:23.2409|TRACE|DeployPackages|Executing EntityFrameworkMappingGenerator.
+2017-10-23 16:38:23.2722|TRACE|DeployPackages|Executing RestGenerator.
+2017-10-23 16:38:23.3191|TRACE|AssemblyGenerator|Compiling assembly: RestService.dll.
+2017-10-23 16:38:23.6472|INFO|AssemblyGenerator|Warning CS1701: Assuming assembly reference 'Autofac, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da' matches 'Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da', you may need to supply runtime policy.
+2017-10-23 16:38:23.6472|INFO|AssemblyGenerator|62 warnings CS0618: 'Rhetos.LegacyClientException' is obsolete: 'Use ClientException instead.'. At line 246, column 34, file 'c:\inetpub\wwwroot\Rhetos\bin\Generated\RestService.cs'.
+2017-10-23 16:38:23.6472|TRACE|DeployPackages|Executing CaptionsResourceGenerator.
+2017-10-23 16:38:23.7253|TRACE|AssemblyGenerator|Compiling assembly: Captions.dll.
+2017-10-23 16:38:23.8347|TRACE|DeployPackages|Executing MvcModelGenerator.
+2017-10-23 16:38:23.8972|TRACE|AssemblyGenerator|Compiling assembly: Rhetos.Mvc.dll.
+2017-10-23 16:38:24.0066|TRACE|DeployPackages|Executing EntityFrameworkGenerateMetadataFiles.
+2017-10-23 16:38:25.1904|TRACE|DeployPackages|Cleaning old migration data.
+2017-10-23 16:38:25.2061|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2017-10-23 16:38:25.2061|TRACE|DeployPackages|Executing data migration scripts.
+2017-10-23 16:38:25.2373|INFO|DataMigration|Executing Rhetos.CommonConcepts\0.9.12\1 - AppliedConcept Options1 Options2.sql (tag 533F534B-388C-4CE1-B8AE-A308542471F5)
+2017-10-23 16:38:25.2373|INFO|DataMigration|Executing Rhetos.CommonConcepts\0.9.14\1 - Claim.Active.sql (tag 323D7F48-433F-49E9-983B-09A4B7317077)
+2017-10-23 16:38:25.2529|INFO|DataMigration|Executing Rhetos.CommonConcepts\0.9.29\1 - RoleInheritsRole renames columns.sql (tag 0D99CDE7-E4CB-4FBF-937B-4ADEEEBC46CE)
+2017-10-23 16:38:25.2529|INFO|DataMigration|Executing Rhetos.CommonConcepts\0.9.29\2 - Permissions to RP and PP.sql (tag 33EA1F9E-1A89-4CF0-9AD3-A8E10BEF2D3C)
+2017-10-23 16:38:25.2529|INFO|DataMigration|Executing Rhetos.CommonConcepts\0.9.35\1 - A new tag in create property.sql (tag E2B91BB7-FED3-45DB-AFB1-61CEF615C2C3)
+2017-10-23 16:38:25.2529|INFO|DataMigration|Executing Rhetos.CommonConcepts\1.3.0\1 - Clear excess dependencies for subtype id.sql (tag B3D3CD35-D41F-4E70-A490-94CBD12226FF)
+2017-10-23 16:38:25.2529|INFO|DataMigration|Executing Rhetos.CommonConcepts\1.11.0\1 - DataStructureExtendsInfo to UniqueReferenceInfo.sql (tag 0246E7EA-F2F2-419B-9710-1149838E8604)
+2017-10-23 16:38:25.7529|TRACE|DeployPackages|Executed 7 of 7 scripts.
+2017-10-23 16:38:25.7686|TRACE|DeployPackages|Upgrading database.
+2017-10-23 16:38:25.9248|TRACE|DeployPackages|DatabaseGenerator removing 0 concept applications.
+2017-10-23 16:38:25.9404|TRACE|DatabaseGenerator Concepts|Creating ModuleInfo Common/Rhetos.DatabaseGenerator.DefaultConcepts.ModuleDatabaseDefinition, ID=2C5D2894-EB87-4444-86BD-BD8D2F77F9FE.
+2017-10-23 16:38:25.9561|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.AutoCodeCache/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=2AC055CD-CF3D-4B23-9AB1-CFE8E3039454.
+2017-10-23 16:38:25.9561|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Entity/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=17A8922B-BBD4-4365-B15A-DF3EF58C1519.
+2017-10-23 16:38:25.9561|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Property/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=F2CE5194-9C2D-425F-BD0A-814052DBFB92.
+2017-10-23 16:38:25.9561|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Grouping/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=3DE7DB66-D896-4329-95F8-3DEAA9E9FCB7.
+2017-10-23 16:38:25.9561|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Prefix/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=9A4C8E63-0393-4278-BAE7-D0FD5D8AFB9E.
+2017-10-23 16:38:25.9561|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.MinDigits/Rhetos.DatabaseGenerator.DefaultConcepts.IntegerPropertyDatabaseDefinition, ID=9DC671C5-CD24-43AD-8168-41B4ADBEAFDB.
+2017-10-23 16:38:25.9561|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.LastCode/Rhetos.DatabaseGenerator.DefaultConcepts.IntegerPropertyDatabaseDefinition, ID=74D1E399-1A81-419D-8810-77B83E7229C6.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.AutoCodeCache.'Entity Property Grouping Prefix'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=55D31B9C-DE23-425C-AE1A-5EAB30C9EF3E.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating SqlProcedureInfo Common.AutoCodeCacheGetNext/Rhetos.DatabaseGenerator.DefaultConcepts.SqlProcedureDatabaseDefinition, ID=031E5F06-DC08-4FE1-BFB8-EB8258C6D782.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating SqlProcedureInfo Common.AutoCodeCacheUpdate/Rhetos.DatabaseGenerator.DefaultConcepts.SqlProcedureDatabaseDefinition, ID=7AC89975-56E8-413D-BF43-C9A1CE7EBA52.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.FilterId/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=BCA39D3C-09AA-46F1-8028-EE00ABF5123E.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.FilterId.Handle/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=1C130EF2-8FF9-499B-A3DD-28EA04358873.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.FilterId.Value/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=2C3D737F-4226-4744-9BA5-A07D735793D2.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.FilterId.'Handle Value'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=00687789-C1B5-45E0-9402-01FAE4F6058D.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.KeepSynchronizedMetadata/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=3C40669D-07FF-4F81-A14E-67F9E8E2893A.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.KeepSynchronizedMetadata.Target/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=D6A6ACE3-9BE4-4E22-962C-5C6B1AAAD2C7.
+2017-10-23 16:38:25.9717|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.KeepSynchronizedMetadata.Source/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=9282755A-6368-428C-82E6-0EA55AB1A8BA.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.KeepSynchronizedMetadata.Context/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=F6749BA2-C552-4F52-B7AB-1D8AEFFCCC64.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.ExclusiveLock/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=0690F0FE-35B3-4176-B6D8-E9DB630155E2.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.ResourceType/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=8CDBD0F3-E58A-4B13-8ABF-3D17506392EB.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.ResourceID/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=5E5770EC-53EB-463C-8450-D350634223CD.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.UserName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=7CBC633F-D949-4C59-A29A-91E178B1E30C.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.Workstation/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=28615F52-0D47-40A0-8857-FB47255821B0.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.LockStart/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=B12A8322-3A69-47E3-A645-56FF956BD73A.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.LockFinish/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=7B241246-DEE0-4CCF-87E6-3CF9A2E60233.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Log/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=68AA3089-B4D1-4AE9-AFA9-205098A32170.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.UserName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=88FC02BF-CC83-4CB2-B0C4-4577AA54238B.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Workstation/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=A33C268C-D02F-49B5-8CD2-EA80D746B5EE.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.ContextInfo/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=72D2248A-AFE1-4D9C-8D74-23872572266B.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Action/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=BC3AA15D-B243-4A40-B377-B30716478DBE.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.TableName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=968B2A9D-71F6-459B-B3E1-BEA31886F707.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=CE2100F5-C7F6-4066-B3C6-C632F01C3186.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Description/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=6F383B91-889D-483E-A7A1-789F544E5CFF.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Created/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=E0B81008-A48C-4E4A-81F8-6A824DE592FC.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.LogReader/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=8AD8FEA5-EC1E-470D-886D-8FC047D5D1AE.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.LogRelatedItem/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=8C798E8B-40CF-46C9-86EC-37C50FC6530C.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.TableName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=F3EF9477-6E72-4595-8063-9598AA318D6C.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.Relation/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=74D887A5-B251-4980-A9AC-8D76A7FA1BE2.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=21F81162-85CB-45B0-B3D4-B2D204C1823A.
+2017-10-23 16:38:25.9873|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.Log/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=5548D498-B021-40E4-8C30-41EC9F30E264.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.Log/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=4FDBD7F9-D883-450B-B0C4-5BF7E5B8695A.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.LogRelatedItemReader/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=F97E3F38-7142-42C3-AA22-9C9D62E5A90D.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.Created/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=E03C3E67-6CC3-4F7D-9D61-0AB88CED41B9.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.UserName/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=6B4F0EA4-B318-4CFC-BE17-AA4D1E4E85CB.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.Workstation/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=14D6EE67-691A-4750-A243-345D425F37D2.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.ContextInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=99A3BDF7-BD8D-4377-85ED-92A756045845.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Log.'TableName Action'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=A0388A8B-59E2-48F1-9629-F47989ECFFCD.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.RelatedEventsSource/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=EA9D855E-1061-4898-85CD-7BF1EADD1A9C.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=9BD673C3-F499-49FA-B6FD-CAFE844670A8.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Claim.ClaimResource/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=2D153331-CB9E-49B0-9F45-1B77E23E26F5.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Claim.ClaimRight/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=A9A480C7-11B3-4244-AB79-40D62B10D39D.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Claim.Active/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=71E3D24A-47D0-4EF3-AC20-F78B15E03F47.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=92DBB3BB-26AB-4165-989C-8DDCBD5F6795.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Claim/OmegaCommonConcepts.EntityLoggingDescriptionDefinition, ID=C035BDD6-3778-4773-AFE8-A671F720E1CB.
+2017-10-23 16:38:26.0029|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=0DBC855E-B1A3-4BE9-98F0-C0B4C1AABFD9.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Principal.Name/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=4721072F-EB5C-4CE4-AB4A-C81B54036F75.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=BC17CE8A-FBCB-452F-A89F-B0D9A7D1A400.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Principal/OmegaCommonConcepts.EntityLoggingDescriptionDefinition, ID=679F7F55-9876-4EC4-8C0F-005658726A0C.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.PrincipalHasRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=9B77BC6C-3164-4862-A555-9C9371B2867C.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=2A0C3CE3-507D-4744-A256-E663DBB1DA1B.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=8B07275D-2212-456A-95E9-B86401D2E834.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Role/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=E3A0CC21-C155-4638-976F-E8CABA4977BD.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=02C5E1B1-160A-4972-8186-12B9E35A6AC4.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=32BB20C4-BFE7-4F4B-9EA5-1099D8C74E29.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalHasRole.'Principal Role'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=A44ABD2C-610E-4844-9F8B-969B30A0A82E.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.PrincipalHasRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=8C929393-ECA8-43C3-AED7-3222630AAF71.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.PrincipalHasRole/OmegaCommonConcepts.EntityLoggingDescriptionDefinition, ID=ADC7A679-C1DE-49E2-8FD7-4BA3BA34AED3.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Role.Name/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=C303B274-A1AC-4FBB-B04B-8D4EAC2C145F.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Role/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=9ED3D7E8-B59E-46BA-A88B-7B52EAB13028.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Role/OmegaCommonConcepts.EntityLoggingDescriptionDefinition, ID=C5E8B24F-7D46-406D-AC14-7D4E356FA3EE.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.RoleInheritsRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=EF336A73-5373-4AFF-9D75-F61ABFBAF989.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.UsersFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=361ED236-2B58-4255-83A5-F462FF5F6637.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.UsersFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=D5D8013D-7507-470F-B79E-C99807864F74.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.PermissionsFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=8FFFD7D3-B636-48A3-9301-6547A2B3F1F2.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.PermissionsFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=99E9AE16-4250-47E1-9F06-D329947ECB89.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RoleInheritsRole.'UsersFrom PermissionsFrom'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=89250118-976A-49FD-88A3-B9CD38DDC7A4.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.RoleInheritsRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=4B240B13-F25C-4672-AC12-575595239F47.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.RoleInheritsRole/OmegaCommonConcepts.EntityLoggingDescriptionDefinition, ID=83886FFE-E0B5-4579-94FC-2AB0E6111D53.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.PrincipalPermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=05B0ADEC-99E3-4A9A-BD6A-01D405EC99B6.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=DC097F8A-3DAE-4974-B275-E23BDF7DC48E.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=F1679DC1-33AA-475E-8543-FB00ECABF62F.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=2C939776-0C3C-4A34-AA57-2CCFBC98DFD7.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=3DEFAE17-271C-4976-9CBF-2932B5A132AC.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.IsAuthorized/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=16250C1D-4AA4-4852-9F08-79AB81C750A4.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalPermission.'Principal Claim'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=4B0051BB-B2F8-41FF-9C66-5BCDEF4C0047.
+2017-10-23 16:38:26.0186|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.PrincipalPermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=7ABA1C1B-BB1C-4BAE-A052-BA3327A1D3DA.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.PrincipalPermission/OmegaCommonConcepts.EntityLoggingDescriptionDefinition, ID=3908D1C2-1A17-4FBF-80B1-198FDCA806C0.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.RolePermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=A058AE43-44B0-4F44-9CC9-5DF26DBEE447.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=BDF3E266-D844-435D-96EC-142149C4CEDC.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=8AD0BAC1-F417-405B-90F9-3BEB3689924D.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=46833301-171D-49C8-8C67-60147047A227.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=AE47A52D-F650-46AF-961B-4634D816CB58.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.IsAuthorized/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=CC833938-5A8E-4AA2-BDBE-6866E2B46BCF.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RolePermission.'Role Claim'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=83694C72-5AE3-42DA-9F3D-D4B4CC3BFC99.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.RolePermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=36D7E1C8-079A-4C5F-AE52-BE83FD7F7949.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.RolePermission/OmegaCommonConcepts.EntityLoggingDescriptionDefinition, ID=818270EE-0F09-4354-AA47-13ED35839AA5.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.ReportTemplate/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=C61EDECC-4CE8-4108-9359-9AF2E356E961.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ReportTemplate.FileName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=07E9776D-4B03-4546-BB85-1FFA867BE772.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ReportTemplate.DisplayName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=C12BA697-756E-4E20-AA2D-FC0B061D7A5E.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ReportTemplate.Content/Rhetos.DatabaseGenerator.DefaultConcepts.BinaryPropertyDatabaseDefinition, ID=E26D31A8-ECDD-478B-BC53-EA1527B9ADB5.
+2017-10-23 16:38:26.0342|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.ExclusiveLock.'ResourceID ResourceType'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=ADA1D915-57BB-4A0B-B714-559A96941DA3.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Claim.'ClaimResource ClaimRight'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=5FFE61C4-99F6-4AAE-A832-91DDF592736B.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Principal.Name/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=46D5C1ED-D40F-46D6-8B13-A55ABD1F7B8E.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Role.Name/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=B1B37500-5B22-4658-94C9-5E5A41FC9873.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Log.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=3FD51D56-8B11-4786-BF6B-71EA321D44B1.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.LogRelatedItem.TableName/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=396497F1-D651-4528-AE1A-CE70855D04EA.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.LogRelatedItem.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=F8A8931A-36DD-47F1-82EA-CEE2D5918975.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.LogRelatedItem.Log/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=66CFD91F-4E4D-4073-8251-9DDA847E5B5F.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalHasRole.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=EC20EF69-25C9-46F1-8FB4-A89E7422799F.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RoleInheritsRole.UsersFrom/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=CB2C14C6-22C0-45DE-9383-D014A21E9F26.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalPermission.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=CE1EFFDF-DACE-4F94-A1C1-D4B08A058846.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalPermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=E8F9C61C-2BA3-4FC1-AAE5-41F46FFC5914.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RolePermission.Role/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=B5863789-0BA8-4A5F-B7F9-ADCE064EEE6A.
+2017-10-23 16:38:26.0498|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RolePermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=2C2C0847-1B4A-4DDF-8E5B-101BA27B2477.
+2017-10-23 16:38:26.0498|INFO|DeployPackages|DatabaseGenerator creating 115 concept applications.
+2017-10-23 16:38:28.2060|TRACE|DeployPackages|Deleting redundant migration data.
+2017-10-23 16:38:28.2373|TRACE|DeployPackages|Deleted 9 columns in data migration schemas, 7 remaining.
+2017-10-23 16:38:28.2373|TRACE|DeployPackages|Uploading DSL scripts.
+2017-10-23 16:38:28.3001|TRACE|DeployPackages|Uploaded 8 DSL scripts to database.
+2017-10-23 16:38:28.3157|TRACE|DeployPackages|Loading generated plugins.
+2017-10-23 16:38:28.4876|TRACE|DeployPackages|Initialization KeepSynchronizedRecomputeOnDeploy.
+2017-10-23 16:38:29.9570|TRACE|DeployPackages|Initialization ClaimGenerator.
+2017-10-23 16:38:30.1914|TRACE|ClaimGenerator Claims|Inserting claims Common.AddToLog.Execute, Common.AuditDataModifications.Read, Common.AuditRelatedEvents.Read, Common.AutoCodeCache.Edit, Common.AutoCodeCache.New, Common.AutoCodeCache.Read, Common.AutoCodeCache.Remove, Common.Claim.Edit, Common.Claim.New, Common.Claim.Read, Common.Claim.Remove, Common.ExclusiveLock.Edit, Common.ExclusiveLock.New, Common.ExclusiveLock.Read, Common.ExclusiveLock.Remove, Common.FilterId.Edit, Common.FilterId.New, Common.FilterId.Read, Common.FilterId.Remove, Common.KeepSynchronizedMetadata.Edit, Common.KeepSynchronizedMetadata.New, Common.KeepSynchronizedMetadata.Read, Common.KeepSynchronizedMetadata.Remove, Common.Log.Edit, Common.Log.New, Common.Log.Read, Common.Log.Remove, Common.LogReader.Read, Common.LogRelatedItem.Edit, Common.LogRelatedItem.New, Common.LogRelatedItem.Read, Common.LogRelatedItem.Remove, Common.LogRelatedItemReader.Read, Common.MyClaim.Read, Common.Principal.Edit, Common.Principal.New, Common.Principal.Read, Common.Principal.Remove, Common.PrincipalHasRole.Edit, Common.PrincipalHasRole.New, Common.PrincipalHasRole.Read, Common.PrincipalHasRole.Remove, Common.PrincipalPermission.Edit, Common.PrincipalPermission.New, Common.PrincipalPermission.Read, Common.PrincipalPermission.Remove, Common.RelatedEventsSource.Read, Common.ReleaseLock.Execute, Common.ReportTemplate.Edit, Common.ReportTemplate.New, Common.ReportTemplate.Read, Common.ReportTemplate.Remove, Common.Role.Edit, Common.Role.New, Common.Role.Read, Common.Role.Remove, Common.RoleInheritsRole.Edit, Common.RoleInheritsRole.New, Common.RoleInheritsRole.Read, Common.RoleInheritsRole.Remove, Common.RolePermission.Edit, Common.RolePermission.New, Common.RolePermission.Read, Common.RolePermission.Remove, Common.SetLock.Execute.
+2017-10-23 16:38:30.9336|TRACE|DeployPackages|Updated Web.config modification date to restart server.
+2017-10-23 16:38:30.9805|TRACE|DeployPackages|Done.

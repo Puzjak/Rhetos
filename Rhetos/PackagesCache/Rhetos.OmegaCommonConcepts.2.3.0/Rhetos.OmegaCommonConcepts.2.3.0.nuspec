@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata>
+    <id>Rhetos.OmegaCommonConcepts</id>
+    <version>2.3.0</version>
+    <authors>Omega software</authors>
+    <owners>Omega software</owners>
+    <projectUrl>https://github.com/rhetos/rhetos</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package is a plugin for Rhetos development platform.</description>
+    <releaseNotes>2.3.0 (2017-09-06)
+
+Implementirani Function, Object i ListOf koncepti. Object i ListOf omogućavaju slanje i retrievanje kompleksnih objekata Rhetos serveru kako bismo uklonili potrebu za JSON serijalizacijom.
+Function omogućava vraćanje responsea s Rhetosove serverske akcije.</releaseNotes>
+    <copyright>Copyright Omega software 2015</copyright>
+    <tags>Rhetos plugin</tags>
+    <dependencies>
+      <dependency id="Rhetos" version="1.2.1" />
+      <dependency id="Rhetos.CommonConcepts" version="1.2.0" />
+      <dependency id="Rhetos.RestGenerator" version="2.0.0" />
+      <dependency id="Rhetos.MvcModelGenerator" version="2.0.0" />
+      <dependency id="valueinjecter" version="2.3.3" />
+    </dependencies>
+    <references>
+      <group targetFramework=".NETFramework4.5.1">
+        <reference file="OmegaCommonConcepts.dll" />
+        <reference file="OmegaCommonConcepts.Mvc.Client.dll" />
+        <reference file="OmegaCommonConcepts.Plugin.dll" />
+      </group>
+    </references>
+  </metadata>
+</package>
