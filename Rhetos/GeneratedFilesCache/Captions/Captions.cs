@@ -1261,6 +1261,15 @@ namespace Rhetos.Mvc {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adresa Min length filter.
+        /// </summary>
+        public static string PrviRhetos_Adresa_MinLengthFilter {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Adresa_MinLengthFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Država.
         /// </summary>
         public static string PrviRhetos_Drzava {
@@ -1324,6 +1333,15 @@ namespace Rhetos.Mvc {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O i b Reg ex match filter.
+        /// </summary>
+        public static string PrviRhetos_OIB_RegExMatchFilter {
+            get {
+                return ResourceManager.GetString("PrviRhetos_OIB_RegExMatchFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Osoba.
         /// </summary>
         public static string PrviRhetos_Osoba {
@@ -1347,6 +1365,15 @@ namespace Rhetos.Mvc {
         public static string PrviRhetos_Osoba_BrojMobitela {
             get {
                 return ResourceManager.GetString("PrviRhetos_Osoba_BrojMobitela", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum rodenja.
+        /// </summary>
+        public static string PrviRhetos_Osoba_DatumRodenja {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Osoba_DatumRodenja", resourceCulture);
             }
         }
         
@@ -1383,6 +1410,15 @@ namespace Rhetos.Mvc {
         public static string PrviRhetos_Osoba_OIB {
             get {
                 return ResourceManager.GetString("PrviRhetos_Osoba_OIB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pozivni broj Max length filter.
+        /// </summary>
+        public static string PrviRhetos_PozivniBroj_MaxLengthFilter {
+            get {
+                return ResourceManager.GetString("PrviRhetos_PozivniBroj_MaxLengthFilter", resourceCulture);
             }
         }
     }

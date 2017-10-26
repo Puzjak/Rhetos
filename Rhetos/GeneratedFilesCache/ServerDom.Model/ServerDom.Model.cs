@@ -52,7 +52,7 @@ namespace PrviRhetos
         [DataMember]/*PropertyInfo Attribute PrviRhetos.Drzava.Naziv*/
         public string Naziv { get; set; }
         [DataMember]/*PropertyInfo Attribute PrviRhetos.Drzava.PozivniBroj*/
-        public int? PozivniBroj { get; set; }
+        public string PozivniBroj { get; set; }
         /*DataStructureInfo ClassBody PrviRhetos.Drzava*/
     }
 
@@ -92,6 +92,7 @@ namespace PrviRhetos
             {
                 ID = item.ID,
                 OIB = item.OIB,
+                DatumRodenja = item.DatumRodenja,
                 GradRodenjaID = item.GradRodenjaID,
                 DrzavaRodenjaID = item.DrzavaRodenjaID,
                 GradStanovanjaID = item.GradStanovanjaID,
@@ -102,6 +103,8 @@ namespace PrviRhetos
 
         [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.OIB*/
         public string OIB { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.DatumRodenja*/
+        public DateTime? DatumRodenja { get; set; }
         [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.GradRodenjaID*/
         public Guid? GradRodenjaID { get; set; }
         [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.DrzavaRodenjaID*/
@@ -113,6 +116,24 @@ namespace PrviRhetos
         [DataMember]/*PropertyInfo Attribute PrviRhetos.Osoba.BrojMobitela*/
         public string BrojMobitela { get; set; }
         /*DataStructureInfo ClassBody PrviRhetos.Osoba*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.OIB_RegExMatchFilter*/
+    public class OIB_RegExMatchFilter/*DataStructureInfo ClassInterace PrviRhetos.OIB_RegExMatchFilter*/
+    {
+        /*DataStructureInfo ClassBody PrviRhetos.OIB_RegExMatchFilter*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.PozivniBroj_MaxLengthFilter*/
+    public class PozivniBroj_MaxLengthFilter/*DataStructureInfo ClassInterace PrviRhetos.PozivniBroj_MaxLengthFilter*/
+    {
+        /*DataStructureInfo ClassBody PrviRhetos.PozivniBroj_MaxLengthFilter*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.Adresa_MinLengthFilter*/
+    public class Adresa_MinLengthFilter/*DataStructureInfo ClassInterace PrviRhetos.Adresa_MinLengthFilter*/
+    {
+        /*DataStructureInfo ClassBody PrviRhetos.Adresa_MinLengthFilter*/
     }
 
     /*ModuleInfo Body PrviRhetos*/
@@ -281,9 +302,9 @@ namespace Common
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
+                Created = item.Created,
                 Description = item.Description,
-                ItemId = item.ItemId,
-                Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
+                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
             };
         }
 
@@ -297,12 +318,12 @@ namespace Common
         public string Action { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogReader.TableName*/
         public string TableName { get; set; }
+        [DataMember]/*PropertyInfo Attribute Common.LogReader.Created*/
+        public DateTime? Created { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogReader.Description*/
         public string Description { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogReader.ItemId*/
         public Guid? ItemId { get; set; }
-        [DataMember]/*PropertyInfo Attribute Common.LogReader.Created*/
-        public DateTime? Created { get; set; }
         /*DataStructureInfo ClassBody Common.LogReader*/
     }
 
@@ -435,9 +456,9 @@ namespace Common
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
+                Created = item.Created,
                 Description = item.Description,
-                ItemId = item.ItemId,
-                Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
+                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
             };
         }
 
@@ -459,12 +480,12 @@ namespace Common
         public string Action { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.TableName*/
         public string TableName { get; set; }
+        [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.Created*/
+        public DateTime? Created { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.Description*/
         public string Description { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.ItemId*/
         public Guid? ItemId { get; set; }
-        [DataMember]/*PropertyInfo Attribute Common.RelatedEventsSource.Created*/
-        public DateTime? Created { get; set; }
         /*DataStructureInfo ClassBody Common.RelatedEventsSource*/
     }
 
@@ -919,6 +940,7 @@ namespace Common.Queryable
             {
                 ID = item.ID,
                 OIB = item.OIB,
+                DatumRodenja = item.DatumRodenja,
                 GradRodenjaID = item.GradRodenjaID,
                 DrzavaRodenjaID = item.DrzavaRodenjaID,
                 GradStanovanjaID = item.GradStanovanjaID,
@@ -1118,9 +1140,9 @@ namespace Common.Queryable
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
+                Created = item.Created,
                 Description = item.Description,
-                ItemId = item.ItemId,
-                Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
+                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
             };
         }
 
@@ -1276,9 +1298,9 @@ namespace Common.Queryable
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
+                Created = item.Created,
                 Description = item.Description,
-                ItemId = item.ItemId,
-                Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
+                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
             };
         }
 
@@ -1867,6 +1889,7 @@ namespace Rhetos.Dom.DefaultConcepts
             {
                 ID = item.ID,
                 OIB = item.OIB,
+                DatumRodenja = item.DatumRodenja,
                 GradRodenjaID = item.GradRodenjaID,
                 DrzavaRodenjaID = item.DrzavaRodenjaID,
                 GradStanovanjaID = item.GradStanovanjaID,
@@ -1934,9 +1957,9 @@ namespace Rhetos.Dom.DefaultConcepts
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
+                Created = item.Created,
                 Description = item.Description,
-                ItemId = item.ItemId,
-                Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
+                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.LogReader*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -1994,9 +2017,9 @@ namespace Rhetos.Dom.DefaultConcepts
                 ContextInfo = item.ContextInfo,
                 Action = item.Action,
                 TableName = item.TableName,
+                Created = item.Created,
                 Description = item.Description,
-                ItemId = item.ItemId,
-                Created = item.Created/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
+                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.RelatedEventsSource*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>

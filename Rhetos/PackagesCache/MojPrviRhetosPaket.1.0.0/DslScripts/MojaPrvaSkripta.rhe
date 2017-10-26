@@ -26,6 +26,15 @@ Module PrviRhetos
 		UniqueMultiple 'OIB DrzavaRodenja';
 	}
 	
-	
-	
+	Entity Putovanje
+	{
+		Reference Osoba PrviRhetos.Osoba {Required;}
+		Reference IzGrada PrviRhetos.Grad {Required;}
+		Reference UGrad PrviRhetos.Grad {Required;}
+		DateTime DatumPolaska {Required;}
+		DateTime DatumPovratka {Required;}
+		ShortString Napomena;
+		
+		UniqueMultiple 'Osoba DatumPolaska';
+	}	
 }

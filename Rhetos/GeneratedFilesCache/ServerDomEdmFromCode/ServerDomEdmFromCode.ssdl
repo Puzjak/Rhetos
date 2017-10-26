@@ -73,9 +73,9 @@
           <Property Name="ContextInfo" Type="nvarchar(max)" Nullable="true" />
           <Property Name="Action" Type="nvarchar(max)" Nullable="true" />
           <Property Name="TableName" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="Created" Type="datetime" Nullable="true" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
           <Property Name="ItemId" Type="uniqueidentifier" Nullable="true" />
-          <Property Name="Created" Type="datetime" Nullable="true" />
         </EntityType>
         <EntityType Name="Common_LogRelatedItem">
           <Key>
@@ -142,9 +142,9 @@
           <Property Name="ContextInfo" Type="nvarchar(max)" Nullable="true" />
           <Property Name="Action" Type="nvarchar(max)" Nullable="true" />
           <Property Name="TableName" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="Created" Type="datetime" Nullable="true" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
           <Property Name="ItemId" Type="uniqueidentifier" Nullable="true" />
-          <Property Name="Created" Type="datetime" Nullable="true" />
         </EntityType>
         <EntityType Name="Common_ReportTemplate">
           <Key>
@@ -178,7 +178,7 @@
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Naziv" Type="nvarchar(max)" Nullable="true" />
-          <Property Name="PozivniBroj" Type="int" Nullable="true" />
+          <Property Name="PozivniBroj" Type="nvarchar(max)" Nullable="true" />
         </EntityType>
         <EntityType Name="PrviRhetos_Grad">
           <Key>
@@ -195,6 +195,7 @@
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="OIB" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="DatumRodenja" Type="datetime" Nullable="true" />
           <Property Name="GradRodenjaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_GradRodenjaID, Order: 0 }" Nullable="true" />
           <Property Name="DrzavaRodenjaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_DrzavaRodenjaID, Order: 0 }" Nullable="true" />
           <Property Name="GradStanovanjaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_GradStanovanjaID, Order: 0 }" Nullable="true" />

@@ -52,8 +52,10 @@ namespace Rhetos.Mvc.PrviRhetos
         public const string PropertyNaziv = "Naziv";
         
         [Display(Name = "PrviRhetos_Drzava_PozivniBroj", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        //[MaxLength(256)]
         [Required()]
-        public virtual int? PozivniBroj { get; set; }
+        [MaxLength(4)]
+        public virtual string PozivniBroj { get; set; }
         public const string PropertyPozivniBroj = "PozivniBroj";
     }
 }
@@ -81,6 +83,7 @@ namespace Rhetos.Mvc.PrviRhetos
         
         [Display(Name = "PrviRhetos_Grad_PostanskiBroj", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [MaxLength(256)]
+        [Required()]
         public virtual string PostanskiBroj { get; set; }
         public const string PropertyPostanskiBroj = "PostanskiBroj";
     }
@@ -99,8 +102,14 @@ namespace Rhetos.Mvc.PrviRhetos
         [Display(Name = "PrviRhetos_Osoba_OIB", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [MaxLength(256)]
         [Required()]
+        [RegularExpression(@"\\d{13}", ErrorMessage = @"Property {0} does not match required format.")]
         public virtual string OIB { get; set; }
         public const string PropertyOIB = "OIB";
+        
+        [Display(Name = "PrviRhetos_Osoba_DatumRodenja", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual DateTime? DatumRodenja { get; set; }
+        public const string PropertyDatumRodenja = "DatumRodenja";
         
         [Display(Name = "PrviRhetos_Osoba_GradRodenja", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [Required()]
@@ -120,6 +129,7 @@ namespace Rhetos.Mvc.PrviRhetos
         [Display(Name = "PrviRhetos_Osoba_Adresa", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [UIHint("StringMultiline")]
         [Required()]
+        [MinLength(4)]
         public virtual string Adresa { get; set; }
         public const string PropertyAdresa = "Adresa";
         
@@ -340,6 +350,11 @@ namespace Rhetos.Mvc.Common
         public virtual string TableName { get; set; }
         public const string PropertyTableName = "TableName";
         
+        [Display(Name = "Common_LogReader_Created", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual DateTime? Created { get; set; }
+        public const string PropertyCreated = "Created";
+        
         [Display(Name = "Common_LogReader_Description", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [UIHint("StringMultiline")]
         public virtual string Description { get; set; }
@@ -348,11 +363,6 @@ namespace Rhetos.Mvc.Common
         [Display(Name = "Common_LogReader_ItemId", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         public virtual Guid? ItemId { get; set; }
         public const string PropertyItemId = "ItemId";
-        
-        [Display(Name = "Common_LogReader_Created", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
-        [Required()]
-        public virtual DateTime? Created { get; set; }
-        public const string PropertyCreated = "Created";
     }
 }
 
@@ -556,6 +566,11 @@ namespace Rhetos.Mvc.Common
         public virtual string TableName { get; set; }
         public const string PropertyTableName = "TableName";
         
+        [Display(Name = "Common_RelatedEventsSource_Created", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual DateTime? Created { get; set; }
+        public const string PropertyCreated = "Created";
+        
         [Display(Name = "Common_RelatedEventsSource_Description", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         [UIHint("StringMultiline")]
         public virtual string Description { get; set; }
@@ -564,11 +579,6 @@ namespace Rhetos.Mvc.Common
         [Display(Name = "Common_RelatedEventsSource_ItemId", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         public virtual Guid? ItemId { get; set; }
         public const string PropertyItemId = "ItemId";
-        
-        [Display(Name = "Common_RelatedEventsSource_Created", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
-        [Required()]
-        public virtual DateTime? Created { get; set; }
-        public const string PropertyCreated = "Created";
     }
 }
 
@@ -951,6 +961,36 @@ namespace Rhetos.Mvc.Common
         [Display(Name = "Common_ReportTemplate_Content", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
         public virtual byte[] Content { get; set; }
         public const string PropertyContent = "Content";
+    }
+}
+
+
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_OIB_RegExMatchFilter", typeof(CaptionsResourceClass))]
+    public partial class OIB_RegExMatchFilter
+    {
+        public const string EntityOIB_RegExMatchFilter = "OIB_RegExMatchFilter";
+    }
+}
+
+
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_PozivniBroj_MaxLengthFilter", typeof(CaptionsResourceClass))]
+    public partial class PozivniBroj_MaxLengthFilter
+    {
+        public const string EntityPozivniBroj_MaxLengthFilter = "PozivniBroj_MaxLengthFilter";
+    }
+}
+
+
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_Adresa_MinLengthFilter", typeof(CaptionsResourceClass))]
+    public partial class Adresa_MinLengthFilter
+    {
+        public const string EntityAdresa_MinLengthFilter = "Adresa_MinLengthFilter";
     }
 }
 

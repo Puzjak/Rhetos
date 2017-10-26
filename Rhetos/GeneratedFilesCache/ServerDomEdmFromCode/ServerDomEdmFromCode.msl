@@ -79,9 +79,9 @@
                 <ScalarProperty Name="ContextInfo" ColumnName="ContextInfo" />
                 <ScalarProperty Name="Action" ColumnName="Action" />
                 <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -155,9 +155,9 @@
                 <ScalarProperty Name="ContextInfo" ColumnName="ContextInfo" />
                 <ScalarProperty Name="Action" ColumnName="Action" />
                 <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -214,6 +214,7 @@
               <MappingFragment StoreEntitySet="PrviRhetos_Osoba">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="OIB" ColumnName="OIB" />
+                <ScalarProperty Name="DatumRodenja" ColumnName="DatumRodenja" />
                 <ScalarProperty Name="GradRodenjaID" ColumnName="GradRodenjaID" />
                 <ScalarProperty Name="DrzavaRodenjaID" ColumnName="DrzavaRodenjaID" />
                 <ScalarProperty Name="GradStanovanjaID" ColumnName="GradStanovanjaID" />

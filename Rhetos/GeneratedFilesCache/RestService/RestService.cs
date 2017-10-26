@@ -202,6 +202,8 @@ namespace Rhetos.Rest
     
         public static readonly IDictionary<string, Type[]> FilterTypes = new List<Tuple<string, Type>>
             {
+                Tuple.Create("PrviRhetos.PozivniBroj_MaxLengthFilter", typeof(PrviRhetos.PozivniBroj_MaxLengthFilter)),
+                Tuple.Create("PozivniBroj_MaxLengthFilter", typeof(PrviRhetos.PozivniBroj_MaxLengthFilter)),
                 /*DataStructureInfo FilterTypes PrviRhetos.Drzava*/
             }
             .GroupBy(typeName => typeName.Item1)
@@ -466,6 +468,10 @@ namespace Rhetos.Rest
     
         public static readonly IDictionary<string, Type[]> FilterTypes = new List<Tuple<string, Type>>
             {
+                Tuple.Create("PrviRhetos.OIB_RegExMatchFilter", typeof(PrviRhetos.OIB_RegExMatchFilter)),
+                Tuple.Create("OIB_RegExMatchFilter", typeof(PrviRhetos.OIB_RegExMatchFilter)),
+                Tuple.Create("PrviRhetos.Adresa_MinLengthFilter", typeof(PrviRhetos.Adresa_MinLengthFilter)),
+                Tuple.Create("Adresa_MinLengthFilter", typeof(PrviRhetos.Adresa_MinLengthFilter)),
                 /*DataStructureInfo FilterTypes PrviRhetos.Osoba*/
             }
             .GroupBy(typeName => typeName.Item1)
