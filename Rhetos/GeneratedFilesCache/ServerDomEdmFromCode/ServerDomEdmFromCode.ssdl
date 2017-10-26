@@ -202,6 +202,18 @@
           <Property Name="Adresa" Type="nvarchar(max)" Nullable="true" />
           <Property Name="BrojMobitela" Type="nvarchar(max)" Nullable="true" />
         </EntityType>
+        <EntityType Name="PrviRhetos_Putovanje">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OsobaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_OsobaID, Order: 0 }" Nullable="true" />
+          <Property Name="IzGradaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_IzGradaID, Order: 0 }" Nullable="true" />
+          <Property Name="UGradID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_UGradID, Order: 0 }" Nullable="true" />
+          <Property Name="DatumPolaska" Type="datetime" Nullable="true" />
+          <Property Name="DatumPovratka" Type="datetime" Nullable="true" />
+          <Property Name="Napomena" Type="nvarchar(max)" Nullable="true" />
+        </EntityType>
         <Association Name="Common_LogRelatedItem_Log">
           <End Role="Common_Log" Type="Self.Common_Log" Multiplicity="0..1" />
           <End Role="Common_LogRelatedItem" Type="Self.Common_LogRelatedItem" Multiplicity="*" />
@@ -382,6 +394,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="PrviRhetos_Putovanje_IzGrada">
+          <End Role="PrviRhetos_Grad" Type="Self.PrviRhetos_Grad" Multiplicity="0..1" />
+          <End Role="PrviRhetos_Putovanje" Type="Self.PrviRhetos_Putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Grad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Putovanje">
+              <PropertyRef Name="IzGradaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrviRhetos_Putovanje_Osoba">
+          <End Role="PrviRhetos_Osoba" Type="Self.PrviRhetos_Osoba" Multiplicity="0..1" />
+          <End Role="PrviRhetos_Putovanje" Type="Self.PrviRhetos_Putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Osoba">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Putovanje">
+              <PropertyRef Name="OsobaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrviRhetos_Putovanje_UGrad">
+          <End Role="PrviRhetos_Grad" Type="Self.PrviRhetos_Grad" Multiplicity="0..1" />
+          <End Role="PrviRhetos_Putovanje" Type="Self.PrviRhetos_Putovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Grad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Putovanje">
+              <PropertyRef Name="UGradID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="CodeFirstDatabase">
           <EntitySet Name="Common_AutoCodeCache" EntityType="Self.Common_AutoCodeCache" Schema="Common" Table="AutoCodeCache" />
           <EntitySet Name="Common_Claim" EntityType="Self.Common_Claim" Schema="Common" Table="Claim" />
@@ -403,6 +451,7 @@
           <EntitySet Name="PrviRhetos_Drzava" EntityType="Self.PrviRhetos_Drzava" Schema="PrviRhetos" Table="Drzava" />
           <EntitySet Name="PrviRhetos_Grad" EntityType="Self.PrviRhetos_Grad" Schema="PrviRhetos" Table="Grad" />
           <EntitySet Name="PrviRhetos_Osoba" EntityType="Self.PrviRhetos_Osoba" Schema="PrviRhetos" Table="Osoba" />
+          <EntitySet Name="PrviRhetos_Putovanje" EntityType="Self.PrviRhetos_Putovanje" Schema="PrviRhetos" Table="Putovanje" />
           <AssociationSet Name="Common_LogRelatedItem_Log" Association="Self.Common_LogRelatedItem_Log">
             <End Role="Common_Log" EntitySet="Common_Log" />
             <End Role="Common_LogRelatedItem" EntitySet="Common_LogRelatedItem" />
@@ -462,6 +511,18 @@
           <AssociationSet Name="PrviRhetos_Osoba_GradStanovanja" Association="Self.PrviRhetos_Osoba_GradStanovanja">
             <End Role="PrviRhetos_Grad" EntitySet="PrviRhetos_Grad" />
             <End Role="PrviRhetos_Osoba" EntitySet="PrviRhetos_Osoba" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Putovanje_IzGrada" Association="Self.PrviRhetos_Putovanje_IzGrada">
+            <End Role="PrviRhetos_Grad" EntitySet="PrviRhetos_Grad" />
+            <End Role="PrviRhetos_Putovanje" EntitySet="PrviRhetos_Putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Putovanje_Osoba" Association="Self.PrviRhetos_Putovanje_Osoba">
+            <End Role="PrviRhetos_Osoba" EntitySet="PrviRhetos_Osoba" />
+            <End Role="PrviRhetos_Putovanje" EntitySet="PrviRhetos_Putovanje" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Putovanje_UGrad" Association="Self.PrviRhetos_Putovanje_UGrad">
+            <End Role="PrviRhetos_Grad" EntitySet="PrviRhetos_Grad" />
+            <End Role="PrviRhetos_Putovanje" EntitySet="PrviRhetos_Putovanje" />
           </AssociationSet>
         </EntityContainer>
       </Schema>

@@ -122,6 +122,8 @@ namespace Common
             modelBuilder.Entity<Common.Queryable.PrviRhetos_Putovanje>()
                 .HasOptional(t => t.UGrad).WithMany()
                 .HasForeignKey(t => t.UGradID);
+            modelBuilder.Ignore<global::PrviRhetos.Test>();
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Test>().Map(m => { m.MapInheritedProperties(); m.ToTable("Test", "PrviRhetos"); });
             modelBuilder.Ignore<global::Common.AutoCodeCache>();
             modelBuilder.Entity<Common.Queryable.Common_AutoCodeCache>().Map(m => { m.MapInheritedProperties(); m.ToTable("AutoCodeCache", "Common"); });
             modelBuilder.Ignore<global::Common.FilterId>();
@@ -197,6 +199,7 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Grad> PrviRhetos_Grad { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Osoba> PrviRhetos_Osoba { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Putovanje> PrviRhetos_Putovanje { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Test> PrviRhetos_Test { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_AutoCodeCache> Common_AutoCodeCache { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_FilterId> Common_FilterId { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_KeepSynchronizedMetadata> Common_KeepSynchronizedMetadata { get; set; }

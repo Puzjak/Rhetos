@@ -232,6 +232,14 @@
           <NavigationProperty Name="Osoba" Relationship="Self.PrviRhetos_Putovanje_Osoba" FromRole="PrviRhetos_Putovanje_Osoba_Source" ToRole="PrviRhetos_Putovanje_Osoba_Target" />
           <NavigationProperty Name="UGrad" Relationship="Self.PrviRhetos_Putovanje_UGrad" FromRole="PrviRhetos_Putovanje_UGrad_Source" ToRole="PrviRhetos_Putovanje_UGrad_Target" />
         </EntityType>
+        <EntityType Name="PrviRhetos_Test" customannotation:ClrType="Common.Queryable.PrviRhetos_Test, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Test1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Test2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <Association Name="Common_LogRelatedItem_Log">
           <End Role="Common_LogRelatedItem_Log_Source" Type="Self.Common_LogRelatedItem" Multiplicity="*" />
           <End Role="Common_LogRelatedItem_Log_Target" Type="Self.Common_Log" Multiplicity="0..1" />
@@ -470,6 +478,7 @@
           <EntitySet Name="PrviRhetos_Grad" EntityType="Self.PrviRhetos_Grad" />
           <EntitySet Name="PrviRhetos_Osoba" EntityType="Self.PrviRhetos_Osoba" />
           <EntitySet Name="PrviRhetos_Putovanje" EntityType="Self.PrviRhetos_Putovanje" />
+          <EntitySet Name="PrviRhetos_Test" EntityType="Self.PrviRhetos_Test" />
           <AssociationSet Name="Common_LogRelatedItem_Log" Association="Self.Common_LogRelatedItem_Log">
             <End Role="Common_LogRelatedItem_Log_Source" EntitySet="Common_LogRelatedItem" />
             <End Role="Common_LogRelatedItem_Log_Target" EntitySet="Common_Log" />

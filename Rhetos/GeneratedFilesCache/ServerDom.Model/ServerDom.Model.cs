@@ -118,6 +118,40 @@ namespace PrviRhetos
         /*DataStructureInfo ClassBody PrviRhetos.Osoba*/
     }
 
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.Putovanje*/
+    public class Putovanje : EntityBase<PrviRhetos.Putovanje>/*Next DataStructureInfo ClassInterace PrviRhetos.Putovanje*/
+    {
+        /// <summary>Converts the simple object to a navigation object, and copies its simple properties. Navigation properties are set to null.</summary>
+        public Common.Queryable.PrviRhetos_Putovanje ToNavigation()
+        {
+            var item = this;
+            return new Common.Queryable.PrviRhetos_Putovanje
+            {
+                ID = item.ID,
+                OsobaID = item.OsobaID,
+                IzGradaID = item.IzGradaID,
+                UGradID = item.UGradID,
+                DatumPolaska = item.DatumPolaska,
+                DatumPovratka = item.DatumPovratka,
+                Napomena = item.Napomena/*DataStructureInfo AssignSimpleProperty PrviRhetos.Putovanje*/
+            };
+        }
+
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Putovanje.OsobaID*/
+        public Guid? OsobaID { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Putovanje.IzGradaID*/
+        public Guid? IzGradaID { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Putovanje.UGradID*/
+        public Guid? UGradID { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Putovanje.DatumPolaska*/
+        public DateTime? DatumPolaska { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Putovanje.DatumPovratka*/
+        public DateTime? DatumPovratka { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Putovanje.Napomena*/
+        public string Napomena { get; set; }
+        /*DataStructureInfo ClassBody PrviRhetos.Putovanje*/
+    }
+
     [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.OIB_RegExMatchFilter*/
     public class OIB_RegExMatchFilter/*DataStructureInfo ClassInterace PrviRhetos.OIB_RegExMatchFilter*/
     {
@@ -1014,6 +1048,92 @@ namespace Common.Queryable
         }
     }
 
+    /*DataStructureInfo QueryableClassAttributes PrviRhetos.Putovanje*/
+    public class PrviRhetos_Putovanje : global::PrviRhetos.Putovanje, IQueryableEntity<PrviRhetos.Putovanje>, System.IEquatable<PrviRhetos_Putovanje>, IDetachOverride/*DataStructureInfo QueryableClassInterace PrviRhetos.Putovanje*/
+    {
+        bool IDetachOverride.Detaching { get; set; }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public PrviRhetos.Putovanje ToSimple()
+        {
+            var item = this;
+            return new PrviRhetos.Putovanje
+            {
+                ID = item.ID,
+                OsobaID = item.OsobaID,
+                IzGradaID = item.IzGradaID,
+                UGradID = item.UGradID,
+                DatumPolaska = item.DatumPolaska,
+                DatumPovratka = item.DatumPovratka,
+                Napomena = item.Napomena/*DataStructureInfo AssignSimpleProperty PrviRhetos.Putovanje*/
+            };
+        }
+
+        private Common.Queryable.PrviRhetos_Osoba _osoba;
+
+        /*DataStructureQueryable PropertyAttribute PrviRhetos.Putovanje.Osoba*/
+        public virtual Common.Queryable.PrviRhetos_Osoba Osoba
+        {
+            get
+            {
+                /*DataStructureQueryable Getter PrviRhetos.Putovanje.Osoba*/
+                return _osoba;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter PrviRhetos.Putovanje.Osoba*/
+                _osoba = value;
+                OsobaID = value != null ? (Guid?)value.ID : null;
+            }
+        }
+
+        private Common.Queryable.PrviRhetos_Grad _izGrada;
+
+        /*DataStructureQueryable PropertyAttribute PrviRhetos.Putovanje.IzGrada*/
+        public virtual Common.Queryable.PrviRhetos_Grad IzGrada
+        {
+            get
+            {
+                /*DataStructureQueryable Getter PrviRhetos.Putovanje.IzGrada*/
+                return _izGrada;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter PrviRhetos.Putovanje.IzGrada*/
+                _izGrada = value;
+                IzGradaID = value != null ? (Guid?)value.ID : null;
+            }
+        }
+
+        private Common.Queryable.PrviRhetos_Grad _uGrad;
+
+        /*DataStructureQueryable PropertyAttribute PrviRhetos.Putovanje.UGrad*/
+        public virtual Common.Queryable.PrviRhetos_Grad UGrad
+        {
+            get
+            {
+                /*DataStructureQueryable Getter PrviRhetos.Putovanje.UGrad*/
+                return _uGrad;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter PrviRhetos.Putovanje.UGrad*/
+                _uGrad = value;
+                UGradID = value != null ? (Guid?)value.ID : null;
+            }
+        }
+
+        /*DataStructureInfo QueryableClassMembers PrviRhetos.Putovanje*/
+
+        public bool Equals(PrviRhetos_Putovanje other)
+        {
+            return other != null && other.ID == ID;
+        }
+    }
+
     /*DataStructureInfo QueryableClassAttributes Common.AutoCodeCache*/
     public class Common_AutoCodeCache : global::Common.AutoCodeCache, IQueryableEntity<Common.AutoCodeCache>, System.IEquatable<Common_AutoCodeCache>, IDetachOverride/*DataStructureInfo QueryableClassInterace Common.AutoCodeCache*/
     {
@@ -1895,6 +2015,20 @@ namespace Rhetos.Dom.DefaultConcepts
                 GradStanovanjaID = item.GradStanovanjaID,
                 Adresa = item.Adresa,
                 BrojMobitela = item.BrojMobitela/*DataStructureInfo AssignSimpleProperty PrviRhetos.Osoba*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<PrviRhetos.Putovanje> ToSimple(this IQueryable<Common.Queryable.PrviRhetos_Putovanje> query)
+        {
+            return query.Select(item => new PrviRhetos.Putovanje
+            {
+                ID = item.ID,
+                OsobaID = item.OsobaID,
+                IzGradaID = item.IzGradaID,
+                UGradID = item.UGradID,
+                DatumPolaska = item.DatumPolaska,
+                DatumPovratka = item.DatumPovratka,
+                Napomena = item.Napomena/*DataStructureInfo AssignSimpleProperty PrviRhetos.Putovanje*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>

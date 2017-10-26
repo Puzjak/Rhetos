@@ -1,108 +1,108 @@
-2017-10-26 12:52:48.2159|TRACE|Performance|00:00:00.0821977 PackageDownloader: Found the NuGet package Rhetos.CommonConcepts [2.2.0,2.2.0] in cache.
-2017-10-26 12:52:48.2511|TRACE|Performance|00:00:00.0034547 PackageDownloader: Found the NuGet package Rhetos.OmegaCommonConcepts [2.3.0,2.3.0] in cache.
-2017-10-26 12:52:48.2601|TRACE|Performance|00:00:00.0030906 PackageDownloader: Found the NuGet package Rhetos.RestGenerator [2.4.0,2.4.0] in cache.
-2017-10-26 12:52:48.2601|TRACE|Performance|00:00:00.0041720 PackageDownloader: Found the NuGet package Rhetos.MvcModelGenerator [2.2.0,2.2.0] in cache.
-2017-10-26 12:52:48.2751|TRACE|Performance|00:00:00.0021962 PackageDownloader: Did not find the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] in cache.
-2017-10-26 12:52:49.9636|TRACE|Performance|00:00:01.6806936 PackageDownloader: Did not find the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] at https://www.nuget.org/api/v2/.
-2017-10-26 12:52:49.9636|TRACE|Performance|00:00:00.0009625 PackageDownloader: Did not find the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] at C:\Projects\MojPrviRhetos\Rhetos\Packages.
-2017-10-26 12:52:49.9636|TRACE|Performance|00:00:00.0058138 PackageDownloader: Found the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] at C:\Projects\MojPrviRhetos\MojPrviRhetosPaket.
-2017-10-26 12:52:50.1127|TRACE|Performance|00:00:00.1420751 PackageDownloader: Installed NuGet package MojPrviRhetosPaket.
-2017-10-26 12:52:50.3440|TRACE|Performance|00:00:00.2261286 PackageDownloader: Found the NuGet package valueinjecter 2.3.3 at https://www.nuget.org/api/v2/.
-2017-10-26 12:52:50.3740|TRACE|Performance|00:00:00.0300206 PackageDownloader: Installed NuGet package valueinjecter.
-2017-10-26 12:52:50.5334|TRACE|Performance|00:00:00.1552910 PackageDownloader: Did not find the NuGet package Rhetos.MvcModelGenerator.Client 2.2.0 at https://www.nuget.org/api/v2/.
-2017-10-26 12:52:50.5374|TRACE|Performance|00:00:00.0019771 PackageDownloader: Found the NuGet package Rhetos.MvcModelGenerator.Client 2.2.0 at C:\Projects\MojPrviRhetos\Rhetos\Packages.
-2017-10-26 12:52:50.5374|TRACE|Performance|00:00:00.0118785 PackageDownloader: Installed NuGet package Rhetos.MvcModelGenerator.Client.
-2017-10-26 12:52:50.6155|TRACE|Performance|00:00:02.4994461 PackageDownloader.GetPackages.
-2017-10-26 12:52:50.6763|TRACE|Performance|00:00:00.0015912 MefPluginScanner: Listed assemblies (14).
-2017-10-26 12:52:50.8622|TRACE|Performance|00:00:00.1782204 MefPluginScanner: Loaded plugins (600).
-2017-10-26 12:52:50.9622|TRACE|Performance|00:00:00.3225818 DeployPackages.Program: Modules and plugins registered.
-2017-10-26 12:52:51.3998|TRACE|Performance|00:00:00.0231812 DslParser.CreateGenericParsers.
-2017-10-26 12:52:51.4748|TRACE|Performance|00:00:00.0733965 DslParser.ExtractConcepts (284 concepts).
-2017-10-26 12:52:51.4748|TRACE|Performance|00:00:00.0020644 DslParser.InitializeAlternativeInitializationConcepts (0 new concepts created).
-2017-10-26 12:52:51.5268|TRACE|Performance|00:00:00.0260885 DslModel.ExpandMacroConcepts initialization (131 evaluators, 278 parsed concepts resolved, 0 unresolved).
-2017-10-26 12:52:51.5868|TRACE|Performance|00:00:00.0591461 DslModel.ExpandMacroConcepts iteration 1 (348 new concepts, 0 left unresolved).
-2017-10-26 12:52:51.6028|TRACE|Performance|00:00:00.0153562 DslModel.ExpandMacroConcepts iteration 2 (0 new concepts, 0 left unresolved).
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.0084042 DslModel.ExpandMacroConcepts total time for IMacroConcept Rhetos.Dsl.DefaultConcepts.UniqueMultiplePropertiesInfo.
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.0065882 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.ImplementsInterfaceMacro for Rhetos.Dsl.DefaultConcepts.ImplementsInterfaceInfo.
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.0059237 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.AutoInheritRowPermissionsMacro for Rhetos.Dsl.InitializationConcept.
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.0047096 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.PropertyFromMacro for Rhetos.Dsl.DefaultConcepts.PropertyFromInfo.
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.0039629 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.EntityLoggingMacro for Rhetos.Dsl.DefaultConcepts.EntityLoggingInfo.
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.1391039 DslModel.ExpandMacroConcepts.
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.0354403 DslContainer.AddNewConceptsAndReplaceReferences total time.
-2017-10-26 12:52:51.6371|TRACE|Performance|00:00:00.0084511 DslContainer.ValidateNewConceptSameAsExisting total time.
-2017-10-26 12:52:51.6522|TRACE|Performance|00:00:00.0025702 DslModel.CheckSemantics total time for LoadOldItemsTakeInfo.
-2017-10-26 12:52:51.6522|TRACE|Performance|00:00:00.0005170 DslModel.CheckSemantics total time for RegisteredInterfaceImplementationInfo.
-2017-10-26 12:52:51.6522|TRACE|Performance|00:00:00.0004339 DslModel.CheckSemantics total time for UniquePropertiesInfo.
-2017-10-26 12:52:51.6522|TRACE|Performance|00:00:00.0090229 DslModel.CheckSemantics
-2017-10-26 12:52:51.6522|TRACE|Performance|00:00:00.0024614 DslContainer.SortReferencesBeforeUsingConcept.
-2017-10-26 12:52:51.6522|TRACE|Performance|00:00:00.2842595 DslModel.Initialize (626 concepts).
-2017-10-26 12:52:51.6522|TRACE|Performance|00:00:00.0000591 DslModel.LogDslModel.
-2017-10-26 12:52:51.7292|TRACE|Performance|00:00:00.0640915 DslModelFile.Save.
-2017-10-26 12:52:51.8432|TRACE|Performance|00:00:00.1073530 CodeGenerator: Code generated.
-2017-10-26 12:52:51.8702|TRACE|Performance|00:00:00.0061047 AssemblyGenerator: Save source and hash (ServerDom.Model.dll).
-2017-10-26 12:52:52.0575|TRACE|Performance|00:00:00.1868242 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (ServerDom.Model.dll).
-2017-10-26 12:52:52.0715|TRACE|Performance|00:00:00.0135344 AssemblyGenerator: Report errors (ServerDom.Model.dll).
-2017-10-26 12:52:52.0715|TRACE|Performance|00:00:00.0020316 AssemblyGenerator: Save source and hash (ServerDom.Orm.dll).
-2017-10-26 12:52:52.2515|TRACE|Performance|00:00:00.1757296 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (ServerDom.Orm.dll).
-2017-10-26 12:52:52.2558|TRACE|Performance|00:00:00.0039578 AssemblyGenerator: Report errors (ServerDom.Orm.dll).
-2017-10-26 12:52:52.2754|TRACE|Performance|00:00:00.0044803 AssemblyGenerator: Save source and hash (ServerDom.Repositories.dll).
-2017-10-26 12:52:52.6164|TRACE|Performance|00:00:00.3408892 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (ServerDom.Repositories.dll).
-2017-10-26 12:52:52.6404|TRACE|Performance|00:00:00.0260259 AssemblyGenerator: Report errors (ServerDom.Repositories.dll).
-2017-10-26 12:52:52.6704|TRACE|Performance|00:00:00.0075487 CodeGenerator: Code generated.
-2017-10-26 12:52:52.6704|TRACE|Performance|00:00:00.0118508 EntityFrameworkMappingGenerator.GenerateMapping
-2017-10-26 12:52:52.7094|TRACE|Performance|00:00:00.0324731 CodeGenerator: Code generated.
-2017-10-26 12:52:52.7094|TRACE|Performance|00:00:00.0040348 AssemblyGenerator: Save source and hash (RestService.dll).
-2017-10-26 12:52:53.0004|TRACE|Performance|00:00:00.2849329 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (RestService.dll).
-2017-10-26 12:52:53.0074|TRACE|Performance|00:00:00.0110053 AssemblyGenerator: Report errors (RestService.dll).
-2017-10-26 12:52:53.0374|TRACE|Performance|00:00:00.0214233 CaptionsValueGenerator.GenerateCaptionValues
-2017-10-26 12:52:53.0374|TRACE|Performance|00:00:00.0311492 CodeGenerator: Code generated.
-2017-10-26 12:52:53.0374|TRACE|Performance|00:00:00.0344370 CaptionsResourceGenerator generated resx
-2017-10-26 12:52:53.0584|TRACE|Performance|00:00:00.0095027 CaptionsResourceGenerator compiled resx to resources
-2017-10-26 12:52:53.0734|TRACE|Performance|00:00:00.0137171 CaptionsResourceGenerator generated cs
-2017-10-26 12:52:53.0734|TRACE|Performance|00:00:00.0026078 AssemblyGenerator: Save source and hash (Captions.dll).
-2017-10-26 12:52:53.1724|TRACE|Performance|00:00:00.0947322 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (Captions.dll).
-2017-10-26 12:52:53.1794|TRACE|Performance|00:00:00.0065903 AssemblyGenerator: Report errors (Captions.dll).
-2017-10-26 12:52:53.1794|TRACE|Performance|00:00:00.1058874 CaptionsResourceGenerator generated dll
-2017-10-26 12:52:53.2244|TRACE|Performance|00:00:00.0414533 CodeGenerator: Code generated.
-2017-10-26 12:52:53.2244|TRACE|Performance|00:00:00.0026129 AssemblyGenerator: Save source and hash (Rhetos.Mvc.dll).
-2017-10-26 12:52:53.3416|TRACE|Performance|00:00:00.1068572 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (Rhetos.Mvc.dll).
-2017-10-26 12:52:53.3496|TRACE|Performance|00:00:00.0073753 AssemblyGenerator: Report errors (Rhetos.Mvc.dll).
-2017-10-26 12:52:53.3496|TRACE|Performance|00:00:00.1680035 MvcModelGenerator.Generate
-2017-10-26 12:52:54.4676|TRACE|Performance|00:00:01.1117075 EntityFrameworkMetadata: Extract EDMX.
-2017-10-26 12:52:54.4676|TRACE|Performance|00:00:00.0035731 EntityFrameworkMetadata: Save EDM files.
-2017-10-26 12:52:54.5786|TRACE|Performance|00:00:00.0436615 DatabaseGenerator: Loaded old concept applications.
-2017-10-26 12:52:54.5996|TRACE|Performance|00:00:00.0197593 DatabaseGenerator.CreateNewApplications: Created concept applications from plugins.
-2017-10-26 12:52:54.6175|TRACE|Performance|00:00:00.0150233 DatabaseGenerator.CreateNewApplications: ExtractDependenciesFromConceptInfos executed.
-2017-10-26 12:52:54.6356|TRACE|Performance|00:00:00.0172712 DatabaseGenerator.CreateNewApplications: ExtractDependenciesFromMefPluginMetadata executed.
-2017-10-26 12:52:54.6356|TRACE|Performance|00:00:00.0035204 DatabaseGenerator.CreateNewApplications: Dependencies union executed.
-2017-10-26 12:52:54.6356|TRACE|Performance|00:00:00.0390395 DatabaseGenerator.CreateNewApplications: ExtractDependencies executed.
-2017-10-26 12:52:54.6495|TRACE|Performance|00:00:00.0087793 DatabaseGenerator.CreateNewApplications: UpdateConceptApplicationsFromDependencyList executed.
-2017-10-26 12:52:54.6495|TRACE|Performance|00:00:00.0499127 DatabaseGenerator.CreateNewApplications: Computed dependencies.
-2017-10-26 12:52:54.6965|TRACE|Performance|00:00:00.0452582 DatabaseGenerator.CreateNewApplications: Generated SQL queries for new concept applications.
-2017-10-26 12:52:54.6965|TRACE|Performance|00:00:00.1183512 DatabaseGenerator: Created new concept applications.
-2017-10-26 12:52:54.6965|TRACE|Performance|00:00:00.0002439 DatabaseGenerator: Verify new concept applications' integrity.
-2017-10-26 12:52:54.7145|TRACE|Performance|00:00:00.0159383 DatabaseGenerator: Removed unused concept applications.
-2017-10-26 12:52:54.7366|TRACE|Performance|00:00:00.0214305 DatabaseGenerator: Analyzed differences in database structure.
-2017-10-26 12:52:54.7405|TRACE|Performance|00:00:00.0036204 DatabaseGenerator.ApplyChangesToDatabase: Prepared SQL scripts for removing concept applications.
-2017-10-26 12:52:54.7405|TRACE|Performance|00:00:00.0044810 DatabaseGenerator.ApplyChangesToDatabase: Prepared SQL scripts for updating unchanged concept applications' metadata.
-2017-10-26 12:52:54.7715|TRACE|Performance|00:00:00.0249288 DatabaseGenerator.ApplyChangesToDatabase: Prepared SQL scripts for inserting concept applications.
-2017-10-26 12:52:54.9892|TRACE|Performance|00:00:00.2151031 DatabaseGenerator.ApplyChangesToDatabase: Executed 66 SQL scripts.
-2017-10-26 12:52:54.9892|TRACE|Performance|00:00:00.2518718 DatabaseGenerator: Applied changes to database.
-2017-10-26 12:52:54.9902|TRACE|Performance|00:00:00.0093141 DatabaseGenerator: Verified integrity of saved concept applications metadata.
-2017-10-26 12:52:54.9902|TRACE|Performance|00:00:00.4657729 DatabaseGenerator.UpdateDatabaseStructure
-2017-10-26 12:52:55.0531|TRACE|Performance|00:00:00.0016545 MefPluginScanner: Listed assemblies (20).
-2017-10-26 12:52:55.1681|TRACE|Performance|00:00:00.1051534 MefPluginScanner: Loaded plugins (603).
-2017-10-26 12:52:55.1941|TRACE|Performance|00:00:00.1342642 DeployPackages.Program: New modules and plugins registered.
-2017-10-26 12:52:55.4231|TRACE|Performance|00:00:00.1583170 EntityFrameworkMetadata: Load EDM files.
-2017-10-26 12:52:56.6671|TRACE|Performance|00:00:00.0056236 DomLoader.LoadObjectModel ServerDom.Model
-2017-10-26 12:52:56.6671|TRACE|Performance|00:00:00.0005909 DomLoader.LoadObjectModel ServerDom.Orm
-2017-10-26 12:52:56.6671|TRACE|Performance|00:00:00.0005844 DomLoader.LoadObjectModel ServerDom.Repositories
-2017-10-26 12:52:56.7361|TRACE|Performance|00:00:00.0400390 DslModelFile.Load.
-2017-10-26 12:52:56.7501|TRACE|Performance|00:00:00.0547996 DslModelFile.Initialize (626 concepts).
-2017-10-26 12:52:56.7641|TRACE|Performance|00:00:00.0722984 ClaimGenerator.Generate: Generate new claims.
-2017-10-26 12:52:56.7713|TRACE|Performance|00:00:00.0002419 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Initialize new items (81)
-2017-10-26 12:52:56.7713|TRACE|Performance|00:00:00.0141202 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Load old items (77)
-2017-10-26 12:52:56.7873|TRACE|Performance|00:00:00.0019200 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Diff (81 new items, 77 old items, 4 to insert, 0 to update, 0 to delete)
-2017-10-26 12:52:56.9233|TRACE|Performance|00:00:00.1324249 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Deactivate (0 to deactivate, 0 already deactivated)
-2017-10-26 12:52:57.4090|TRACE|Performance|00:00:00.4844019 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Save (81 new items, 77 old items, 4 to insert, 0 to update, 0 to delete)
-2017-10-26 12:52:57.4090|TRACE|Performance|00:00:00.6449306 ClaimGenerator.Generate: Save claims.
+2017-10-26 13:06:05.9485|TRACE|Performance|00:00:00.0831688 PackageDownloader: Found the NuGet package Rhetos.CommonConcepts [2.2.0,2.2.0] in cache.
+2017-10-26 13:06:05.9797|TRACE|Performance|00:00:00.0038630 PackageDownloader: Found the NuGet package Rhetos.OmegaCommonConcepts [2.3.0,2.3.0] in cache.
+2017-10-26 13:06:05.9797|TRACE|Performance|00:00:00.0032679 PackageDownloader: Found the NuGet package Rhetos.RestGenerator [2.4.0,2.4.0] in cache.
+2017-10-26 13:06:05.9953|TRACE|Performance|00:00:00.0045689 PackageDownloader: Found the NuGet package Rhetos.MvcModelGenerator [2.2.0,2.2.0] in cache.
+2017-10-26 13:06:05.9953|TRACE|Performance|00:00:00.0020706 PackageDownloader: Did not find the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] in cache.
+2017-10-26 13:06:07.6985|TRACE|Performance|00:00:01.6858902 PackageDownloader: Did not find the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] at https://www.nuget.org/api/v2/.
+2017-10-26 13:06:07.6985|TRACE|Performance|00:00:00.0009653 PackageDownloader: Did not find the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] at C:\Projects\MojPrviRhetos\Rhetos\Packages.
+2017-10-26 13:06:07.6985|TRACE|Performance|00:00:00.0056725 PackageDownloader: Found the NuGet package MojPrviRhetosPaket [1.0.0,1.0.0] at C:\Projects\MojPrviRhetos\MojPrviRhetosPaket.
+2017-10-26 13:06:07.8391|TRACE|Performance|00:00:00.1416727 PackageDownloader: Installed NuGet package MojPrviRhetosPaket.
+2017-10-26 13:06:08.1047|TRACE|Performance|00:00:00.2517356 PackageDownloader: Found the NuGet package valueinjecter 2.3.3 at https://www.nuget.org/api/v2/.
+2017-10-26 13:06:08.1359|TRACE|Performance|00:00:00.0317757 PackageDownloader: Installed NuGet package valueinjecter.
+2017-10-26 13:06:08.3078|TRACE|Performance|00:00:00.1659124 PackageDownloader: Did not find the NuGet package Rhetos.MvcModelGenerator.Client 2.2.0 at https://www.nuget.org/api/v2/.
+2017-10-26 13:06:08.3078|TRACE|Performance|00:00:00.0019840 PackageDownloader: Found the NuGet package Rhetos.MvcModelGenerator.Client 2.2.0 at C:\Projects\MojPrviRhetos\Rhetos\Packages.
+2017-10-26 13:06:08.3234|TRACE|Performance|00:00:00.0116250 PackageDownloader: Installed NuGet package Rhetos.MvcModelGenerator.Client.
+2017-10-26 13:06:08.3859|TRACE|Performance|00:00:02.5483638 PackageDownloader.GetPackages.
+2017-10-26 13:06:08.4484|TRACE|Performance|00:00:00.0014245 MefPluginScanner: Listed assemblies (14).
+2017-10-26 13:06:08.6359|TRACE|Performance|00:00:00.1771172 MefPluginScanner: Loaded plugins (600).
+2017-10-26 13:06:08.7297|TRACE|Performance|00:00:00.3226851 DeployPackages.Program: Modules and plugins registered.
+2017-10-26 13:06:09.1828|TRACE|Performance|00:00:00.0288958 DslParser.CreateGenericParsers.
+2017-10-26 13:06:09.2609|TRACE|Performance|00:00:00.0781170 DslParser.ExtractConcepts (287 concepts).
+2017-10-26 13:06:09.2609|TRACE|Performance|00:00:00.0018718 DslParser.InitializeAlternativeInitializationConcepts (0 new concepts created).
+2017-10-26 13:06:09.3234|TRACE|Performance|00:00:00.0297212 DslModel.ExpandMacroConcepts initialization (131 evaluators, 281 parsed concepts resolved, 0 unresolved).
+2017-10-26 13:06:09.3859|TRACE|Performance|00:00:00.0588460 DslModel.ExpandMacroConcepts iteration 1 (349 new concepts, 0 left unresolved).
+2017-10-26 13:06:09.4015|TRACE|Performance|00:00:00.0148347 DslModel.ExpandMacroConcepts iteration 2 (0 new concepts, 0 left unresolved).
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.0069164 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.ImplementsInterfaceMacro for Rhetos.Dsl.DefaultConcepts.ImplementsInterfaceInfo.
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.0064171 DslModel.ExpandMacroConcepts total time for IMacroConcept Rhetos.Dsl.DefaultConcepts.UniqueMultiplePropertiesInfo.
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.0061820 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.PropertyFromMacro for Rhetos.Dsl.DefaultConcepts.PropertyFromInfo.
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.0056961 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.AutoInheritRowPermissionsMacro for Rhetos.Dsl.InitializationConcept.
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.0039646 DslModel.ExpandMacroConcepts total time for IConceptMacro Rhetos.Dsl.DefaultConcepts.EntityLoggingMacro for Rhetos.Dsl.DefaultConcepts.EntityLoggingInfo.
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.1291371 DslModel.ExpandMacroConcepts.
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.0333368 DslContainer.AddNewConceptsAndReplaceReferences total time.
+2017-10-26 13:06:09.4172|TRACE|Performance|00:00:00.0062891 DslContainer.ValidateNewConceptSameAsExisting total time.
+2017-10-26 13:06:09.4328|TRACE|Performance|00:00:00.0026177 DslModel.CheckSemantics total time for LoadOldItemsTakeInfo.
+2017-10-26 13:06:09.4328|TRACE|Performance|00:00:00.0005173 DslModel.CheckSemantics total time for RegisteredInterfaceImplementationInfo.
+2017-10-26 13:06:09.4328|TRACE|Performance|00:00:00.0004486 DslModel.CheckSemantics total time for UniquePropertiesInfo.
+2017-10-26 13:06:09.4328|TRACE|Performance|00:00:00.0088970 DslModel.CheckSemantics
+2017-10-26 13:06:09.4328|TRACE|Performance|00:00:00.0024887 DslContainer.SortReferencesBeforeUsingConcept.
+2017-10-26 13:06:09.4328|TRACE|Performance|00:00:00.2839905 DslModel.Initialize (630 concepts).
+2017-10-26 13:06:09.4328|TRACE|Performance|00:00:00.0000595 DslModel.LogDslModel.
+2017-10-26 13:06:09.5109|TRACE|Performance|00:00:00.0651284 DslModelFile.Save.
+2017-10-26 13:06:09.6203|TRACE|Performance|00:00:00.1049218 CodeGenerator: Code generated.
+2017-10-26 13:06:09.6516|TRACE|Performance|00:00:00.0078061 AssemblyGenerator: Save source and hash (ServerDom.Model.dll).
+2017-10-26 13:06:09.8390|TRACE|Performance|00:00:00.1841102 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (ServerDom.Model.dll).
+2017-10-26 13:06:09.8390|TRACE|Performance|00:00:00.0140429 AssemblyGenerator: Report errors (ServerDom.Model.dll).
+2017-10-26 13:06:09.8547|TRACE|Performance|00:00:00.0018899 AssemblyGenerator: Save source and hash (ServerDom.Orm.dll).
+2017-10-26 13:06:10.0116|TRACE|Performance|00:00:00.1661659 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (ServerDom.Orm.dll).
+2017-10-26 13:06:10.0272|TRACE|Performance|00:00:00.0036580 AssemblyGenerator: Report errors (ServerDom.Orm.dll).
+2017-10-26 13:06:10.0429|TRACE|Performance|00:00:00.0044047 AssemblyGenerator: Save source and hash (ServerDom.Repositories.dll).
+2017-10-26 13:06:10.3807|TRACE|Performance|00:00:00.3406527 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (ServerDom.Repositories.dll).
+2017-10-26 13:06:10.4119|TRACE|Performance|00:00:00.0331236 AssemblyGenerator: Report errors (ServerDom.Repositories.dll).
+2017-10-26 13:06:10.4432|TRACE|Performance|00:00:00.0073489 CodeGenerator: Code generated.
+2017-10-26 13:06:10.4432|TRACE|Performance|00:00:00.0118488 EntityFrameworkMappingGenerator.GenerateMapping
+2017-10-26 13:06:10.4744|TRACE|Performance|00:00:00.0305562 CodeGenerator: Code generated.
+2017-10-26 13:06:10.4901|TRACE|Performance|00:00:00.0039482 AssemblyGenerator: Save source and hash (RestService.dll).
+2017-10-26 13:06:10.7869|TRACE|Performance|00:00:00.2925060 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (RestService.dll).
+2017-10-26 13:06:10.7869|TRACE|Performance|00:00:00.0089480 AssemblyGenerator: Report errors (RestService.dll).
+2017-10-26 13:06:10.8182|TRACE|Performance|00:00:00.0215027 CaptionsValueGenerator.GenerateCaptionValues
+2017-10-26 13:06:10.8182|TRACE|Performance|00:00:00.0310055 CodeGenerator: Code generated.
+2017-10-26 13:06:10.8182|TRACE|Performance|00:00:00.0338067 CaptionsResourceGenerator generated resx
+2017-10-26 13:06:10.8338|TRACE|Performance|00:00:00.0094260 CaptionsResourceGenerator compiled resx to resources
+2017-10-26 13:06:10.8494|TRACE|Performance|00:00:00.0104547 CaptionsResourceGenerator generated cs
+2017-10-26 13:06:10.8494|TRACE|Performance|00:00:00.0023782 AssemblyGenerator: Save source and hash (Captions.dll).
+2017-10-26 13:06:10.9432|TRACE|Performance|00:00:00.0953814 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (Captions.dll).
+2017-10-26 13:06:10.9588|TRACE|Performance|00:00:00.0061909 AssemblyGenerator: Report errors (Captions.dll).
+2017-10-26 13:06:10.9588|TRACE|Performance|00:00:00.1058313 CaptionsResourceGenerator generated dll
+2017-10-26 13:06:10.9900|TRACE|Performance|00:00:00.0369131 CodeGenerator: Code generated.
+2017-10-26 13:06:11.0057|TRACE|Performance|00:00:00.0024480 AssemblyGenerator: Save source and hash (Rhetos.Mvc.dll).
+2017-10-26 13:06:11.1150|TRACE|Performance|00:00:00.1062074 AssemblyGenerator: CSharpCodeProvider.CompileAssemblyFromFile (Rhetos.Mvc.dll).
+2017-10-26 13:06:11.1150|TRACE|Performance|00:00:00.0062754 AssemblyGenerator: Report errors (Rhetos.Mvc.dll).
+2017-10-26 13:06:11.1150|TRACE|Performance|00:00:00.1645005 MvcModelGenerator.Generate
+2017-10-26 13:06:12.2244|TRACE|Performance|00:00:01.1037627 EntityFrameworkMetadata: Extract EDMX.
+2017-10-26 13:06:12.2400|TRACE|Performance|00:00:00.0040560 EntityFrameworkMetadata: Save EDM files.
+2017-10-26 13:06:12.3338|TRACE|Performance|00:00:00.0331777 DatabaseGenerator: Loaded old concept applications.
+2017-10-26 13:06:12.3650|TRACE|Performance|00:00:00.0201418 DatabaseGenerator.CreateNewApplications: Created concept applications from plugins.
+2017-10-26 13:06:12.3806|TRACE|Performance|00:00:00.0184038 DatabaseGenerator.CreateNewApplications: ExtractDependenciesFromConceptInfos executed.
+2017-10-26 13:06:12.3963|TRACE|Performance|00:00:00.0170320 DatabaseGenerator.CreateNewApplications: ExtractDependenciesFromMefPluginMetadata executed.
+2017-10-26 13:06:12.3963|TRACE|Performance|00:00:00.0033764 DatabaseGenerator.CreateNewApplications: Dependencies union executed.
+2017-10-26 13:06:12.3963|TRACE|Performance|00:00:00.0417131 DatabaseGenerator.CreateNewApplications: ExtractDependencies executed.
+2017-10-26 13:06:12.4119|TRACE|Performance|00:00:00.0047044 DatabaseGenerator.CreateNewApplications: UpdateConceptApplicationsFromDependencyList executed.
+2017-10-26 13:06:12.4119|TRACE|Performance|00:00:00.0481969 DatabaseGenerator.CreateNewApplications: Computed dependencies.
+2017-10-26 13:06:12.4588|TRACE|Performance|00:00:00.0453978 DatabaseGenerator.CreateNewApplications: Generated SQL queries for new concept applications.
+2017-10-26 13:06:12.4588|TRACE|Performance|00:00:00.1168835 DatabaseGenerator: Created new concept applications.
+2017-10-26 13:06:12.4588|TRACE|Performance|00:00:00.0002302 DatabaseGenerator: Verify new concept applications' integrity.
+2017-10-26 13:06:12.4744|TRACE|Performance|00:00:00.0222364 DatabaseGenerator: Removed unused concept applications.
+2017-10-26 13:06:12.4900|TRACE|Performance|00:00:00.0141774 DatabaseGenerator: Analyzed differences in database structure.
+2017-10-26 13:06:12.5056|TRACE|Performance|00:00:00.0036433 DatabaseGenerator.ApplyChangesToDatabase: Prepared SQL scripts for removing concept applications.
+2017-10-26 13:06:12.5056|TRACE|Performance|00:00:00.0044748 DatabaseGenerator.ApplyChangesToDatabase: Prepared SQL scripts for updating unchanged concept applications' metadata.
+2017-10-26 13:06:12.5213|TRACE|Performance|00:00:00.0172031 DatabaseGenerator.ApplyChangesToDatabase: Prepared SQL scripts for inserting concept applications.
+2017-10-26 13:06:12.5681|TRACE|Performance|00:00:00.0437217 DatabaseGenerator.ApplyChangesToDatabase: Executed 14 SQL scripts.
+2017-10-26 13:06:12.5681|TRACE|Performance|00:00:00.0727617 DatabaseGenerator: Applied changes to database.
+2017-10-26 13:06:12.5838|TRACE|Performance|00:00:00.0100006 DatabaseGenerator: Verified integrity of saved concept applications metadata.
+2017-10-26 13:06:12.5838|TRACE|Performance|00:00:00.2744987 DatabaseGenerator.UpdateDatabaseStructure
+2017-10-26 13:06:12.6463|TRACE|Performance|00:00:00.0016740 MefPluginScanner: Listed assemblies (20).
+2017-10-26 13:06:12.7557|TRACE|Performance|00:00:00.1192734 MefPluginScanner: Loaded plugins (603).
+2017-10-26 13:06:12.7869|TRACE|Performance|00:00:00.1473073 DeployPackages.Program: New modules and plugins registered.
+2017-10-26 13:06:13.0056|TRACE|Performance|00:00:00.1508736 EntityFrameworkMetadata: Load EDM files.
+2017-10-26 13:06:14.2351|TRACE|Performance|00:00:00.0054692 DomLoader.LoadObjectModel ServerDom.Model
+2017-10-26 13:06:14.2351|TRACE|Performance|00:00:00.0006091 DomLoader.LoadObjectModel ServerDom.Orm
+2017-10-26 13:06:14.2351|TRACE|Performance|00:00:00.0006183 DomLoader.LoadObjectModel ServerDom.Repositories
+2017-10-26 13:06:14.3132|TRACE|Performance|00:00:00.0437402 DslModelFile.Load.
+2017-10-26 13:06:14.3132|TRACE|Performance|00:00:00.0515049 DslModelFile.Initialize (630 concepts).
+2017-10-26 13:06:14.3289|TRACE|Performance|00:00:00.0686335 ClaimGenerator.Generate: Generate new claims.
+2017-10-26 13:06:14.3445|TRACE|Performance|00:00:00.0002378 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Initialize new items (85)
+2017-10-26 13:06:14.3445|TRACE|Performance|00:00:00.0139772 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Load old items (81)
+2017-10-26 13:06:14.3601|TRACE|Performance|00:00:00.0039622 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Diff (85 new items, 81 old items, 4 to insert, 0 to update, 0 to delete)
+2017-10-26 13:06:14.4958|TRACE|Performance|00:00:00.1319920 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Deactivate (0 to deactivate, 0 already deactivated)
+2017-10-26 13:06:14.9333|TRACE|Performance|00:00:00.4375158 GenericRepository(Common.Claim).InsertOrUpdateOrDeleteOrDeactivate: Save (85 new items, 81 old items, 4 to insert, 0 to update, 0 to delete)
+2017-10-26 13:06:14.9333|TRACE|Performance|00:00:00.5989565 ClaimGenerator.Generate: Save claims.

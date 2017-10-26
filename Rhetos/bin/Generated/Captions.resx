@@ -129,6 +129,9 @@
   <data name="PrviRhetos_Putovanje" xml:space="preserve">
     <value>Putovanje</value>
   </data>
+  <data name="PrviRhetos_Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
   <data name="Common_AutoCodeCache" xml:space="preserve">
     <value>Auto code cache</value>
   </data>
@@ -260,6 +263,9 @@
   </data>
   <data name="PrviRhetos_Putovanje_Napomena" xml:space="preserve">
     <value>Napomena</value>
+  </data>
+  <data name="PrviRhetos_Test_Test1" xml:space="preserve">
+    <value>Test1</value>
   </data>
   <data name="Common_AutoCodeCache_Entity" xml:space="preserve">
     <value>Entity</value>
@@ -470,6 +476,9 @@
   </data>
   <data name="PrviRhetos_Osoba_Adresa" xml:space="preserve">
     <value>Adresa</value>
+  </data>
+  <data name="PrviRhetos_Test_Test2" xml:space="preserve">
+    <value>Test2</value>
   </data>
   <data name="Common_KeepSynchronizedMetadata_Context" xml:space="preserve">
     <value>Context</value>

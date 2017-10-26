@@ -236,5 +236,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PrviRhetos_Test">
+            <EntityTypeMapping TypeName="Common.PrviRhetos_Test">
+              <MappingFragment StoreEntitySet="PrviRhetos_Test">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Test1" ColumnName="Test1" />
+                <ScalarProperty Name="Test2" ColumnName="Test2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>

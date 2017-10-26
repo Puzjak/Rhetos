@@ -152,6 +152,28 @@ namespace PrviRhetos
         /*DataStructureInfo ClassBody PrviRhetos.Putovanje*/
     }
 
+    [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.Test*/
+    public class Test : EntityBase<PrviRhetos.Test>/*Next DataStructureInfo ClassInterace PrviRhetos.Test*/
+    {
+        /// <summary>Converts the simple object to a navigation object, and copies its simple properties. Navigation properties are set to null.</summary>
+        public Common.Queryable.PrviRhetos_Test ToNavigation()
+        {
+            var item = this;
+            return new Common.Queryable.PrviRhetos_Test
+            {
+                ID = item.ID,
+                Test1 = item.Test1,
+                Test2 = item.Test2/*DataStructureInfo AssignSimpleProperty PrviRhetos.Test*/
+            };
+        }
+
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Test.Test1*/
+        public string Test1 { get; set; }
+        [DataMember]/*PropertyInfo Attribute PrviRhetos.Test.Test2*/
+        public string Test2 { get; set; }
+        /*DataStructureInfo ClassBody PrviRhetos.Test*/
+    }
+
     [DataContract]/*DataStructureInfo ClassAttributes PrviRhetos.OIB_RegExMatchFilter*/
     public class OIB_RegExMatchFilter/*DataStructureInfo ClassInterace PrviRhetos.OIB_RegExMatchFilter*/
     {
@@ -1134,6 +1156,31 @@ namespace Common.Queryable
         }
     }
 
+    /*DataStructureInfo QueryableClassAttributes PrviRhetos.Test*/
+    public class PrviRhetos_Test : global::PrviRhetos.Test, IQueryableEntity<PrviRhetos.Test>, System.IEquatable<PrviRhetos_Test>, IDetachOverride/*DataStructureInfo QueryableClassInterace PrviRhetos.Test*/
+    {
+        bool IDetachOverride.Detaching { get; set; }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public PrviRhetos.Test ToSimple()
+        {
+            var item = this;
+            return new PrviRhetos.Test
+            {
+                ID = item.ID,
+                Test1 = item.Test1,
+                Test2 = item.Test2/*DataStructureInfo AssignSimpleProperty PrviRhetos.Test*/
+            };
+        }
+
+        /*DataStructureInfo QueryableClassMembers PrviRhetos.Test*/
+
+        public bool Equals(PrviRhetos_Test other)
+        {
+            return other != null && other.ID == ID;
+        }
+    }
+
     /*DataStructureInfo QueryableClassAttributes Common.AutoCodeCache*/
     public class Common_AutoCodeCache : global::Common.AutoCodeCache, IQueryableEntity<Common.AutoCodeCache>, System.IEquatable<Common_AutoCodeCache>, IDetachOverride/*DataStructureInfo QueryableClassInterace Common.AutoCodeCache*/
     {
@@ -2029,6 +2076,16 @@ namespace Rhetos.Dom.DefaultConcepts
                 DatumPolaska = item.DatumPolaska,
                 DatumPovratka = item.DatumPovratka,
                 Napomena = item.Napomena/*DataStructureInfo AssignSimpleProperty PrviRhetos.Putovanje*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<PrviRhetos.Test> ToSimple(this IQueryable<Common.Queryable.PrviRhetos_Test> query)
+        {
+            return query.Select(item => new PrviRhetos.Test
+            {
+                ID = item.ID,
+                Test1 = item.Test1,
+                Test2 = item.Test2/*DataStructureInfo AssignSimpleProperty PrviRhetos.Test*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>

@@ -1484,5 +1484,32 @@ namespace Rhetos.Mvc {
                 return ResourceManager.GetString("PrviRhetos_Putovanje_UGrad", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        public static string PrviRhetos_Test {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test1.
+        /// </summary>
+        public static string PrviRhetos_Test_Test1 {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Test_Test1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test2.
+        /// </summary>
+        public static string PrviRhetos_Test_Test2 {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Test_Test2", resourceCulture);
+            }
+        }
     }
 }

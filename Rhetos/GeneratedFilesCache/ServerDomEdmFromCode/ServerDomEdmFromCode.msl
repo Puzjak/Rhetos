@@ -223,5 +223,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PrviRhetos_Putovanje">
+            <EntityTypeMapping TypeName="Common.PrviRhetos_Putovanje">
+              <MappingFragment StoreEntitySet="PrviRhetos_Putovanje">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OsobaID" ColumnName="OsobaID" />
+                <ScalarProperty Name="IzGradaID" ColumnName="IzGradaID" />
+                <ScalarProperty Name="UGradID" ColumnName="UGradID" />
+                <ScalarProperty Name="DatumPolaska" ColumnName="DatumPolaska" />
+                <ScalarProperty Name="DatumPovratka" ColumnName="DatumPovratka" />
+                <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>

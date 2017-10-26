@@ -217,6 +217,21 @@
           <NavigationProperty Name="GradRodenja" Relationship="Self.PrviRhetos_Osoba_GradRodenja" FromRole="PrviRhetos_Osoba_GradRodenja_Source" ToRole="PrviRhetos_Osoba_GradRodenja_Target" />
           <NavigationProperty Name="GradStanovanja" Relationship="Self.PrviRhetos_Osoba_GradStanovanja" FromRole="PrviRhetos_Osoba_GradStanovanja_Source" ToRole="PrviRhetos_Osoba_GradStanovanja_Target" />
         </EntityType>
+        <EntityType Name="PrviRhetos_Putovanje" customannotation:ClrType="Common.Queryable.PrviRhetos_Putovanje, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="OsobaID" Type="Guid" />
+          <Property Name="IzGradaID" Type="Guid" />
+          <Property Name="UGradID" Type="Guid" />
+          <Property Name="DatumPolaska" Type="DateTime" />
+          <Property Name="DatumPovratka" Type="DateTime" />
+          <Property Name="Napomena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IzGrada" Relationship="Self.PrviRhetos_Putovanje_IzGrada" FromRole="PrviRhetos_Putovanje_IzGrada_Source" ToRole="PrviRhetos_Putovanje_IzGrada_Target" />
+          <NavigationProperty Name="Osoba" Relationship="Self.PrviRhetos_Putovanje_Osoba" FromRole="PrviRhetos_Putovanje_Osoba_Source" ToRole="PrviRhetos_Putovanje_Osoba_Target" />
+          <NavigationProperty Name="UGrad" Relationship="Self.PrviRhetos_Putovanje_UGrad" FromRole="PrviRhetos_Putovanje_UGrad_Source" ToRole="PrviRhetos_Putovanje_UGrad_Target" />
+        </EntityType>
         <Association Name="Common_LogRelatedItem_Log">
           <End Role="Common_LogRelatedItem_Log_Source" Type="Self.Common_LogRelatedItem" Multiplicity="*" />
           <End Role="Common_LogRelatedItem_Log_Target" Type="Self.Common_Log" Multiplicity="0..1" />
@@ -397,6 +412,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="PrviRhetos_Putovanje_IzGrada">
+          <End Role="PrviRhetos_Putovanje_IzGrada_Source" Type="Self.PrviRhetos_Putovanje" Multiplicity="*" />
+          <End Role="PrviRhetos_Putovanje_IzGrada_Target" Type="Self.PrviRhetos_Grad" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Putovanje_IzGrada_Target">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Putovanje_IzGrada_Source">
+              <PropertyRef Name="IzGradaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrviRhetos_Putovanje_Osoba">
+          <End Role="PrviRhetos_Putovanje_Osoba_Source" Type="Self.PrviRhetos_Putovanje" Multiplicity="*" />
+          <End Role="PrviRhetos_Putovanje_Osoba_Target" Type="Self.PrviRhetos_Osoba" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Putovanje_Osoba_Target">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Putovanje_Osoba_Source">
+              <PropertyRef Name="OsobaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrviRhetos_Putovanje_UGrad">
+          <End Role="PrviRhetos_Putovanje_UGrad_Source" Type="Self.PrviRhetos_Putovanje" Multiplicity="*" />
+          <End Role="PrviRhetos_Putovanje_UGrad_Target" Type="Self.PrviRhetos_Grad" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Putovanje_UGrad_Target">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Putovanje_UGrad_Source">
+              <PropertyRef Name="UGradID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="EntityFrameworkContext" customannotation:UseClrTypes="true">
           <EntitySet Name="Common_AutoCodeCache" EntityType="Self.Common_AutoCodeCache" />
           <EntitySet Name="Common_Claim" EntityType="Self.Common_Claim" />
@@ -418,6 +469,7 @@
           <EntitySet Name="PrviRhetos_Drzava" EntityType="Self.PrviRhetos_Drzava" />
           <EntitySet Name="PrviRhetos_Grad" EntityType="Self.PrviRhetos_Grad" />
           <EntitySet Name="PrviRhetos_Osoba" EntityType="Self.PrviRhetos_Osoba" />
+          <EntitySet Name="PrviRhetos_Putovanje" EntityType="Self.PrviRhetos_Putovanje" />
           <AssociationSet Name="Common_LogRelatedItem_Log" Association="Self.Common_LogRelatedItem_Log">
             <End Role="Common_LogRelatedItem_Log_Source" EntitySet="Common_LogRelatedItem" />
             <End Role="Common_LogRelatedItem_Log_Target" EntitySet="Common_Log" />
@@ -477,6 +529,18 @@
           <AssociationSet Name="PrviRhetos_Osoba_GradStanovanja" Association="Self.PrviRhetos_Osoba_GradStanovanja">
             <End Role="PrviRhetos_Osoba_GradStanovanja_Source" EntitySet="PrviRhetos_Osoba" />
             <End Role="PrviRhetos_Osoba_GradStanovanja_Target" EntitySet="PrviRhetos_Grad" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Putovanje_IzGrada" Association="Self.PrviRhetos_Putovanje_IzGrada">
+            <End Role="PrviRhetos_Putovanje_IzGrada_Source" EntitySet="PrviRhetos_Putovanje" />
+            <End Role="PrviRhetos_Putovanje_IzGrada_Target" EntitySet="PrviRhetos_Grad" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Putovanje_Osoba" Association="Self.PrviRhetos_Putovanje_Osoba">
+            <End Role="PrviRhetos_Putovanje_Osoba_Source" EntitySet="PrviRhetos_Putovanje" />
+            <End Role="PrviRhetos_Putovanje_Osoba_Target" EntitySet="PrviRhetos_Osoba" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Putovanje_UGrad" Association="Self.PrviRhetos_Putovanje_UGrad">
+            <End Role="PrviRhetos_Putovanje_UGrad_Source" EntitySet="PrviRhetos_Putovanje" />
+            <End Role="PrviRhetos_Putovanje_UGrad_Target" EntitySet="PrviRhetos_Grad" />
           </AssociationSet>
         </EntityContainer>
       </Schema>

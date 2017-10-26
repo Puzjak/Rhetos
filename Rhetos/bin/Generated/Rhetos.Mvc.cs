@@ -183,6 +183,28 @@ namespace Rhetos.Mvc.PrviRhetos
 }
 
 
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_Test", typeof(CaptionsResourceClass))]
+    [Rhetos.Mvc.ReadableDataStructure]
+    [Rhetos.Mvc.WritableDataStructure]
+    public partial class Test : Rhetos.Mvc.BaseMvcModel
+    {
+        public const string EntityTest = "Test";
+
+        [Display(Name = "PrviRhetos_Test_Test1", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [MaxLength(256)]
+        public virtual string Test1 { get; set; }
+        public const string PropertyTest1 = "Test1";
+        
+        [Display(Name = "PrviRhetos_Test_Test2", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [UIHint("StringMultiline")]
+        public virtual string Test2 { get; set; }
+        public const string PropertyTest2 = "Test2";
+    }
+}
+
+
 namespace Rhetos.Mvc.Common
 {
     [Rhetos.Mvc.LocalizedDisplayName("Common_AutoCodeCache", typeof(CaptionsResourceClass))]

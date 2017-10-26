@@ -111,6 +111,17 @@ namespace Common
             modelBuilder.Entity<Common.Queryable.PrviRhetos_Osoba>()
                 .HasOptional(t => t.GradStanovanja).WithMany()
                 .HasForeignKey(t => t.GradStanovanjaID);
+            modelBuilder.Ignore<global::PrviRhetos.Putovanje>();
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Putovanje>().Map(m => { m.MapInheritedProperties(); m.ToTable("Putovanje", "PrviRhetos"); });
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Putovanje>()
+                .HasOptional(t => t.Osoba).WithMany()
+                .HasForeignKey(t => t.OsobaID);
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Putovanje>()
+                .HasOptional(t => t.IzGrada).WithMany()
+                .HasForeignKey(t => t.IzGradaID);
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Putovanje>()
+                .HasOptional(t => t.UGrad).WithMany()
+                .HasForeignKey(t => t.UGradID);
             modelBuilder.Ignore<global::Common.AutoCodeCache>();
             modelBuilder.Entity<Common.Queryable.Common_AutoCodeCache>().Map(m => { m.MapInheritedProperties(); m.ToTable("AutoCodeCache", "Common"); });
             modelBuilder.Ignore<global::Common.FilterId>();
@@ -185,6 +196,7 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Drzava> PrviRhetos_Drzava { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Grad> PrviRhetos_Grad { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Osoba> PrviRhetos_Osoba { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Putovanje> PrviRhetos_Putovanje { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_AutoCodeCache> Common_AutoCodeCache { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_FilterId> Common_FilterId { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_KeepSynchronizedMetadata> Common_KeepSynchronizedMetadata { get; set; }

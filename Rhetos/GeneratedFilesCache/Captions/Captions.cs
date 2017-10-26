@@ -1421,5 +1421,68 @@ namespace Rhetos.Mvc {
                 return ResourceManager.GetString("PrviRhetos_PozivniBroj_MaxLengthFilter", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Putovanje.
+        /// </summary>
+        public static string PrviRhetos_Putovanje {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Putovanje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum polaska.
+        /// </summary>
+        public static string PrviRhetos_Putovanje_DatumPolaska {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Putovanje_DatumPolaska", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum povratka.
+        /// </summary>
+        public static string PrviRhetos_Putovanje_DatumPovratka {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Putovanje_DatumPovratka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iz grada.
+        /// </summary>
+        public static string PrviRhetos_Putovanje_IzGrada {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Putovanje_IzGrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Napomena.
+        /// </summary>
+        public static string PrviRhetos_Putovanje_Napomena {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Putovanje_Napomena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Osoba.
+        /// </summary>
+        public static string PrviRhetos_Putovanje_Osoba {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Putovanje_Osoba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to U grad.
+        /// </summary>
+        public static string PrviRhetos_Putovanje_UGrad {
+            get {
+                return ResourceManager.GetString("PrviRhetos_Putovanje_UGrad", resourceCulture);
+            }
+        }
     }
 }

@@ -176,6 +176,7 @@ namespace Common
             builder.RegisterType<PrviRhetos._Helper.Drzava_Repository>().Keyed<IRepository>("PrviRhetos.Drzava").InstancePerLifetimeScope();
             builder.RegisterType<PrviRhetos._Helper.Grad_Repository>().Keyed<IRepository>("PrviRhetos.Grad").InstancePerLifetimeScope();
             builder.RegisterType<PrviRhetos._Helper.Osoba_Repository>().Keyed<IRepository>("PrviRhetos.Osoba").InstancePerLifetimeScope();
+            builder.RegisterType<PrviRhetos._Helper.Putovanje_Repository>().Keyed<IRepository>("PrviRhetos.Putovanje").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.AutoCodeCache_Repository>().Keyed<IRepository>("Common.AutoCodeCache").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.FilterId_Repository>().Keyed<IRepository>("Common.FilterId").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.KeepSynchronizedMetadata_Repository>().Keyed<IRepository>("Common.KeepSynchronizedMetadata").InstancePerLifetimeScope();
@@ -347,6 +348,9 @@ namespace PrviRhetos._Helper
 
         private Osoba_Repository _Osoba_Repository;
         public Osoba_Repository Osoba { get { return _Osoba_Repository ?? (_Osoba_Repository = (Osoba_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"PrviRhetos.Osoba")); } }
+
+        private Putovanje_Repository _Putovanje_Repository;
+        public Putovanje_Repository Putovanje { get { return _Putovanje_Repository ?? (_Putovanje_Repository = (Putovanje_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"PrviRhetos.Putovanje")); } }
 
         /*ModuleInfo RepositoryMembers PrviRhetos*/
     }
@@ -692,6 +696,10 @@ namespace PrviRhetos._Helper
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Osoba,Property:GradRodenjaID,Referenced:PrviRhetos.Grad";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"PrviRhetos.Osoba", @"GradStanovanjaID", @"FK_Osoba_Grad_GradStanovanjaID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Osoba,Property:GradStanovanjaID,Referenced:PrviRhetos.Grad";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"PrviRhetos.Putovanje", @"IzGradaID", @"FK_Putovanje_Grad_IzGradaID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Putovanje,Property:IzGradaID,Referenced:PrviRhetos.Grad";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"PrviRhetos.Putovanje", @"UGradID", @"FK_Putovanje_Grad_UGradID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Putovanje,Property:UGradID,Referenced:PrviRhetos.Grad";
                 /*DataStructureInfo WritableOrm OnDatabaseError PrviRhetos.Grad*/
                 if (checkUserPermissions)
                     Rhetos.Utilities.MsSqlUtility.ThrowIfPrimaryKeyErrorOnInsert(interpretedException, "PrviRhetos.Grad");
@@ -894,6 +902,8 @@ namespace PrviRhetos._Helper
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Osoba,Property:GradStanovanjaID,Referenced:PrviRhetos.Grad";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"PrviRhetos.Osoba", @"IX_Osoba_OIB_DrzavaRodenja"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Osoba,Property:OIB DrzavaRodenja";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"PrviRhetos.Putovanje", @"OsobaID", @"FK_Putovanje_Osoba_OsobaID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Putovanje,Property:OsobaID,Referenced:PrviRhetos.Osoba";
                 /*DataStructureInfo WritableOrm OnDatabaseError PrviRhetos.Osoba*/
                 if (checkUserPermissions)
                     Rhetos.Utilities.MsSqlUtility.ThrowIfPrimaryKeyErrorOnInsert(interpretedException, "PrviRhetos.Osoba");
@@ -1029,6 +1039,192 @@ namespace PrviRhetos._Helper
         }
 
         /*DataStructureInfo RepositoryMembers PrviRhetos.Osoba*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes PrviRhetos.Putovanje*/
+    public class Putovanje_Repository : /*DataStructureInfo OverrideBaseType PrviRhetos.Putovanje*/ Common.OrmRepositoryBase<Common.Queryable.PrviRhetos_Putovanje, PrviRhetos.Putovanje> // Common.QueryableRepositoryBase<Common.Queryable.PrviRhetos_Putovanje, PrviRhetos.Putovanje> // Common.ReadableRepositoryBase<PrviRhetos.Putovanje> // global::Common.RepositoryBase
+        , IWritableRepository<PrviRhetos.Putovanje>, IValidateRepository/*DataStructureInfo RepositoryInterface PrviRhetos.Putovanje*/
+    {
+        private readonly Rhetos.Utilities.ISqlUtility _sqlUtility;
+        /*DataStructureInfo RepositoryPrivateMembers PrviRhetos.Putovanje*/
+
+        public Putovanje_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext, Rhetos.Utilities.ISqlUtility _sqlUtility/*DataStructureInfo RepositoryConstructorArguments PrviRhetos.Putovanje*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            this._sqlUtility = _sqlUtility;
+            /*DataStructureInfo RepositoryConstructorCode PrviRhetos.Putovanje*/
+        }
+
+        [Obsolete("Use Load() or Query() method.")]
+        public override global::PrviRhetos.Putovanje[] All()
+        {
+            return Query().ToSimple().ToArray();
+        }
+
+        public override IQueryable<Common.Queryable.PrviRhetos_Putovanje> Query()
+        {
+            /*DataStructureInfo RepositoryBeforeQuery PrviRhetos.Putovanje*/
+            return _executionContext.EntityFrameworkContext.PrviRhetos_Putovanje.AsNoTracking();
+        }
+
+        public void Save(IEnumerable<PrviRhetos.Putovanje> insertedNew, IEnumerable<PrviRhetos.Putovanje> updatedNew, IEnumerable<PrviRhetos.Putovanje> deletedIds, bool checkUserPermissions = false)
+        {
+            if (!DomHelper.CleanUpSaveMethodArguments(ref insertedNew, ref updatedNew, ref deletedIds))
+                return;
+
+            /*DataStructureInfo WritableOrm ClearContext PrviRhetos.Putovanje*/
+
+            {
+                var invalidItem = insertedNew.Concat(updatedNew).Where(newItem => newItem.Napomena != null && newItem.Napomena.Length > 256).FirstOrDefault();
+                if (invalidItem != null)
+                    throw new Rhetos.UserException(
+                        "Maximum length of property {0} is {1}.",
+                        new[] { "Putovanje.Napomena", "256" },
+                        "DataStructure:PrviRhetos.Putovanje,ID:" + invalidItem.ID.ToString() + ",Property:Napomena",
+                        null);
+            }
+            /*DataStructureInfo WritableOrm ArgumentValidation PrviRhetos.Putovanje*/
+
+            /*DataStructureInfo WritableOrm Initialization PrviRhetos.Putovanje*/
+
+            // Using old data, including lazy loading of navigation properties:
+            IEnumerable<Common.Queryable.PrviRhetos_Putovanje> deleted = this.Query(deletedIds.Select(item => item.ID)).ToList();
+            Rhetos.Utilities.Graph.SortByGivenOrder((List<Common.Queryable.PrviRhetos_Putovanje>)deleted, deletedIds.Select(item => item.ID), item => item.ID);
+            IEnumerable<Common.Queryable.PrviRhetos_Putovanje> updated = this.Query(updatedNew.Select(item => item.ID)).ToList();
+            Rhetos.Utilities.Graph.SortByGivenOrder((List<Common.Queryable.PrviRhetos_Putovanje>)updated, updatedNew.Select(item => item.ID), item => item.ID);
+
+            /*DataStructureInfo WritableOrm OldDataLoaded PrviRhetos.Putovanje*/
+
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.OsobaID == null /*RequiredPropertyInfo OrCondition PrviRhetos.Putovanje.Osoba*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { "PrviRhetos.Putovanje", "Osoba" },
+                        "DataStructure:PrviRhetos.Putovanje,ID:" + invalid.ID.ToString() + ",Property:OsobaID", null);
+            }
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.IzGradaID == null /*RequiredPropertyInfo OrCondition PrviRhetos.Putovanje.IzGrada*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { "PrviRhetos.Putovanje", "IzGrada" },
+                        "DataStructure:PrviRhetos.Putovanje,ID:" + invalid.ID.ToString() + ",Property:IzGradaID", null);
+            }
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.UGradID == null /*RequiredPropertyInfo OrCondition PrviRhetos.Putovanje.UGrad*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { "PrviRhetos.Putovanje", "UGrad" },
+                        "DataStructure:PrviRhetos.Putovanje,ID:" + invalid.ID.ToString() + ",Property:UGradID", null);
+            }
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.DatumPolaska == null /*RequiredPropertyInfo OrCondition PrviRhetos.Putovanje.DatumPolaska*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { "PrviRhetos.Putovanje", "DatumPolaska" },
+                        "DataStructure:PrviRhetos.Putovanje,ID:" + invalid.ID.ToString() + ",Property:DatumPolaska", null);
+            }
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.DatumPovratka == null /*RequiredPropertyInfo OrCondition PrviRhetos.Putovanje.DatumPovratka*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { "PrviRhetos.Putovanje", "DatumPovratka" },
+                        "DataStructure:PrviRhetos.Putovanje,ID:" + invalid.ID.ToString() + ",Property:DatumPovratka", null);
+            }
+            /*DataStructureInfo WritableOrm ProcessedOldData PrviRhetos.Putovanje*/
+
+            DomHelper.SaveOperation saveOperation = DomHelper.SaveOperation.None;
+            try
+            {
+                if (deletedIds.Count() > 0)
+                {
+                    saveOperation = DomHelper.SaveOperation.Delete;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = false;
+                    foreach (var item in deletedIds.Select(item => item.ToNavigation()))
+                        _executionContext.EntityFrameworkContext.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = true;
+                    _executionContext.EntityFrameworkContext.SaveChanges();
+                }
+
+                if (updatedNew.Count() > 0)
+                {
+                    saveOperation = DomHelper.SaveOperation.Update;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = false;
+                    foreach (var item in updatedNew.Select(item => item.ToNavigation()))
+                        _executionContext.EntityFrameworkContext.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = true;
+                    _executionContext.EntityFrameworkContext.SaveChanges();
+                }
+
+                if (insertedNew.Count() > 0)
+                {
+                    saveOperation = DomHelper.SaveOperation.Insert;
+                    _executionContext.EntityFrameworkContext.PrviRhetos_Putovanje.AddRange(insertedNew.Select(item => item.ToNavigation()));
+                    _executionContext.EntityFrameworkContext.SaveChanges();
+                }
+
+                saveOperation = DomHelper.SaveOperation.None;
+                _executionContext.EntityFrameworkContext.ClearCache();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException saveException)
+            {
+                DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
+        		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"PrviRhetos.Osoba", @"ID", @"FK_Putovanje_Osoba_OsobaID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Putovanje,Property:OsobaID,Referenced:PrviRhetos.Osoba";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"PrviRhetos.Grad", @"ID", @"FK_Putovanje_Grad_IzGradaID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Putovanje,Property:IzGradaID,Referenced:PrviRhetos.Grad";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"PrviRhetos.Grad", @"ID", @"FK_Putovanje_Grad_UGradID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Putovanje,Property:UGradID,Referenced:PrviRhetos.Grad";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"PrviRhetos.Putovanje", @"IX_Putovanje_Osoba_DatumPolaska"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:PrviRhetos.Putovanje,Property:Osoba DatumPolaska";
+                /*DataStructureInfo WritableOrm OnDatabaseError PrviRhetos.Putovanje*/
+                if (checkUserPermissions)
+                    Rhetos.Utilities.MsSqlUtility.ThrowIfPrimaryKeyErrorOnInsert(interpretedException, "PrviRhetos.Putovanje");
+
+                if (interpretedException != null)
+        			Rhetos.Utilities.ExceptionsUtility.Rethrow(interpretedException);
+                var sqlException = _sqlUtility.ExtractSqlException(saveException);
+                if (sqlException != null)
+                    Rhetos.Utilities.ExceptionsUtility.Rethrow(sqlException);
+                throw;
+            }
+
+            deleted = null;
+            updated = this.Query(updatedNew.Select(item => item.ID));
+            IEnumerable<Common.Queryable.PrviRhetos_Putovanje> inserted = this.Query(insertedNew.Select(item => item.ID));
+
+            bool allEffectsCompleted = false;
+            try
+            {
+                /*DataStructureInfo WritableOrm OnSaveTag1 PrviRhetos.Putovanje*/
+
+                /*DataStructureInfo WritableOrm OnSaveTag2 PrviRhetos.Putovanje*/
+
+                Rhetos.Dom.DefaultConcepts.InvalidDataMessage.ValidateOnSave(insertedNew, updatedNew, this, "PrviRhetos.Putovanje");
+                allEffectsCompleted = true;
+            }
+            finally
+            {
+                if (!allEffectsCompleted)
+                    _executionContext.PersistenceTransaction.DiscardChanges();
+            }
+        }
+
+        public IEnumerable<Rhetos.Dom.DefaultConcepts.InvalidDataMessage> Validate(IList<Guid> ids, bool onSave)
+        {
+            /*DataStructureInfo WritableOrm OnSaveValidate PrviRhetos.Putovanje*/
+            yield break;
+        }
+
+        public global::PrviRhetos.Putovanje CreateInstance()
+        {
+            var _item = new global::PrviRhetos.Putovanje();
+            /*DataStructureInfo CreateInstance PrviRhetos.Putovanje*/
+            return _item;
+        }
+
+        /*DataStructureInfo RepositoryMembers PrviRhetos.Putovanje*/
     }
 
     /*ModuleInfo HelperNamespaceMembers PrviRhetos*/

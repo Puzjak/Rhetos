@@ -177,6 +177,7 @@ namespace Common
             builder.RegisterType<PrviRhetos._Helper.Grad_Repository>().Keyed<IRepository>("PrviRhetos.Grad").InstancePerLifetimeScope();
             builder.RegisterType<PrviRhetos._Helper.Osoba_Repository>().Keyed<IRepository>("PrviRhetos.Osoba").InstancePerLifetimeScope();
             builder.RegisterType<PrviRhetos._Helper.Putovanje_Repository>().Keyed<IRepository>("PrviRhetos.Putovanje").InstancePerLifetimeScope();
+            builder.RegisterType<PrviRhetos._Helper.Test_Repository>().Keyed<IRepository>("PrviRhetos.Test").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.AutoCodeCache_Repository>().Keyed<IRepository>("Common.AutoCodeCache").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.FilterId_Repository>().Keyed<IRepository>("Common.FilterId").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.KeepSynchronizedMetadata_Repository>().Keyed<IRepository>("Common.KeepSynchronizedMetadata").InstancePerLifetimeScope();
@@ -351,6 +352,9 @@ namespace PrviRhetos._Helper
 
         private Putovanje_Repository _Putovanje_Repository;
         public Putovanje_Repository Putovanje { get { return _Putovanje_Repository ?? (_Putovanje_Repository = (Putovanje_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"PrviRhetos.Putovanje")); } }
+
+        private Test_Repository _Test_Repository;
+        public Test_Repository Test { get { return _Test_Repository ?? (_Test_Repository = (Test_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"PrviRhetos.Test")); } }
 
         /*ModuleInfo RepositoryMembers PrviRhetos*/
     }
@@ -1225,6 +1229,149 @@ namespace PrviRhetos._Helper
         }
 
         /*DataStructureInfo RepositoryMembers PrviRhetos.Putovanje*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes PrviRhetos.Test*/
+    public class Test_Repository : /*DataStructureInfo OverrideBaseType PrviRhetos.Test*/ Common.OrmRepositoryBase<Common.Queryable.PrviRhetos_Test, PrviRhetos.Test> // Common.QueryableRepositoryBase<Common.Queryable.PrviRhetos_Test, PrviRhetos.Test> // Common.ReadableRepositoryBase<PrviRhetos.Test> // global::Common.RepositoryBase
+        , IWritableRepository<PrviRhetos.Test>, IValidateRepository/*DataStructureInfo RepositoryInterface PrviRhetos.Test*/
+    {
+        private readonly Rhetos.Utilities.ISqlUtility _sqlUtility;
+        /*DataStructureInfo RepositoryPrivateMembers PrviRhetos.Test*/
+
+        public Test_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext, Rhetos.Utilities.ISqlUtility _sqlUtility/*DataStructureInfo RepositoryConstructorArguments PrviRhetos.Test*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            this._sqlUtility = _sqlUtility;
+            /*DataStructureInfo RepositoryConstructorCode PrviRhetos.Test*/
+        }
+
+        [Obsolete("Use Load() or Query() method.")]
+        public override global::PrviRhetos.Test[] All()
+        {
+            return Query().ToSimple().ToArray();
+        }
+
+        public override IQueryable<Common.Queryable.PrviRhetos_Test> Query()
+        {
+            /*DataStructureInfo RepositoryBeforeQuery PrviRhetos.Test*/
+            return _executionContext.EntityFrameworkContext.PrviRhetos_Test.AsNoTracking();
+        }
+
+        public void Save(IEnumerable<PrviRhetos.Test> insertedNew, IEnumerable<PrviRhetos.Test> updatedNew, IEnumerable<PrviRhetos.Test> deletedIds, bool checkUserPermissions = false)
+        {
+            if (!DomHelper.CleanUpSaveMethodArguments(ref insertedNew, ref updatedNew, ref deletedIds))
+                return;
+
+            /*DataStructureInfo WritableOrm ClearContext PrviRhetos.Test*/
+
+            {
+                var invalidItem = insertedNew.Concat(updatedNew).Where(newItem => newItem.Test1 != null && newItem.Test1.Length > 256).FirstOrDefault();
+                if (invalidItem != null)
+                    throw new Rhetos.UserException(
+                        "Maximum length of property {0} is {1}.",
+                        new[] { "Test.Test1", "256" },
+                        "DataStructure:PrviRhetos.Test,ID:" + invalidItem.ID.ToString() + ",Property:Test1",
+                        null);
+            }
+            /*DataStructureInfo WritableOrm ArgumentValidation PrviRhetos.Test*/
+
+            /*DataStructureInfo WritableOrm Initialization PrviRhetos.Test*/
+
+            // Using old data, including lazy loading of navigation properties:
+            IEnumerable<Common.Queryable.PrviRhetos_Test> deleted = this.Query(deletedIds.Select(item => item.ID)).ToList();
+            Rhetos.Utilities.Graph.SortByGivenOrder((List<Common.Queryable.PrviRhetos_Test>)deleted, deletedIds.Select(item => item.ID), item => item.ID);
+            IEnumerable<Common.Queryable.PrviRhetos_Test> updated = this.Query(updatedNew.Select(item => item.ID)).ToList();
+            Rhetos.Utilities.Graph.SortByGivenOrder((List<Common.Queryable.PrviRhetos_Test>)updated, updatedNew.Select(item => item.ID), item => item.ID);
+
+            /*DataStructureInfo WritableOrm OldDataLoaded PrviRhetos.Test*/
+
+            /*DataStructureInfo WritableOrm ProcessedOldData PrviRhetos.Test*/
+
+            DomHelper.SaveOperation saveOperation = DomHelper.SaveOperation.None;
+            try
+            {
+                if (deletedIds.Count() > 0)
+                {
+                    saveOperation = DomHelper.SaveOperation.Delete;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = false;
+                    foreach (var item in deletedIds.Select(item => item.ToNavigation()))
+                        _executionContext.EntityFrameworkContext.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = true;
+                    _executionContext.EntityFrameworkContext.SaveChanges();
+                }
+
+                if (updatedNew.Count() > 0)
+                {
+                    saveOperation = DomHelper.SaveOperation.Update;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = false;
+                    foreach (var item in updatedNew.Select(item => item.ToNavigation()))
+                        _executionContext.EntityFrameworkContext.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    _executionContext.EntityFrameworkContext.Configuration.AutoDetectChangesEnabled = true;
+                    _executionContext.EntityFrameworkContext.SaveChanges();
+                }
+
+                if (insertedNew.Count() > 0)
+                {
+                    saveOperation = DomHelper.SaveOperation.Insert;
+                    _executionContext.EntityFrameworkContext.PrviRhetos_Test.AddRange(insertedNew.Select(item => item.ToNavigation()));
+                    _executionContext.EntityFrameworkContext.SaveChanges();
+                }
+
+                saveOperation = DomHelper.SaveOperation.None;
+                _executionContext.EntityFrameworkContext.ClearCache();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException saveException)
+            {
+                DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
+        		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
+        		/*DataStructureInfo WritableOrm OnDatabaseError PrviRhetos.Test*/
+                if (checkUserPermissions)
+                    Rhetos.Utilities.MsSqlUtility.ThrowIfPrimaryKeyErrorOnInsert(interpretedException, "PrviRhetos.Test");
+
+                if (interpretedException != null)
+        			Rhetos.Utilities.ExceptionsUtility.Rethrow(interpretedException);
+                var sqlException = _sqlUtility.ExtractSqlException(saveException);
+                if (sqlException != null)
+                    Rhetos.Utilities.ExceptionsUtility.Rethrow(sqlException);
+                throw;
+            }
+
+            deleted = null;
+            updated = this.Query(updatedNew.Select(item => item.ID));
+            IEnumerable<Common.Queryable.PrviRhetos_Test> inserted = this.Query(insertedNew.Select(item => item.ID));
+
+            bool allEffectsCompleted = false;
+            try
+            {
+                /*DataStructureInfo WritableOrm OnSaveTag1 PrviRhetos.Test*/
+
+                /*DataStructureInfo WritableOrm OnSaveTag2 PrviRhetos.Test*/
+
+                Rhetos.Dom.DefaultConcepts.InvalidDataMessage.ValidateOnSave(insertedNew, updatedNew, this, "PrviRhetos.Test");
+                allEffectsCompleted = true;
+            }
+            finally
+            {
+                if (!allEffectsCompleted)
+                    _executionContext.PersistenceTransaction.DiscardChanges();
+            }
+        }
+
+        public IEnumerable<Rhetos.Dom.DefaultConcepts.InvalidDataMessage> Validate(IList<Guid> ids, bool onSave)
+        {
+            /*DataStructureInfo WritableOrm OnSaveValidate PrviRhetos.Test*/
+            yield break;
+        }
+
+        public global::PrviRhetos.Test CreateInstance()
+        {
+            var _item = new global::PrviRhetos.Test();
+            /*DataStructureInfo CreateInstance PrviRhetos.Test*/
+            return _item;
+        }
+
+        /*DataStructureInfo RepositoryMembers PrviRhetos.Test*/
     }
 
     /*ModuleInfo HelperNamespaceMembers PrviRhetos*/

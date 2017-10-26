@@ -141,6 +141,48 @@ namespace Rhetos.Mvc.PrviRhetos
 }
 
 
+namespace Rhetos.Mvc.PrviRhetos
+{
+    [Rhetos.Mvc.LocalizedDisplayName("PrviRhetos_Putovanje", typeof(CaptionsResourceClass))]
+    [Rhetos.Mvc.ReadableDataStructure]
+    [Rhetos.Mvc.WritableDataStructure]
+    public partial class Putovanje : Rhetos.Mvc.BaseMvcModel
+    {
+        public const string EntityPutovanje = "Putovanje";
+
+        [Display(Name = "PrviRhetos_Putovanje_Osoba", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual Guid? OsobaID { get; set; }
+        public const string PropertyOsobaID = "OsobaID";
+        
+        [Display(Name = "PrviRhetos_Putovanje_IzGrada", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual Guid? IzGradaID { get; set; }
+        public const string PropertyIzGradaID = "IzGradaID";
+        
+        [Display(Name = "PrviRhetos_Putovanje_UGrad", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual Guid? UGradID { get; set; }
+        public const string PropertyUGradID = "UGradID";
+        
+        [Display(Name = "PrviRhetos_Putovanje_DatumPolaska", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual DateTime? DatumPolaska { get; set; }
+        public const string PropertyDatumPolaska = "DatumPolaska";
+        
+        [Display(Name = "PrviRhetos_Putovanje_DatumPovratka", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [Required()]
+        public virtual DateTime? DatumPovratka { get; set; }
+        public const string PropertyDatumPovratka = "DatumPovratka";
+        
+        [Display(Name = "PrviRhetos_Putovanje_Napomena", ResourceType = typeof(CaptionsResourceClass), AutoGenerateFilter = true)]
+        [MaxLength(256)]
+        public virtual string Napomena { get; set; }
+        public const string PropertyNapomena = "Napomena";
+    }
+}
+
+
 namespace Rhetos.Mvc.Common
 {
     [Rhetos.Mvc.LocalizedDisplayName("Common_AutoCodeCache", typeof(CaptionsResourceClass))]
