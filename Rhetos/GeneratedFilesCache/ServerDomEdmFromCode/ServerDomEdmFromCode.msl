@@ -79,8 +79,8 @@
                 <ScalarProperty Name="ContextInfo" ColumnName="ContextInfo" />
                 <ScalarProperty Name="Action" ColumnName="Action" />
                 <ScalarProperty Name="TableName" ColumnName="TableName" />
-                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -155,8 +155,8 @@
                 <ScalarProperty Name="ContextInfo" ColumnName="ContextInfo" />
                 <ScalarProperty Name="Action" ColumnName="Action" />
                 <ScalarProperty Name="TableName" ColumnName="TableName" />
-                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -196,6 +196,29 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />
                 <ScalarProperty Name="PozivniBroj" ColumnName="PozivniBroj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrviRhetos_Grad">
+            <EntityTypeMapping TypeName="Common.PrviRhetos_Grad">
+              <MappingFragment StoreEntitySet="PrviRhetos_Grad">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="UDrzaviID" ColumnName="UDrzaviID" />
+                <ScalarProperty Name="PostanskiBroj" ColumnName="PostanskiBroj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrviRhetos_Osoba">
+            <EntityTypeMapping TypeName="Common.PrviRhetos_Osoba">
+              <MappingFragment StoreEntitySet="PrviRhetos_Osoba">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OIB" ColumnName="OIB" />
+                <ScalarProperty Name="GradRodenjaID" ColumnName="GradRodenjaID" />
+                <ScalarProperty Name="DrzavaRodenjaID" ColumnName="DrzavaRodenjaID" />
+                <ScalarProperty Name="GradStanovanjaID" ColumnName="GradStanovanjaID" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="BrojMobitela" ColumnName="BrojMobitela" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

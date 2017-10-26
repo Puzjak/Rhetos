@@ -95,6 +95,22 @@ namespace Common
         {
             modelBuilder.Ignore<global::PrviRhetos.Drzava>();
             modelBuilder.Entity<Common.Queryable.PrviRhetos_Drzava>().Map(m => { m.MapInheritedProperties(); m.ToTable("Drzava", "PrviRhetos"); });
+            modelBuilder.Ignore<global::PrviRhetos.Grad>();
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Grad>().Map(m => { m.MapInheritedProperties(); m.ToTable("Grad", "PrviRhetos"); });
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Grad>()
+                .HasOptional(t => t.UDrzavi).WithMany()
+                .HasForeignKey(t => t.UDrzaviID);
+            modelBuilder.Ignore<global::PrviRhetos.Osoba>();
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Osoba>().Map(m => { m.MapInheritedProperties(); m.ToTable("Osoba", "PrviRhetos"); });
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Osoba>()
+                .HasOptional(t => t.GradRodenja).WithMany()
+                .HasForeignKey(t => t.GradRodenjaID);
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Osoba>()
+                .HasOptional(t => t.DrzavaRodenja).WithMany()
+                .HasForeignKey(t => t.DrzavaRodenjaID);
+            modelBuilder.Entity<Common.Queryable.PrviRhetos_Osoba>()
+                .HasOptional(t => t.GradStanovanja).WithMany()
+                .HasForeignKey(t => t.GradStanovanjaID);
             modelBuilder.Ignore<global::Common.AutoCodeCache>();
             modelBuilder.Entity<Common.Queryable.Common_AutoCodeCache>().Map(m => { m.MapInheritedProperties(); m.ToTable("AutoCodeCache", "Common"); });
             modelBuilder.Ignore<global::Common.FilterId>();
@@ -167,6 +183,8 @@ namespace Common
         }
 
         public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Drzava> PrviRhetos_Drzava { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Grad> PrviRhetos_Grad { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.PrviRhetos_Osoba> PrviRhetos_Osoba { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_AutoCodeCache> Common_AutoCodeCache { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_FilterId> Common_FilterId { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_KeepSynchronizedMetadata> Common_KeepSynchronizedMetadata { get; set; }

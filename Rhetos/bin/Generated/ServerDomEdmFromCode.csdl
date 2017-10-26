@@ -73,9 +73,9 @@
           <Property Name="ContextInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TableName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ItemId" Type="Guid" />
-          <Property Name="Created" Type="DateTime" />
         </EntityType>
         <EntityType Name="Common_LogRelatedItem" customannotation:ClrType="Common.Queryable.Common_LogRelatedItem, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -148,9 +148,9 @@
           <Property Name="ContextInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TableName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ItemId" Type="Guid" />
-          <Property Name="Created" Type="DateTime" />
           <NavigationProperty Name="Log" Relationship="Self.Common_RelatedEventsSource_Log" FromRole="Common_RelatedEventsSource_Log_Source" ToRole="Common_RelatedEventsSource_Log_Target" />
         </EntityType>
         <EntityType Name="Common_ReportTemplate" customannotation:ClrType="Common.Queryable.Common_ReportTemplate, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -189,7 +189,7 @@
           </Key>
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="Naziv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PozivniBroj" Type="Int32" />
+          <Property Name="PozivniBroj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="PrviRhetos_Grad" customannotation:ClrType="Common.Queryable.PrviRhetos_Grad, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -207,6 +207,7 @@
           </Key>
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="OIB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DatumRodenja" Type="DateTime" />
           <Property Name="GradRodenjaID" Type="Guid" />
           <Property Name="DrzavaRodenjaID" Type="Guid" />
           <Property Name="GradStanovanjaID" Type="Guid" />

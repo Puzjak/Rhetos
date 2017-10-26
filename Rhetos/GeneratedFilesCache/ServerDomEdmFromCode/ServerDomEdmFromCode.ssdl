@@ -73,8 +73,8 @@
           <Property Name="ContextInfo" Type="nvarchar(max)" Nullable="true" />
           <Property Name="Action" Type="nvarchar(max)" Nullable="true" />
           <Property Name="TableName" Type="nvarchar(max)" Nullable="true" />
-          <Property Name="ItemId" Type="uniqueidentifier" Nullable="true" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="ItemId" Type="uniqueidentifier" Nullable="true" />
           <Property Name="Created" Type="datetime" Nullable="true" />
         </EntityType>
         <EntityType Name="Common_LogRelatedItem">
@@ -142,8 +142,8 @@
           <Property Name="ContextInfo" Type="nvarchar(max)" Nullable="true" />
           <Property Name="Action" Type="nvarchar(max)" Nullable="true" />
           <Property Name="TableName" Type="nvarchar(max)" Nullable="true" />
-          <Property Name="ItemId" Type="uniqueidentifier" Nullable="true" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="ItemId" Type="uniqueidentifier" Nullable="true" />
           <Property Name="Created" Type="datetime" Nullable="true" />
         </EntityType>
         <EntityType Name="Common_ReportTemplate">
@@ -179,6 +179,27 @@
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Naziv" Type="nvarchar(max)" Nullable="true" />
           <Property Name="PozivniBroj" Type="int" Nullable="true" />
+        </EntityType>
+        <EntityType Name="PrviRhetos_Grad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="UDrzaviID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_UDrzaviID, Order: 0 }" Nullable="true" />
+          <Property Name="PostanskiBroj" Type="nvarchar(max)" Nullable="true" />
+        </EntityType>
+        <EntityType Name="PrviRhetos_Osoba">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OIB" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="GradRodenjaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_GradRodenjaID, Order: 0 }" Nullable="true" />
+          <Property Name="DrzavaRodenjaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_DrzavaRodenjaID, Order: 0 }" Nullable="true" />
+          <Property Name="GradStanovanjaID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_GradStanovanjaID, Order: 0 }" Nullable="true" />
+          <Property Name="Adresa" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="BrojMobitela" Type="nvarchar(max)" Nullable="true" />
         </EntityType>
         <Association Name="Common_LogRelatedItem_Log">
           <End Role="Common_Log" Type="Self.Common_Log" Multiplicity="0..1" />
@@ -312,6 +333,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="PrviRhetos_Grad_UDrzavi">
+          <End Role="PrviRhetos_Drzava" Type="Self.PrviRhetos_Drzava" Multiplicity="0..1" />
+          <End Role="PrviRhetos_Grad" Type="Self.PrviRhetos_Grad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Drzava">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Grad">
+              <PropertyRef Name="UDrzaviID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrviRhetos_Osoba_DrzavaRodenja">
+          <End Role="PrviRhetos_Drzava" Type="Self.PrviRhetos_Drzava" Multiplicity="0..1" />
+          <End Role="PrviRhetos_Osoba" Type="Self.PrviRhetos_Osoba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Drzava">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Osoba">
+              <PropertyRef Name="DrzavaRodenjaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrviRhetos_Osoba_GradRodenja">
+          <End Role="PrviRhetos_Grad" Type="Self.PrviRhetos_Grad" Multiplicity="0..1" />
+          <End Role="PrviRhetos_Osoba" Type="Self.PrviRhetos_Osoba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Grad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Osoba">
+              <PropertyRef Name="GradRodenjaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrviRhetos_Osoba_GradStanovanja">
+          <End Role="PrviRhetos_Grad" Type="Self.PrviRhetos_Grad" Multiplicity="0..1" />
+          <End Role="PrviRhetos_Osoba" Type="Self.PrviRhetos_Osoba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrviRhetos_Grad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PrviRhetos_Osoba">
+              <PropertyRef Name="GradStanovanjaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="CodeFirstDatabase">
           <EntitySet Name="Common_AutoCodeCache" EntityType="Self.Common_AutoCodeCache" Schema="Common" Table="AutoCodeCache" />
           <EntitySet Name="Common_Claim" EntityType="Self.Common_Claim" Schema="Common" Table="Claim" />
@@ -331,6 +400,8 @@
           <EntitySet Name="Common_RoleInheritsRole" EntityType="Self.Common_RoleInheritsRole" Schema="Common" Table="RoleInheritsRole" />
           <EntitySet Name="Common_RolePermission" EntityType="Self.Common_RolePermission" Schema="Common" Table="RolePermission" />
           <EntitySet Name="PrviRhetos_Drzava" EntityType="Self.PrviRhetos_Drzava" Schema="PrviRhetos" Table="Drzava" />
+          <EntitySet Name="PrviRhetos_Grad" EntityType="Self.PrviRhetos_Grad" Schema="PrviRhetos" Table="Grad" />
+          <EntitySet Name="PrviRhetos_Osoba" EntityType="Self.PrviRhetos_Osoba" Schema="PrviRhetos" Table="Osoba" />
           <AssociationSet Name="Common_LogRelatedItem_Log" Association="Self.Common_LogRelatedItem_Log">
             <End Role="Common_Log" EntitySet="Common_Log" />
             <End Role="Common_LogRelatedItem" EntitySet="Common_LogRelatedItem" />
@@ -374,6 +445,22 @@
           <AssociationSet Name="Common_RolePermission_Role" Association="Self.Common_RolePermission_Role">
             <End Role="Common_Role" EntitySet="Common_Role" />
             <End Role="Common_RolePermission" EntitySet="Common_RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Grad_UDrzavi" Association="Self.PrviRhetos_Grad_UDrzavi">
+            <End Role="PrviRhetos_Drzava" EntitySet="PrviRhetos_Drzava" />
+            <End Role="PrviRhetos_Grad" EntitySet="PrviRhetos_Grad" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Osoba_DrzavaRodenja" Association="Self.PrviRhetos_Osoba_DrzavaRodenja">
+            <End Role="PrviRhetos_Drzava" EntitySet="PrviRhetos_Drzava" />
+            <End Role="PrviRhetos_Osoba" EntitySet="PrviRhetos_Osoba" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Osoba_GradRodenja" Association="Self.PrviRhetos_Osoba_GradRodenja">
+            <End Role="PrviRhetos_Grad" EntitySet="PrviRhetos_Grad" />
+            <End Role="PrviRhetos_Osoba" EntitySet="PrviRhetos_Osoba" />
+          </AssociationSet>
+          <AssociationSet Name="PrviRhetos_Osoba_GradStanovanja" Association="Self.PrviRhetos_Osoba_GradStanovanja">
+            <End Role="PrviRhetos_Grad" EntitySet="PrviRhetos_Grad" />
+            <End Role="PrviRhetos_Osoba" EntitySet="PrviRhetos_Osoba" />
           </AssociationSet>
         </EntityContainer>
       </Schema>

@@ -394,6 +394,15 @@ namespace PrviRhetos._Helper
                         "DataStructure:PrviRhetos.Drzava,ID:" + invalidItem.ID.ToString() + ",Property:Naziv",
                         null);
             }
+            {
+                var invalidItem = insertedNew.Concat(updatedNew).Where(newItem => newItem.PozivniBroj != null && newItem.PozivniBroj.Length > 256).FirstOrDefault();
+                if (invalidItem != null)
+                    throw new Rhetos.UserException(
+                        "Maximum length of property {0} is {1}.",
+                        new[] { "Drzava.PozivniBroj", "256" },
+                        "DataStructure:PrviRhetos.Drzava,ID:" + invalidItem.ID.ToString() + ",Property:PozivniBroj",
+                        null);
+            }
             /*DataStructureInfo WritableOrm ArgumentValidation PrviRhetos.Drzava*/
 
             /*DataStructureInfo WritableOrm Initialization PrviRhetos.Drzava*/
@@ -414,7 +423,7 @@ namespace PrviRhetos._Helper
                         "DataStructure:PrviRhetos.Drzava,ID:" + invalid.ID.ToString() + ",Property:Naziv", null);
             }
             {
-                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.PozivniBroj == null /*RequiredPropertyInfo OrCondition PrviRhetos.Drzava.PozivniBroj*/);
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.PozivniBroj == null || string.IsNullOrWhiteSpace(item.PozivniBroj) /*RequiredPropertyInfo OrCondition PrviRhetos.Drzava.PozivniBroj*/);
                 if (invalid != null)
                     throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
                         new[] { "PrviRhetos.Drzava", "PozivniBroj" },
@@ -498,6 +507,13 @@ namespace PrviRhetos._Helper
 
         public IEnumerable<Rhetos.Dom.DefaultConcepts.InvalidDataMessage> Validate(IList<Guid> ids, bool onSave)
         {
+            if (onSave)
+            {
+                var errorIds = this.Filter(this.Query(ids), new PozivniBroj_MaxLengthFilter()).Select(item => item.ID).ToArray();
+                if (errorIds.Count() > 0)
+                    foreach (var error in GetErrorMessage_PozivniBroj__MaxLengthFilter(errorIds))
+                        yield return error;
+            }
             /*DataStructureInfo WritableOrm OnSaveValidate PrviRhetos.Drzava*/
             yield break;
         }
@@ -507,6 +523,40 @@ namespace PrviRhetos._Helper
             var _item = new global::PrviRhetos.Drzava();
             /*DataStructureInfo CreateInstance PrviRhetos.Drzava*/
             return _item;
+        }
+
+        public IEnumerable<InvalidDataMessage> GetErrorMessage_PozivniBroj__MaxLengthFilter(IEnumerable<Guid> invalidData_Ids)
+        {
+            const string invalidData_Description = @"Maximum allowed length of {0} is {1} characters.";
+            IDictionary<string, object> metadata = new Dictionary<string, object>();
+            metadata["Validation"] = @"PozivniBroj_MaxLengthFilter";
+            metadata[@"Property"] = @"PozivniBroj";
+            /*InvalidDataInfo ErrorMetadata PrviRhetos.Drzava.PozivniBroj_MaxLengthFilter*/
+            return invalidData_Ids.Select(id => new InvalidDataMessage
+            {
+                ID = id,
+                Message = invalidData_Description,
+                MessageParameters = new object[] { @"PozivniBroj", 4 },
+                Metadata = metadata
+            });
+            // /*InvalidDataInfo OverrideUserMessages PrviRhetos.Drzava.PozivniBroj_MaxLengthFilter*/ return invalidData_Ids.Select(id => new InvalidDataMessage { ID = id, Message = invalidData_Description, Metadata = metadata });
+        }
+
+        public IQueryable<Common.Queryable.PrviRhetos_Drzava> Filter(IQueryable<Common.Queryable.PrviRhetos_Drzava> localSource, PrviRhetos.PozivniBroj_MaxLengthFilter localParameter)
+        {
+            Func<IQueryable<Common.Queryable.PrviRhetos_Drzava>, Common.DomRepository, PrviRhetos.PozivniBroj_MaxLengthFilter/*ComposableFilterByInfo AdditionalParametersType PrviRhetos.Drzava.'PrviRhetos.PozivniBroj_MaxLengthFilter'*/, IQueryable<Common.Queryable.PrviRhetos_Drzava>> filterFunction =
+            (source, repository, parameter) => source.Where(item => !String.IsNullOrEmpty(item.PozivniBroj) && item.PozivniBroj.Length > 4);
+
+            /*ComposableFilterByInfo BeforeFilter PrviRhetos.Drzava.'PrviRhetos.PozivniBroj_MaxLengthFilter'*/
+            return filterFunction(localSource, _domRepository, localParameter/*ComposableFilterByInfo AdditionalParametersArgument PrviRhetos.Drzava.'PrviRhetos.PozivniBroj_MaxLengthFilter'*/);
+        }
+
+        public global::PrviRhetos.Drzava[] Filter(PrviRhetos.PozivniBroj_MaxLengthFilter filter_Parameter)
+        {
+            Func<Common.DomRepository, PrviRhetos.PozivniBroj_MaxLengthFilter/*FilterByInfo AdditionalParametersType PrviRhetos.Drzava.'PrviRhetos.PozivniBroj_MaxLengthFilter'*/, PrviRhetos.Drzava[]> filter_Function =
+                (repository, parameter) => repository.PrviRhetos.Drzava.Filter(repository.PrviRhetos.Drzava.Query(), parameter).ToArray();
+
+            return filter_Function(_domRepository, filter_Parameter/*FilterByInfo AdditionalParametersArgument PrviRhetos.Drzava.'PrviRhetos.PozivniBroj_MaxLengthFilter'*/);
         }
 
         /*DataStructureInfo RepositoryMembers PrviRhetos.Drzava*/
@@ -589,6 +639,13 @@ namespace PrviRhetos._Helper
                     throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
                         new[] { "PrviRhetos.Grad", "UDrzavi" },
                         "DataStructure:PrviRhetos.Grad,ID:" + invalid.ID.ToString() + ",Property:UDrzaviID", null);
+            }
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.PostanskiBroj == null || string.IsNullOrWhiteSpace(item.PostanskiBroj) /*RequiredPropertyInfo OrCondition PrviRhetos.Grad.PostanskiBroj*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { "PrviRhetos.Grad", "PostanskiBroj" },
+                        "DataStructure:PrviRhetos.Grad,ID:" + invalid.ID.ToString() + ",Property:PostanskiBroj", null);
             }
             /*DataStructureInfo WritableOrm ProcessedOldData PrviRhetos.Grad*/
 
@@ -756,6 +813,13 @@ namespace PrviRhetos._Helper
                         "DataStructure:PrviRhetos.Osoba,ID:" + invalid.ID.ToString() + ",Property:OIB", null);
             }
             {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.DatumRodenja == null /*RequiredPropertyInfo OrCondition PrviRhetos.Osoba.DatumRodenja*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { "PrviRhetos.Osoba", "DatumRodenja" },
+                        "DataStructure:PrviRhetos.Osoba,ID:" + invalid.ID.ToString() + ",Property:DatumRodenja", null);
+            }
+            {
                 var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.GradRodenjaID == null /*RequiredPropertyInfo OrCondition PrviRhetos.Osoba.GradRodenja*/);
                 if (invalid != null)
                     throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
@@ -865,6 +929,20 @@ namespace PrviRhetos._Helper
 
         public IEnumerable<Rhetos.Dom.DefaultConcepts.InvalidDataMessage> Validate(IList<Guid> ids, bool onSave)
         {
+            if (onSave)
+            {
+                var errorIds = this.Filter(this.Query(ids), new Adresa_MinLengthFilter()).Select(item => item.ID).ToArray();
+                if (errorIds.Count() > 0)
+                    foreach (var error in GetErrorMessage_Adresa__MinLengthFilter(errorIds))
+                        yield return error;
+            }
+            if (onSave)
+            {
+                var errorIds = this.Filter(this.Query(ids), new PrviRhetos.OIB_RegExMatchFilter()).Select(item => item.ID).ToArray();
+                if (errorIds.Count() > 0)
+                    foreach (var error in GetErrorMessage_OIB_RegExMatchFilter(errorIds))
+                        yield return error;
+            }
             /*DataStructureInfo WritableOrm OnSaveValidate PrviRhetos.Osoba*/
             yield break;
         }
@@ -874,6 +952,80 @@ namespace PrviRhetos._Helper
             var _item = new global::PrviRhetos.Osoba();
             /*DataStructureInfo CreateInstance PrviRhetos.Osoba*/
             return _item;
+        }
+
+        public IEnumerable<InvalidDataMessage> GetErrorMessage_Adresa__MinLengthFilter(IEnumerable<Guid> invalidData_Ids)
+        {
+            const string invalidData_Description = @"Minimum allowed length of {0} is {1} characters.";
+            IDictionary<string, object> metadata = new Dictionary<string, object>();
+            metadata["Validation"] = @"Adresa_MinLengthFilter";
+            metadata[@"Property"] = @"Adresa";
+            /*InvalidDataInfo ErrorMetadata PrviRhetos.Osoba.Adresa_MinLengthFilter*/
+            return invalidData_Ids.Select(id => new InvalidDataMessage
+            {
+                ID = id,
+                Message = invalidData_Description,
+                MessageParameters = new object[] { @"Adresa", 4 },
+                Metadata = metadata
+            });
+            // /*InvalidDataInfo OverrideUserMessages PrviRhetos.Osoba.Adresa_MinLengthFilter*/ return invalidData_Ids.Select(id => new InvalidDataMessage { ID = id, Message = invalidData_Description, Metadata = metadata });
+        }
+
+        public IQueryable<Common.Queryable.PrviRhetos_Osoba> Filter(IQueryable<Common.Queryable.PrviRhetos_Osoba> localSource, PrviRhetos.OIB_RegExMatchFilter localParameter)
+        {
+            Func<IQueryable<Common.Queryable.PrviRhetos_Osoba>, Common.DomRepository, PrviRhetos.OIB_RegExMatchFilter/*ComposableFilterByInfo AdditionalParametersType PrviRhetos.Osoba.'PrviRhetos.OIB_RegExMatchFilter'*/, IQueryable<Common.Queryable.PrviRhetos_Osoba>> filterFunction =
+            (source, repository, parameter) =>
+                {
+                    var items = source.Where(item => !string.IsNullOrEmpty(item.OIB)).Select(item => new { item.ID, item.OIB }).ToList();
+                    var regex = new System.Text.RegularExpressions.Regex(@"^\\d{13}$");
+                    var invalidItemIds = items.Where(item => !regex.IsMatch(item.OIB)).Select(item => item.ID).ToList();
+                    return Filter(source, invalidItemIds);
+                };
+
+            /*ComposableFilterByInfo BeforeFilter PrviRhetos.Osoba.'PrviRhetos.OIB_RegExMatchFilter'*/
+            return filterFunction(localSource, _domRepository, localParameter/*ComposableFilterByInfo AdditionalParametersArgument PrviRhetos.Osoba.'PrviRhetos.OIB_RegExMatchFilter'*/);
+        }
+
+        public IEnumerable<InvalidDataMessage> GetErrorMessage_OIB_RegExMatchFilter(IEnumerable<Guid> invalidData_Ids)
+        {
+            const string invalidData_Description = @"Property {0} does not match required format.";
+            IDictionary<string, object> metadata = new Dictionary<string, object>();
+            metadata["Validation"] = @"PrviRhetos.OIB_RegExMatchFilter";
+            metadata[@"Property"] = @"OIB";
+            /*InvalidDataInfo ErrorMetadata PrviRhetos.Osoba.'PrviRhetos.OIB_RegExMatchFilter'*/
+            return invalidData_Ids.Select(id => new InvalidDataMessage
+            {
+                ID = id,
+                Message = invalidData_Description,
+                MessageParameters = new object[] { @"OIB" },
+                Metadata = metadata
+            });
+            // /*InvalidDataInfo OverrideUserMessages PrviRhetos.Osoba.'PrviRhetos.OIB_RegExMatchFilter'*/ return invalidData_Ids.Select(id => new InvalidDataMessage { ID = id, Message = invalidData_Description, Metadata = metadata });
+        }
+
+        public IQueryable<Common.Queryable.PrviRhetos_Osoba> Filter(IQueryable<Common.Queryable.PrviRhetos_Osoba> localSource, PrviRhetos.Adresa_MinLengthFilter localParameter)
+        {
+            Func<IQueryable<Common.Queryable.PrviRhetos_Osoba>, Common.DomRepository, PrviRhetos.Adresa_MinLengthFilter/*ComposableFilterByInfo AdditionalParametersType PrviRhetos.Osoba.'PrviRhetos.Adresa_MinLengthFilter'*/, IQueryable<Common.Queryable.PrviRhetos_Osoba>> filterFunction =
+            (source, repository, parameter) => source.Where(item => !String.IsNullOrEmpty(item.Adresa) && item.Adresa.Length < 4);
+
+            /*ComposableFilterByInfo BeforeFilter PrviRhetos.Osoba.'PrviRhetos.Adresa_MinLengthFilter'*/
+            return filterFunction(localSource, _domRepository, localParameter/*ComposableFilterByInfo AdditionalParametersArgument PrviRhetos.Osoba.'PrviRhetos.Adresa_MinLengthFilter'*/);
+        }
+
+        public global::PrviRhetos.Osoba[] Filter(PrviRhetos.OIB_RegExMatchFilter filter_Parameter)
+        {
+            Func<Common.DomRepository, PrviRhetos.OIB_RegExMatchFilter/*FilterByInfo AdditionalParametersType PrviRhetos.Osoba.'PrviRhetos.OIB_RegExMatchFilter'*/, PrviRhetos.Osoba[]> filter_Function =
+                (repository, parameter) => repository.PrviRhetos.Osoba.Filter(repository.PrviRhetos.Osoba.Query(), parameter).ToArray();
+
+            return filter_Function(_domRepository, filter_Parameter/*FilterByInfo AdditionalParametersArgument PrviRhetos.Osoba.'PrviRhetos.OIB_RegExMatchFilter'*/);
+        }
+
+        public global::PrviRhetos.Osoba[] Filter(PrviRhetos.Adresa_MinLengthFilter filter_Parameter)
+        {
+            Func<Common.DomRepository, PrviRhetos.Adresa_MinLengthFilter/*FilterByInfo AdditionalParametersType PrviRhetos.Osoba.'PrviRhetos.Adresa_MinLengthFilter'*/, PrviRhetos.Osoba[]> filter_Function =
+                (repository, parameter) => repository.PrviRhetos.Osoba.Filter(repository.PrviRhetos.Osoba.Query(), parameter).ToArray();
+
+            return filter_Function(_domRepository, filter_Parameter/*FilterByInfo AdditionalParametersArgument PrviRhetos.Osoba.'PrviRhetos.Adresa_MinLengthFilter'*/);
         }
 
         /*DataStructureInfo RepositoryMembers PrviRhetos.Osoba*/

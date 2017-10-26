@@ -88,6 +88,8 @@ namespace Rhetos.Rest
         {
             builder.RegisterType<ServiceUtility>().InstancePerLifetimeScope();
             builder.RegisterType<RestServicePrviRhetosDrzava>().InstancePerLifetimeScope();
+            builder.RegisterType<RestServicePrviRhetosGrad>().InstancePerLifetimeScope();
+            builder.RegisterType<RestServicePrviRhetosOsoba>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceCommonAutoCodeCache>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceCommonFilterId>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceCommonKeepSynchronizedMetadata>().InstancePerLifetimeScope();
@@ -123,6 +125,10 @@ namespace Rhetos.Rest
         {
             System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/PrviRhetos/Drzava", 
                 new RestServiceHostFactory(), typeof(RestServicePrviRhetosDrzava)));
+            System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/PrviRhetos/Grad", 
+                new RestServiceHostFactory(), typeof(RestServicePrviRhetosGrad)));
+            System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/PrviRhetos/Osoba", 
+                new RestServiceHostFactory(), typeof(RestServicePrviRhetosOsoba)));
             System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Common/AutoCodeCache", 
                 new RestServiceHostFactory(), typeof(RestServiceCommonAutoCodeCache)));
             System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Common/FilterId", 
@@ -308,6 +314,270 @@ namespace Rhetos.Rest
             return null;
         }
             /*DataStructureInfo AdditionalOperations PrviRhetos.Drzava*/
+    }
+    
+    [System.ServiceModel.ServiceContract]
+    [System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode = System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed)]
+    public class RestServicePrviRhetosGrad
+    {
+        private ServiceUtility _serviceUtility;
+        
+        private Rhetos.Processing.IProcessingEngine _processingEngine;
+/*DataStructureInfo AdditionalPropertyInitialization PrviRhetos.Grad*/
+
+        public RestServicePrviRhetosGrad(ServiceUtility serviceUtility, Rhetos.Processing.IProcessingEngine processingEngine/*DataStructureInfo AdditionalPropertyConstructorParameter PrviRhetos.Grad*/)
+        {
+            _serviceUtility = serviceUtility;
+            _processingEngine = processingEngine;
+/*DataStructureInfo AdditionalPropertyConstructorSetProperties PrviRhetos.Grad*/
+        }
+    
+        public static readonly IDictionary<string, Type[]> FilterTypes = new List<Tuple<string, Type>>
+            {
+                /*DataStructureInfo FilterTypes PrviRhetos.Grad*/
+            }
+            .GroupBy(typeName => typeName.Item1)
+            .ToDictionary(g => g.Key, g => g.Select(typeName => typeName.Item2).Distinct().ToArray());
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters), page, psize (use top and skip).
+        [OperationContract]
+        [WebGet(UriTemplate = "/?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&top={top}&skip={skip}&page={page}&psize={psize}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public RecordsResult<PrviRhetos.Grad> Get(string filter, string fparam, string genericfilter, string filters, int top, int skip, int page, int psize, string sort)
+        {
+            var data = _serviceUtility.GetData<PrviRhetos.Grad>(filter, fparam, genericfilter, filters, FilterTypes, top, skip, page, psize, sort,
+                readRecords: true, readTotalCount: false);
+            return new RecordsResult<PrviRhetos.Grad> { Records = data.Records };
+        }
+
+        [Obsolete]
+        [OperationContract]
+        [WebGet(UriTemplate = "/Count?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public CountResult GetCount(string filter, string fparam, string genericfilter, string filters, string sort)
+        {
+            var data = _serviceUtility.GetData<PrviRhetos.Grad>(filter, fparam, genericfilter, filters, FilterTypes, 0, 0, 0, 0, sort,
+                readRecords: false, readTotalCount: true);
+            return new CountResult { TotalRecords = data.TotalCount };
+        }
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters).
+        [OperationContract]
+        [WebGet(UriTemplate = "/TotalCount?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public TotalCountResult GetTotalCount(string filter, string fparam, string genericfilter, string filters, string sort)
+        {
+            var data = _serviceUtility.GetData<PrviRhetos.Grad>(filter, fparam, genericfilter, filters, FilterTypes, 0, 0, 0, 0, sort,
+                readRecords: false, readTotalCount: true);
+            return new TotalCountResult { TotalCount = data.TotalCount };
+        }
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters), page, psize (use top and skip).
+        [OperationContract]
+        [WebGet(UriTemplate = "/RecordsAndTotalCount?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&top={top}&skip={skip}&page={page}&psize={psize}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public RecordsAndTotalCountResult<PrviRhetos.Grad> GetRecordsAndTotalCount(string filter, string fparam, string genericfilter, string filters, int top, int skip, int page, int psize, string sort)
+        {
+            return _serviceUtility.GetData<PrviRhetos.Grad>(filter, fparam, genericfilter, filters, FilterTypes, top, skip, page, psize, sort,
+                readRecords: true, readTotalCount: true);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public PrviRhetos.Grad GetById(string id)
+        {
+            var result = _serviceUtility.GetDataById<PrviRhetos.Grad>(id);
+            if (result == null)
+                throw new Rhetos.LegacyClientException("There is no resource of this type with a given ID.") { HttpStatusCode = HttpStatusCode.NotFound, Severe = false };
+            return result;
+        }
+
+        
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public InsertDataResult InsertPrviRhetosGrad(PrviRhetos.Grad entity)
+        {
+            if (Guid.Empty == entity.ID)
+                entity.ID = Guid.NewGuid();
+
+            var result = _serviceUtility.InsertData(entity);
+            return new InsertDataResult { ID = entity.ID };
+        }
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", UriTemplate = "{id}", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public void UpdatePrviRhetosGrad(string id, PrviRhetos.Grad entity)
+        {
+            Guid guid;
+            if (!Guid.TryParse(id, out guid))
+                throw new Rhetos.LegacyClientException("Invalid format of GUID parametar 'ID'.");
+            if (Guid.Empty == entity.ID)
+                entity.ID = guid;
+            if (guid != entity.ID)
+                throw new Rhetos.LegacyClientException("Given entity ID is not equal to resource ID from URI.");
+
+            _serviceUtility.UpdateData(entity);
+        }
+
+        [OperationContract]
+        [WebInvoke(Method = "DELETE", UriTemplate = "{id}", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public void DeletePrviRhetosGrad(string id)
+        {
+            Guid guid;
+            if (!Guid.TryParse(id, out guid))
+                throw new Rhetos.LegacyClientException("Invalid format of GUID parametar 'ID'.");
+            var entity = new PrviRhetos.Grad { ID = guid };
+
+            _serviceUtility.DeleteData(entity);
+        }
+
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/CreateInstance", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public PrviRhetos.Grad CreateInstance()
+        {
+            var commandInfo = new OmegaCommonConcepts.SimpleBusinessLogic.CreateInstance.CreateInstanceCommandInfo 
+            {
+                DataStructureName = "PrviRhetos.Grad"
+            };
+
+            var result = _processingEngine.Execute(new[] {
+                commandInfo
+            });
+
+            if (result.Success && result.CommandResults != null && result.CommandResults.Length == 1)
+                return (PrviRhetos.Grad)result.CommandResults[0].Data.Value;
+            return null;
+        }
+            /*DataStructureInfo AdditionalOperations PrviRhetos.Grad*/
+    }
+    
+    [System.ServiceModel.ServiceContract]
+    [System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode = System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed)]
+    public class RestServicePrviRhetosOsoba
+    {
+        private ServiceUtility _serviceUtility;
+        
+        private Rhetos.Processing.IProcessingEngine _processingEngine;
+/*DataStructureInfo AdditionalPropertyInitialization PrviRhetos.Osoba*/
+
+        public RestServicePrviRhetosOsoba(ServiceUtility serviceUtility, Rhetos.Processing.IProcessingEngine processingEngine/*DataStructureInfo AdditionalPropertyConstructorParameter PrviRhetos.Osoba*/)
+        {
+            _serviceUtility = serviceUtility;
+            _processingEngine = processingEngine;
+/*DataStructureInfo AdditionalPropertyConstructorSetProperties PrviRhetos.Osoba*/
+        }
+    
+        public static readonly IDictionary<string, Type[]> FilterTypes = new List<Tuple<string, Type>>
+            {
+                /*DataStructureInfo FilterTypes PrviRhetos.Osoba*/
+            }
+            .GroupBy(typeName => typeName.Item1)
+            .ToDictionary(g => g.Key, g => g.Select(typeName => typeName.Item2).Distinct().ToArray());
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters), page, psize (use top and skip).
+        [OperationContract]
+        [WebGet(UriTemplate = "/?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&top={top}&skip={skip}&page={page}&psize={psize}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public RecordsResult<PrviRhetos.Osoba> Get(string filter, string fparam, string genericfilter, string filters, int top, int skip, int page, int psize, string sort)
+        {
+            var data = _serviceUtility.GetData<PrviRhetos.Osoba>(filter, fparam, genericfilter, filters, FilterTypes, top, skip, page, psize, sort,
+                readRecords: true, readTotalCount: false);
+            return new RecordsResult<PrviRhetos.Osoba> { Records = data.Records };
+        }
+
+        [Obsolete]
+        [OperationContract]
+        [WebGet(UriTemplate = "/Count?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public CountResult GetCount(string filter, string fparam, string genericfilter, string filters, string sort)
+        {
+            var data = _serviceUtility.GetData<PrviRhetos.Osoba>(filter, fparam, genericfilter, filters, FilterTypes, 0, 0, 0, 0, sort,
+                readRecords: false, readTotalCount: true);
+            return new CountResult { TotalRecords = data.TotalCount };
+        }
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters).
+        [OperationContract]
+        [WebGet(UriTemplate = "/TotalCount?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public TotalCountResult GetTotalCount(string filter, string fparam, string genericfilter, string filters, string sort)
+        {
+            var data = _serviceUtility.GetData<PrviRhetos.Osoba>(filter, fparam, genericfilter, filters, FilterTypes, 0, 0, 0, 0, sort,
+                readRecords: false, readTotalCount: true);
+            return new TotalCountResult { TotalCount = data.TotalCount };
+        }
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters), page, psize (use top and skip).
+        [OperationContract]
+        [WebGet(UriTemplate = "/RecordsAndTotalCount?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&top={top}&skip={skip}&page={page}&psize={psize}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public RecordsAndTotalCountResult<PrviRhetos.Osoba> GetRecordsAndTotalCount(string filter, string fparam, string genericfilter, string filters, int top, int skip, int page, int psize, string sort)
+        {
+            return _serviceUtility.GetData<PrviRhetos.Osoba>(filter, fparam, genericfilter, filters, FilterTypes, top, skip, page, psize, sort,
+                readRecords: true, readTotalCount: true);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public PrviRhetos.Osoba GetById(string id)
+        {
+            var result = _serviceUtility.GetDataById<PrviRhetos.Osoba>(id);
+            if (result == null)
+                throw new Rhetos.LegacyClientException("There is no resource of this type with a given ID.") { HttpStatusCode = HttpStatusCode.NotFound, Severe = false };
+            return result;
+        }
+
+        
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public InsertDataResult InsertPrviRhetosOsoba(PrviRhetos.Osoba entity)
+        {
+            if (Guid.Empty == entity.ID)
+                entity.ID = Guid.NewGuid();
+
+            var result = _serviceUtility.InsertData(entity);
+            return new InsertDataResult { ID = entity.ID };
+        }
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", UriTemplate = "{id}", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public void UpdatePrviRhetosOsoba(string id, PrviRhetos.Osoba entity)
+        {
+            Guid guid;
+            if (!Guid.TryParse(id, out guid))
+                throw new Rhetos.LegacyClientException("Invalid format of GUID parametar 'ID'.");
+            if (Guid.Empty == entity.ID)
+                entity.ID = guid;
+            if (guid != entity.ID)
+                throw new Rhetos.LegacyClientException("Given entity ID is not equal to resource ID from URI.");
+
+            _serviceUtility.UpdateData(entity);
+        }
+
+        [OperationContract]
+        [WebInvoke(Method = "DELETE", UriTemplate = "{id}", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public void DeletePrviRhetosOsoba(string id)
+        {
+            Guid guid;
+            if (!Guid.TryParse(id, out guid))
+                throw new Rhetos.LegacyClientException("Invalid format of GUID parametar 'ID'.");
+            var entity = new PrviRhetos.Osoba { ID = guid };
+
+            _serviceUtility.DeleteData(entity);
+        }
+
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/CreateInstance", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public PrviRhetos.Osoba CreateInstance()
+        {
+            var commandInfo = new OmegaCommonConcepts.SimpleBusinessLogic.CreateInstance.CreateInstanceCommandInfo 
+            {
+                DataStructureName = "PrviRhetos.Osoba"
+            };
+
+            var result = _processingEngine.Execute(new[] {
+                commandInfo
+            });
+
+            if (result.Success && result.CommandResults != null && result.CommandResults.Length == 1)
+                return (PrviRhetos.Osoba)result.CommandResults[0].Data.Value;
+            return null;
+        }
+            /*DataStructureInfo AdditionalOperations PrviRhetos.Osoba*/
     }
     
     [System.ServiceModel.ServiceContract]
