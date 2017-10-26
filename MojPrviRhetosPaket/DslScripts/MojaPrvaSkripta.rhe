@@ -3,25 +3,27 @@ Module PrviRhetos
 	Entity Drzava
 	{
 		ShortString Naziv {Required;}
-		Integer PozivniBroj {Required;}
+		Integer PozivniBroj {Required; MaxLength 4;}
 	}
 	
 	Entity Grad 
 	{
 		ShortString Naziv {Required;}
 		Reference UDrzavi PrviRhetos.Drzava {Required;}
-		ShortString PostanskiBroj;
+		ShortString PostanskiBroj{};
 	}
 	
 	Entity Osoba
 	{
-		ShortString OIB {Required;}
+		ShortString OIB {Required; RegexMatch "\\d{13}"}
+		DateTime DatumRodenja {Required;}
 		Reference GradRodenja PrviRhetos.Grad {Required;}
 		Reference DrzavaRodenja PrviRhetos.Drzava {Required;}
 		Reference GradStanovanja PrviRhetos.Grad {Required;}
-		LongString Adresa {Required;}
+		LongString Adresa {Required; MinLength 4}
 		ShortString BrojMobitela;
 		
 		UniqueMultiple 'OIB DrzavaRodenja';
 	}
+	
 }
