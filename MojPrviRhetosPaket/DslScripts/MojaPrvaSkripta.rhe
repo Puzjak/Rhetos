@@ -38,9 +38,5 @@ Module PrviRhetos
 		UniqueMultiple 'Osoba DatumPolaska';
 	}	
 	
-	Entity Test 
-	{
-		ShortString Test1;
-		LongString Test2;
-	}
+
 }
